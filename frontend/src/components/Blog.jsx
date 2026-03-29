@@ -8,7 +8,8 @@ export const Blog = () => {
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      style={{ padding: '20px 0', maxWidth: '800px', margin: '0 auto', marginBottom: '40px' }}
+      className="page-container"
+      style={{ maxWidth: '800px' }}
     >
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
         <h2 style={{ fontSize: '32px', marginBottom: '12px', fontWeight: '800' }}>Articles & <span className="text-gradient">Guides</span></h2>

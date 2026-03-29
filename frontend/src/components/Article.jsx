@@ -121,7 +121,7 @@ export const Article = () => {
       </Link>
       
       <div className="glass" style={{ padding: '0', overflow: 'hidden' }}>
-        <div style={{ padding: '60px 60px 40px', borderBottom: '1px solid var(--border-color)', background: 'rgba(255,255,255,0.02)' }}>
+        <div className="article-header" style={{ borderBottom: '1px solid var(--border-color)', background: 'rgba(255,255,255,0.02)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
             <span style={{ fontSize: '0.75rem', color: 'var(--accent-secondary)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', background: 'rgba(var(--accent-secondary-rgb), 0.1)', padding: '4px 12px', borderRadius: '100px' }}>
               {article.category}
@@ -152,7 +152,7 @@ export const Article = () => {
           </div>
         </div>
 
-        <div style={{ padding: '40px 60px 60px' }}>
+        <div className="article-body">
           <div style={{ color: 'var(--text-primary)', lineHeight: '1.8', fontSize: '1.15rem' }}>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.3rem', lineHeight: '1.6', marginBottom: '48px', borderLeft: '4px solid var(--accent-primary)', paddingLeft: '24px' }}>
               {article.snippet}
@@ -164,9 +164,8 @@ export const Article = () => {
               <AdPlaceholder type="post-content" />
             </div>
 
-            <div className="glass" style={{ 
+            <div className="glass page-container" style={{ 
               marginTop: '80px', 
-              padding: '60px 40px', 
               borderRadius: '24px', 
               textAlign: 'center', 
               position: 'relative', 

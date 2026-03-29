@@ -6,8 +6,8 @@ export const ContactUs = () => {
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="glass"
-      style={{ padding: '40px', maxWidth: '600px', margin: '0 auto', marginBottom: '40px' }}
+      className="glass page-container"
+      style={{ maxWidth: '600px' }}
     >
       <h2 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800' }}>Contact <span className="text-gradient">Us</span></h2>
       <p style={{ color: 'var(--text-secondary)', marginBottom: '32px' }}>

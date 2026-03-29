@@ -6,8 +6,8 @@ export const AboutUs = () => {
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="glass"
-      style={{ padding: '40px', maxWidth: '800px', margin: '0 auto', marginBottom: '40px' }}
+      className="glass page-container"
+      style={{ maxWidth: '800px' }}
     >
       <h2 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800' }}>About <span className="text-gradient">LearnPath</span></h2>
       

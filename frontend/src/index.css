@@ -218,51 +218,105 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 32px;
 }
 
-/* Mobile Adjustments */
+/* Global Page Containers Setup */
+.page-container {
+  padding: 40px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.article-header { padding: 60px 60px 40px; }
+.article-body { padding: 40px 60px 60px; }
+
 @media (max-width: 768px) {
+  /* Layout Flow */
   .flex-responsive {
     flex-direction: column;
-    gap: 12px;
+    gap: 8px !important;
   }
   
   .glass-container {
     width: 100% !important;
-    padding: 20px 16px !important;
+    padding: 16px 14px !important;
   }
+
+  .page-container {
+    padding: 16px 14px !important;
+  }
+  
+  .article-header { padding: 24px 16px 16px !important; }
+  .article-body { padding: 16px 16px 32px !important; }
   
   .container {
-    padding: 0 16px !important;
+    padding: 0 14px !important;
   }
+  
+  /* Extreme Typography Miniaturization */
+  h2 { font-size: 20px !important; margin-bottom: 4px !important; }
+  h3 { font-size: 16px !important; margin-bottom: 0px !important; }
+  h4 { font-size: 14px !important; }
+  p { font-size: 0.85rem !important; }
+  .input-label { font-size: 0.75rem !important; margin-bottom: 4px !important; }
   
   .text-smaller-on-mobile {
-    font-size: 26px !important;
+    font-size: 22px !important;
   }
   
+  /* Input & Button Miniaturization */
+  .input-field { 
+    padding: 8px 12px !important; 
+    font-size: 0.85rem !important; 
+  }
+  .btn-primary, .btn-secondary { 
+    padding: 8px 14px !important; 
+    font-size: 0.85rem !important; 
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  /* Cards Setup */
   .topic-card {
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 16px;
+    gap: 10px !important;
+    padding: 10px 12px !important;
   }
   
   .topic-card-text {
     align-items: flex-start !important;
+    gap: 8px !important;
   }
 
   .topic-card-action {
     width: 100%;
     text-align: center;
     justify-content: center;
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
   }
   
   header {
-    padding-bottom: 12px !important;
-    margin-bottom: 24px !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 16px !important;
   }
   
   .action-buttons-wrap {
     width: 100%;
-    margin-top: 8px;
+    margin-top: 4px;
     justify-content: flex-start !important;
     flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  
+  /* Scale down the big UI Icons slightly */
+  svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  /* Fix the specific map loader in D3 component container */
+  .d3-mobile-wrap {
+    height: 350px !important;
   }
 }
+
