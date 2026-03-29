@@ -137,7 +137,7 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
             style={{ padding: '24px', borderLeft: '4px solid var(--accent-primary)' }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <div style={{ background: 'var(--bg-secondary)', padding: '4px 10px', borderRadius: '6px', fontSize: '12px', fontWeight: '700', border: '1px solid var(--border-color)', color: 'var(--accent-secondary)', textTransform: 'uppercase' }}>
+              <div style={{ background: 'var(--bg-secondary)', padding: '4px 10px', borderRadius: '6px', fontSize: '12px', fontWeight: '700', border: '1px solid var(--border-color)', color: 'var(--accent-secondary)', textTransform: 'uppercase', whiteSpace: 'nowrap', flexShrink: 0 }}>
                 Week {weekData.week}
               </div>
               <h3 style={{ fontSize: '20px', margin: 0 }}>{weekData.focus}</h3>

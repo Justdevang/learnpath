@@ -152,6 +152,9 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
             </div>
 
             <div style={{ flex: 1.5 }}>
+              <label className="input-label" style={{ visibility: 'hidden', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <Globe size={14} /> Spacer
+              </label>
               <div 
                 onClick={() => setIncludeYouTube(!includeYouTube)}
                 style={{

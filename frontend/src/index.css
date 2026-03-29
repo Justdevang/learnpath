@@ -308,8 +308,8 @@ h1, h2, h3, h4, h5, h6 {
     gap: 8px !important;
   }
   
-  /* Scale down the big UI Icons slightly */
-  svg {
+  /* Scale down the big UI Icons slightly, but not the D3 graph */
+  svg:not(.d3-mobile-wrap svg) {
     width: 16px !important;
     height: 16px !important;
   }
