@@ -67,7 +67,8 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
         }}>
           <Zap size={28} color="var(--accent-primary)" strokeWidth={2.5} />
         </div>
-        <h2 style={{ fontSize: '30px', marginBottom: '12px', fontWeight: '800' }}>What do you <span className="text-gradient">want to learn?</span></h2>
+        <h1 style={{ fontSize: '32px', marginBottom: '8px', fontWeight: '800', lineHeight: 1.2 }}>Generate your <span className="text-gradient">AI Personalized Learning Roadmap</span></h1>
+        <h2 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: '600', color: 'var(--text-primary)' }}>What do you want to learn?</h2>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', maxWidth: '480px', margin: '0 auto' }}>Get a custom, week-by-week learning path generated specifically for your goals and schedule.</p>
       </div>
 
@@ -192,6 +193,10 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
             )}
           </button>
         </form>
+      </div>
+      
+      <div style={{ marginTop: '40px', padding: '0 20px', color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'center', opacity: 0.7 }}>
+        <p>LearnPath is an advanced <strong>AI Personalized Learning Roadmap</strong> generator designed for developers, designers, and tech enthusiasts. Tell us your target career, current skills, and weekly availability, and our system builds a comprehensive, week-by-week curriculum using the best free tutorials, documentation, and real YouTube videos on the internet. Start your structured tech career journey today.</p>
       </div>
     </motion.div>
   );

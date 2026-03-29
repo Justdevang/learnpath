@@ -35,9 +35,9 @@ function App() {
               <AdPlaceholder type="sticky-header" />
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <h1 className="text-gradient" onClick={() => window.location.href='/'} style={{ margin: 0, fontSize: '24px', cursor: 'pointer' }}>
+              <div className="text-gradient" onClick={() => window.location.href='/'} style={{ margin: 0, fontSize: '24px', cursor: 'pointer', fontWeight: 'bold' }}>
                 LearnPath
-              </h1>
+              </div>
             </div>
           </div>
         </header>
