@@ -47,7 +47,7 @@ Output the response AS PURE JSON in the following format (no markdown formatting
 
   try {
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-flash-lite",
+      model: "gemini-1.5-flash",
       generationConfig: {
         temperature: 0.2,
         responseMimeType: "application/json",

@@ -27,23 +27,25 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
     
     try {
       const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const fetchParams = { 
+        currentSkills: skills, 
+        targetRole: role, 
+        hoursPerWeek: hours,
+        resourcePreference: resourcePref,
+        includeYouTube,
+        language
+      };
+      
       const response = await fetch(`${apiUrl}/api/generate-roadmap`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          currentSkills: skills, 
-          targetRole: role, 
-          hoursPerWeek: hours,
-          resourcePreference: resourcePref,
-          includeYouTube,
-          language
-        }),
+        body: JSON.stringify(fetchParams),
       });
       
       const data = await response.json();
       
       if (data.roadmap) {
-        setRoadmapData(data.roadmap);
+        setRoadmapData(data.roadmap, fetchParams);
         navigate('/roadmap');
       } else {
         alert('Failed to generate roadmap: ' + (data.error || 'Unknown error'));
