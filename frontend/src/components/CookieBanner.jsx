@@ -12,12 +12,32 @@ export const CookieBanner = () => {
       // Small delay so it animates in nicely after initial load
       const timer = setTimeout(() => setIsVisible(true), 1500);
       return () => clearTimeout(timer);
+    } else {
+      // For returning users who already accepted, update consent state to granted
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('consent', 'update', {
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
     }
   }, []);
 
   const acceptCookies = () => {
     localStorage.setItem('learnpath_cookie_consent', 'true');
     setIsVisible(false);
+    
+    // Dispatch instant update when user clicks accept
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
   };
 
   return (
