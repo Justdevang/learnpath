@@ -1,24 +1,28 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LearnPath | AI Personalized Learning Roadmaps</title>
-    <meta name="description" content="LearnPath builds AI personalized learning roadmaps for your tech career goals. Generate a free, step-by-step curriculum using top-tier developer tutorials." />
-    <meta name="keywords" content="learning roadmap, AI curriculum, free coding bootcamp, tech career path, learn coding, developer roadmap" />
-    <meta name="author" content="LearnPath" />
-    <link rel="canonical" href="https://learnpath-1.onrender.com/" />
 
-    <!-- Open Graph (Facebook/Social) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://learnpath-1.onrender.com/" />
-    <meta property="og:title" content="LearnPath | AI Personalized Learning Roadmaps" />
-    <meta property="og:description" content="Generate a free, step-by-step tech curriculum using AI. Tell us your career goals and automatically get a curated learning path." />
-    <meta property="og:image" content="https://learnpath-1.onrender.com/og-image.jpg" />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnPath | AI Personalized Learning Roadmaps</title>
+  <meta name="description"
+    content="LearnPath builds AI personalized learning roadmaps for your tech career goals. Generate a free, step-by-step curriculum using top-tier developer tutorials." />
+  <meta name="keywords"
+    content="learning roadmap, AI curriculum, free coding bootcamp, tech career path, learn coding, developer roadmap" />
+  <meta name="author" content="LearnPath" />
+  <link rel="canonical" href="https://learnpath-pk9b.onrender.com/" />
 
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
+  <!-- Open Graph (Facebook/Social) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://learnpath-pk9b.onrender.com/" />
+  <meta property="og:title" content="LearnPath | AI Personalized Learning Roadmaps" />
+  <meta property="og:description"
+    content="Generate a free, step-by-step tech curriculum using AI. Tell us your career goals and automatically get a curated learning path." />
+  <meta property="og:image" content="https://learnpath-pk9b.onrender.com/og-image.jpg" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -26,51 +30,68 @@
       "operatingSystem": "Any",
       "applicationCategory": "EducationalApplication",
       "description": "An AI-powered personalized learning roadmap generator for developers.",
-      "url": "https://learnpath-1.onrender.com/"
+      "url": "https://learnpath-pk9b.onrender.com/"
     }
     </script>
 
-    
-    <style>
-      #root:empty {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: #070707;
-        color: #ccff00;
-        font-family: system-ui, -apple-system, sans-serif;
+
+  <style>
+    #root:empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #070707;
+      color: #ccff00;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .initial-loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .initial-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(204, 255, 0, 0.15);
+      border-top-color: #ccff00;
+      border-radius: 50%;
+      animation: ispin 1s linear infinite;
+    }
+
+    @keyframes ispin {
+      100% {
+        transform: rotate(360deg);
       }
-      .initial-loader {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-      }
-      .initial-spinner {
-        width: 40px;
-        height: 40px;
-        border: 3px solid rgba(204, 255, 0, 0.15);
-        border-top-color: #ccff00;
-        border-radius: 50%;
-        animation: ispin 1s linear infinite;
-      }
-      @keyframes ispin { 100% { transform: rotate(360deg); } }
-      .initial-text { font-size: 1.1rem; font-weight: 700; opacity: 0.8; }
-    </style>
-  </head>
+    }
+
+    .initial-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      opacity: 0.8;
+    }
+  </style>
+</head>
 
 
-  <body>
-    <div id="root">
-      <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">LearnPath: AI Personalized Learning Roadmaps</h1>
-      <h2 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Generate your free custom developer curriculum with artificial intelligence</h2>
-      
-      <div class="initial-loader">
-        <div class="initial-spinner"></div>
-        <div class="initial-text">Initializing AI...</div>
-      </div>
+<body>
+  <div id="root">
+    <h1
+      style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">
+      LearnPath: AI Personalized Learning Roadmaps</h1>
+    <h2
+      style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">
+      Generate your free custom developer curriculum with artificial intelligence</h2>
+
+    <div class="initial-loader">
+      <div class="initial-spinner"></div>
+      <div class="initial-text">Initializing AI...</div>
     </div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
