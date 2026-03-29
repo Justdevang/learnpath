@@ -188,8 +188,7 @@ export const D3Graph = ({ data }) => {
         .attr("r", 50)
         .attr("fill", "var(--bg-secondary)") // Dark bg
         .attr("stroke", d => d.group === 0 ? "var(--accent-primary)" : "var(--accent-secondary)") // Lime start, Yellow end
-        .attr("stroke-width", 3)
-        .style("filter", "drop-shadow(0 0 15px rgba(204,255,0,0.3))");
+        .attr("stroke-width", 3);
         
       circleNodes.append("text")
         .attr("text-anchor", "middle")
@@ -211,8 +210,7 @@ export const D3Graph = ({ data }) => {
         .attr("rx", 6)
         .attr("fill", "var(--bg-secondary)") // Dark gray
         .attr("stroke", "var(--border-color)") // Lime border with opacity
-        .attr("stroke-width", 2)
-        .style("filter", "drop-shadow(0 4px 6px rgba(0,0,0,0.5))");
+        .attr("stroke-width", 2);
         
       weekNodes.append("text")
         .attr("text-anchor", "middle")
@@ -311,8 +309,6 @@ export const D3Graph = ({ data }) => {
         .scaleExtent([0.3, 2])
         .on("zoom", (e) => {
           g.attr("transform", e.transform);
-          // Sync grid pattern with pan (don't scale grid to avoid visual clutter)
-          pattern.attr("x", e.transform.x).attr("y", e.transform.y);
         });
       
       svg.call(zoom);
@@ -329,7 +325,7 @@ export const D3Graph = ({ data }) => {
     <div style={{ width: '100%', overflowX: 'auto', overflowY: 'hidden', cursor: 'grab' }}>
       <div 
         ref={d3Container} 
-        style={{ width: '100%', height: '600px', backgroundColor: '#000000', borderRadius: '16px', border: '1px solid #27272a' }}
+        style={{ width: '100%', height: '600px', backgroundColor: '#000000', borderRadius: '16px', border: '1px solid #27272a', touchAction: 'none' }}
       />
     </div>
   );
