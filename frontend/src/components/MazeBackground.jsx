@@ -51,9 +51,11 @@ const generateMaze = (width, height) => {
 };
 
 export const MazeBackground = () => {
-  const width = 20;
-  const height = 25;
-  const cellSize = 50;
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+  const width = isMobile ? 10 : 20; // Drastically fewer columns on mobile
+  const height = isMobile ? 15 : 25; // Drastically fewer rows on mobile
+  const cellSize = isMobile ? 60 : 50; // Larger cells on mobile to cover space
+
 
   const maze = useMemo(() => generateMaze(width, height), []);
   const mazeHeightPixels = height * cellSize;
@@ -72,8 +74,8 @@ export const MazeBackground = () => {
     }}>
       {/* 3D Rotated Container */}
       <motion.div
-        animate={{ 
-          rotateZ: [0, 2, 0, -2, 0], // Gentle swaying
+        animate={isMobile ? {} : { 
+          rotateZ: [0, 2, 0, -2, 0], // Gentle swaying only on desktop
         }}
         transition={{ repeat: Infinity, duration: 15, ease: 'easeInOut' }}
         style={{
@@ -126,9 +128,7 @@ export const MazeBackground = () => {
                     borderRight: cell.right ? borderStyle : '1px solid rgba(204, 255, 0, 0.05)',
                     borderBottom: cell.bottom ? borderStyle : '1px solid rgba(204, 255, 0, 0.05)',
                     borderLeft: cell.left ? borderStyle : '1px solid rgba(204, 255, 0, 0.05)',
-                    boxShadow: (cell.top || cell.right || cell.bottom || cell.left) 
-                                ? 'inset 0 0 8px rgba(204, 255, 0, 0.1), 0 0 8px rgba(204, 255, 0, 0.1)' 
-                                : 'none',
+                    boxShadow: 'none', // Removed expensive box-shadow that causes lag
                     backgroundColor: 'rgba(10, 10, 12, 0.2)', // More transparent cell background
                   }}>
                   </div>
