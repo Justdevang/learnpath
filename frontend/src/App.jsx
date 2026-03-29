@@ -16,12 +16,29 @@ import { AdPlaceholder } from './components/AdPlaceholder';
 import { CookieBanner } from './components/CookieBanner';
 
 function App() {
-  const [roadmapData, setRoadmapData] = useState(null);
-  const [originalParams, setOriginalParams] = useState(null);
+  const [roadmapData, setRoadmapData] = useState(() => {
+    try {
+      const saved = localStorage.getItem('learnpath_active_roadmap');
+      return saved ? JSON.parse(saved) : null;
+    } catch { return null; }
+  });
+  
+  const [originalParams, setOriginalParams] = useState(() => {
+    try {
+      const saved = localStorage.getItem('learnpath_active_params');
+      return saved ? JSON.parse(saved) : null;
+    } catch { return null; }
+  });
 
   const handleSetRoadmapData = (data, params) => {
     setRoadmapData(data);
-    if(params) setOriginalParams(params);
+    if(params) {
+      setOriginalParams(params);
+      localStorage.setItem('learnpath_active_params', JSON.stringify(params));
+    }
+    if(data) {
+      localStorage.setItem('learnpath_active_roadmap', JSON.stringify(data));
+    }
   };
 
   return (

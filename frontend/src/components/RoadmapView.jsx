@@ -7,9 +7,22 @@ import { saveRoadmapToFirebase } from '../firebase/api';
 
 export const RoadmapView = ({ roadmapData, originalParams }) => {
   const navigate = useNavigate();
-  const [completedTopics, setCompletedTopics] = useState([]);
+  const roadmapKey = originalParams?.targetRole ? `learnpath_progress_${originalParams.targetRole.replace(/\s+/g, '_')}` : 'learnpath_progress_default';
+  
+  const [completedTopics, setCompletedTopics] = useState(() => {
+    try {
+      const saved = localStorage.getItem(roadmapKey);
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
   const [shareLink, setShareLink] = useState('');
   const [isSharing, setIsSharing] = useState(false);
+  
+  useEffect(() => {
+    if (completedTopics.length > 0) {
+      localStorage.setItem(roadmapKey, JSON.stringify(completedTopics));
+    }
+  }, [completedTopics, roadmapKey]);
   
   useEffect(() => {
     if (!roadmapData) {
@@ -26,8 +39,21 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
   const toggleTopic = (topicId) => {
     if (completedTopics.includes(topicId)) {
       setCompletedTopics(completedTopics.filter(id => id !== topicId));
+      // Update local storage explicitly on removal to ensure sync
+      const updated = completedTopics.filter(id => id !== topicId);
+      localStorage.setItem(roadmapKey, JSON.stringify(updated));
     } else {
       setCompletedTopics([...completedTopics, topicId]);
+    }
+  };
+
+  const handleLearnClick = (topicId) => {
+    if (!completedTopics.includes(topicId)) {
+      setCompletedTopics(prev => {
+        const updated = [...prev, topicId];
+        localStorage.setItem(roadmapKey, JSON.stringify(updated));
+        return updated;
+      });
     }
   };
 
@@ -165,6 +191,7 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
                       rel="noopener noreferrer"
                       className="btn-secondary topic-card-action"
                       style={{ padding: '6px 12px', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none' }}
+                      onClick={() => handleLearnClick(topicId)}
                     >
                       Learn <ExternalLink size={14} />
                     </a>
