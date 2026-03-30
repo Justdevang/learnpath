@@ -22,7 +22,7 @@ Their current skills are: ${currentSkills}.
 They have ${hoursPerWeek} hours per week available.
 Preferred Content Language: ${language}
 
-Generate a highly specific, week-by-week learning roadmap. For each week, provide a focus area, 2-3 specific topics to learn, and the best free resource link for each topic. The linked resources MUST be heavily biased towards ${language}.
+Generate a highly specific, week-by-week learning roadmap with 6-8 weeks. For each week, provide a focus area, 2-3 specific topics to learn, and the best free resource link for each topic. The linked resources MUST be heavily biased towards ${language}.
 
 CRITICAL RESOURCE QUALITY GUIDELINES:
 - The resources MUST be top-tier learning materials that help the user learn deeply and effectively.
@@ -45,14 +45,22 @@ Output the response AS PURE JSON in the following format (no markdown formatting
 ]
 `;
 
-  try {
-    const modelNames = ["models/gemini-3.1-flash-live-preview", "models/gemini-3-flash-preview", "models/gemini-flash-latest", "models/gemini-1.5-flash", "models/gemini-pro-latest"];
-    let result;
-    let lastError;
+  // Models that support generateContent, ordered by preference (fastest first)
+  // DO NOT use models/ prefix — the SDK adds it automatically
+  const MODEL_CANDIDATES = [
+    "gemini-2.0-flash-lite",   // fastest, lightweight
+    "gemini-2.0-flash",        // fast, capable
+    "gemini-2.5-flash",        // newer flash
+    "gemini-2.5-flash-lite",   // newer flash lite
+  ];
 
-    for (const modelName of modelNames) {
+  try {
+    let result;
+    let usedModel;
+
+    for (const modelName of MODEL_CANDIDATES) {
       try {
-        console.log(`Attempting roadmap generation with model: ${modelName}`);
+        console.log(`Trying model: ${modelName}`);
         const model = genAI.getGenerativeModel({
           model: modelName,
           generationConfig: {
@@ -62,24 +70,24 @@ Output the response AS PURE JSON in the following format (no markdown formatting
           systemInstruction: "You are a professional technical curriculum designer generating structured JSON outputs.",
         });
         result = await model.generateContent(prompt);
-        if (result) break;
+        usedModel = modelName;
+        console.log(`Success with model: ${modelName}`);
+        break;
       } catch (err) {
-        console.warn(`Model ${modelName} failed:`, err.message);
-        lastError = err;
+        console.warn(`Model ${modelName} failed: ${err.message}`);
       }
     }
 
     if (!result) {
-      throw lastError || new Error("All models failed to generate content");
+      throw new Error("All Gemini models failed. Check your GEMINI_API_KEY.");
     }
 
     const responseText = result.response.text();
-    console.log("Raw Response from Gemini:", responseText); // DEBUG
     
     // Clean up potential markdown formatting from the response
     let cleanedText = responseText.replace(/```json\n?|\n?```/g, '').trim();
     
-    // Sometimes the model adds extra text before/after JSON
+    // Extract JSON array or object from the response
     if (cleanedText.indexOf('[') !== -1) {
       cleanedText = cleanedText.substring(cleanedText.indexOf('['));
       const lastIndex = cleanedText.lastIndexOf(']');
@@ -87,7 +95,6 @@ Output the response AS PURE JSON in the following format (no markdown formatting
         cleanedText = cleanedText.substring(0, lastIndex + 1);
       }
     } else if (cleanedText.indexOf('{') !== -1) {
-      // If it returns an object instead of an array
       cleanedText = cleanedText.substring(cleanedText.indexOf('{'));
       const lastIndex = cleanedText.lastIndexOf('}');
       if (lastIndex !== -1) {
@@ -99,42 +106,39 @@ Output the response AS PURE JSON in the following format (no markdown formatting
     try {
       parsedData = JSON.parse(cleanedText);
     } catch (parseError) {
-      console.error("JSON Parsing Error. Cleaned text:", cleanedText);
-      throw new Error("Invalid response format from AI");
+      console.error("JSON parse failed. Response was:", cleanedText.substring(0, 500));
+      throw new Error("Invalid JSON response from AI");
     }
 
-    // If it's an object with a roadmap key, extract it
+    // Handle object wrapper
     if (!Array.isArray(parsedData) && parsedData.roadmap && Array.isArray(parsedData.roadmap)) {
       parsedData = parsedData.roadmap;
     }
 
     if (!Array.isArray(parsedData)) {
-      console.error("Parsed data is not an array:", parsedData);
+      console.error("Response is not an array:", typeof parsedData);
       throw new Error("Roadmap data format is invalid");
     }
 
-    // If includeYouTube is true, let's fetch real YouTube links in parallel
+    // Fetch real YouTube links in parallel if requested
     if (includeYouTube) {
-      console.log("Fetching YouTube links for topics...");
       const searchPromises = [];
-      
       for (const week of parsedData) {
         if (week.topics && Array.isArray(week.topics)) {
           for (const topic of week.topics) {
-            searchPromises.push((async () => {
-              try {
-                const query = `${targetRole} ${week.focus || ''} ${topic.name} roadmap tutorial in ${language}`;
-                const ytVideo = await searchYouTubeVideo(query);
-                topic.resourceName = `[YouTube] ${ytVideo.title}`;
-                topic.resourceUrl = ytVideo.url;
-              } catch (ytErr) {
-                console.warn(`Failed to fetch YouTube link for ${topic.name}:`, ytErr);
-              }
-            })());
+            searchPromises.push(
+              searchYouTubeVideo(`${targetRole} ${topic.name} tutorial ${language}`)
+                .then(ytVideo => {
+                  topic.resourceName = `[YouTube] ${ytVideo.title}`;
+                  topic.resourceUrl = ytVideo.url;
+                })
+                .catch(err => {
+                  console.warn(`YouTube search failed for ${topic.name}:`, err.message);
+                })
+            );
           }
         }
       }
-      
       if (searchPromises.length > 0) {
         await Promise.all(searchPromises);
       }
@@ -142,7 +146,7 @@ Output the response AS PURE JSON in the following format (no markdown formatting
 
     return parsedData;
   } catch (error) {
-    console.error("Error generating roadmap:", error);
+    console.error("generateRoadmap error:", error.message);
     throw error;
   }
 };
