@@ -22,6 +22,18 @@ const limiter = rateLimit({
   message: { error: 'Too many requests. Please wait 15 minutes and try again.' }
 });
 app.use('/api', limiter);
+// Health Check Endpoint for Diagnostics
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    environment: {
+      geminiKey: !!process.env.GEMINI_API_KEY,
+      youtubeKey: !!process.env.YOUTUBE_API_KEY,
+      nodeVersion: process.version,
+      port: process.env.PORT || 3001
+    }
+  });
+});
 
 app.post('/api/generate-roadmap', async (req, res) => {
   try {
@@ -49,7 +61,10 @@ app.post('/api/generate-roadmap', async (req, res) => {
     res.json({ roadmap });
   } catch (error) {
     console.error('API Error:', error);
-    res.status(500).json({ error: 'Failed to generate roadmap' });
+    res.status(500).json({ 
+      error: 'Failed to generate roadmap', 
+      details: error.message || 'Unknown error'
+    });
   }
 });
 

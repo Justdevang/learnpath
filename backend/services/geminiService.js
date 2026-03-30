@@ -46,16 +46,33 @@ Output the response AS PURE JSON in the following format (no markdown formatting
 `;
 
   try {
-    const model = genAI.getGenerativeModel({
-      model: "gemini-3-flash-preview",
-      generationConfig: {
-        temperature: 0.2,
-        responseMimeType: "application/json",
-      },
-      systemInstruction: "You are a professional technical curriculum designer generating structured JSON outputs.",
-    });
+    const modelNames = ["gemini-3-flash-preview", "gemini-1.5-flash-latest", "gemini-1.5-flash", "gemini-pro"];
+    let result;
+    let lastError;
 
-    const result = await model.generateContent(prompt);
+    for (const modelName of modelNames) {
+      try {
+        console.log(`Attempting roadmap generation with model: ${modelName}`);
+        const model = genAI.getGenerativeModel({
+          model: modelName,
+          generationConfig: {
+            temperature: 0.2,
+            responseMimeType: "application/json",
+          },
+          systemInstruction: "You are a professional technical curriculum designer generating structured JSON outputs.",
+        });
+        result = await model.generateContent(prompt);
+        if (result) break;
+      } catch (err) {
+        console.warn(`Model ${modelName} failed:`, err.message);
+        lastError = err;
+      }
+    }
+
+    if (!result) {
+      throw lastError || new Error("All models failed to generate content");
+    }
+
     const responseText = result.response.text();
     console.log("Raw Response from Gemini:", responseText); // DEBUG
     
