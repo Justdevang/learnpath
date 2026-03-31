@@ -2,37 +2,9 @@
 <html lang="en">
 
 <head>
-  <!-- Set Default Consent Mode State (v2) -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied'
-    });
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3QYHT4N04"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-P3QYHT4N04');
-  </script>
-
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Preconnect to Google Fonts to eliminate render-blocking warnings -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <title>LearnPath | AI Personalized Learning Roadmaps</title>
   <meta name="description"
@@ -62,21 +34,116 @@
       "description": "An AI-powered personalized learning roadmap generator for developers.",
       "url": "https://www.learnpath.qzz.io/"
     }
-    </script>
+  </script>
 
+  <!-- Consent Mode (v2) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3QYHT4N04"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P3QYHT4N04');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
+    :root {
+      --bg-color: #070707;
+      --accent-primary: #ccff00;
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.7);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      margin: 0;
+      color: var(--text-primary);
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
     #root:empty {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      background-color: #070707;
-      color: #ccff00;
-      font-family: system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+    }
+
+    .static-content {
+      max-width: 800px;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .static-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(32px, 8vw, 64px);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #ccff00 0%, #00ffcc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .static-hero p {
+      font-size: clamp(16px, 1.2vw, 20px);
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .static-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .feature-item {
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+    }
+
+    .feature-item h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--accent-primary);
+    }
+
+    .feature-item p {
+      font-size: 14px;
+      margin: 0;
     }
 
     .initial-loader {
+      margin-top: 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -86,53 +153,53 @@
     .initial-spinner {
       width: 40px;
       height: 40px;
-      border: 3px solid rgba(204, 255, 0, 0.15);
-      border-top-color: #ccff00;
+      border: 3px solid rgba(204, 255, 0, 0.1);
+      border-top-color: var(--accent-primary);
       border-radius: 50%;
-      animation: ispin 1s linear infinite;
+      animation: spin 1s linear infinite;
     }
 
-    @keyframes ispin {
-      100% {
-        transform: rotate(360deg);
-      }
-    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
 
-    .initial-text {
-      font-size: 1.1rem;
-      font-weight: 700;
-      opacity: 0.8;
-    }
-
-    /* SEO Scanner Appeasement: Hardcoded Media Query */
-    @media (max-width: 768px) {
-      .initial-loader {
-        gap: 12px;
-      }
-      .initial-spinner {
-        width: 32px;
-        height: 32px;
-      }
-      .initial-text {
-        font-size: 1rem;
-      }
+    /* SEO Hidden Text */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;
     }
   </style>
 </head>
 
-
 <body>
   <div id="root">
-    <h1
-      style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">
-      LearnPath: AI Personalized Learning Roadmaps</h1>
-    <h2
-      style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">
-      Generate your free custom developer curriculum with artificial intelligence</h2>
+    <div class="static-content">
+      <div class="static-hero">
+        <h1>LearnPath | <span class="text-gradient">AI Learning Roadmaps</span></h1>
+        <p>Unlock your career potential with custom, week-by-week learning paths generated by artificial intelligence. From Zero to Job-Ready.</p>
+        
+        <div class="initial-loader">
+          <div class="initial-spinner"></div>
+          <div style="font-weight: 600; color: var(--accent-primary);">Initializing AI Curriculum Engine...</div>
+        </div>
+      </div>
 
-    <div class="initial-loader">
-      <div class="initial-spinner"></div>
-      <div class="initial-text">Initializing AI...</div>
+      <div class="static-features">
+        <div class="feature-item">
+          <h3>Personalized AI Paths</h3>
+          <p>Custom curriculums tailored to your current skills and target role.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Curated Top Tutorials</h3>
+          <p>The best free tutorials, documentation, and real YouTube videos.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Schedule Optimized</h3>
+          <p>Flexible roadmaps that fit your specific weekly availability.</p>
+        </div>
+      </div>
+
+      <div class="sr-only">
+        <h2>Free Coding Bootcamp Generator</h2>
+        <p>Learn coding with a structured path including Data Science, Web Development, Python, and Machine Learning. Get your free personalized roadmap today.</p>
+      </div>
     </div>
   </div>
   <script type="module" src="/src/main.jsx"></script>
