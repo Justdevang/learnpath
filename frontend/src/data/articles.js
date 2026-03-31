@@ -1,107 +1,19 @@
 export const articles = [
   {
-    "id": "python",
-    "title": "Learn Python in 5 hours/week - Free Personalized Roadmap",
-    "skillName": "Python",
-    "category": "Programming",
-    "timeCommitment": "5 Hours / Week",
-    "marketDemand": "High Growth",
-    "snippet": "Unlock your career potential with our free, 5-hour/week Python learning roadmap. Master Python in 8 weeks with video tutorials and project-based learning.",
-    "content": "\n# The Ultimate Python Growth Path for 2026\n\n## Why Python is Non-Negotiable\n\n**Market Velocity**: Python remains the #1 language for AI and automation.\n**Salary Trajectory**: Senior Pythonistas are command $140,000+ base salaries.\n**High ROI**: With just 5 hours/week, you'll reach mid-level proficiency in 3 months.\n\nPython isn't just a language anymore; it's the glue of the modern tech stack. From rapid prototyping in startups to massive data pipelines in Big Tech, Python is everywhere. If you haven't started yet, you're missing out on the most versatile skill of the decade.\n\n## The Accelerated Learning Curve\n\n### Phase 1: Logic & Flow\n**Focus**: Mastering the Zen of Python (PEP 8) and core algorithms.\n**Practice**: Scripting local file backups or simple data scrapers.\n\n### Phase 2: Data & APIs\n**Focus**: Integration with REST APIs and handling JSON data.\n**Real Example**: I once automated a weekly 4-hour manual data entry task with a 20-line Python script after just two weeks of learning.\n\n### Phase 3: Project Mastery\n**Focus**: Building a full-scale portfolio piece like a personal assistant or mini-framework.\n\n## Time Commitment: 5 Hours/Week\n\n- **Mon**: 1h Deep Learning (Videos/Docs)\n- **Wed**: 2h Hands-on Building (No tutorials, just code)\n- **Sat**: 2h Project Refinement\n\n## Expert Tools\n- **VS Code**: Best-in-class IDE.\n- **Python Interpreter**: Standard 3.x environment (No Node.js required!).\n- **Pyenv**: Managing multiple Python versions.\n\n## Pro-Tips for Career Changers\nDon't just watch videos. Code alongside them. If you don't get an error, you aren't learning. Breaking things in local development is the fastest way to understand how they work.\n",
-    "metaDescription": "Master Python with a personalized roadmap. Just 5 hours/week required. Start your free learning journey on LearnPath today.",
-    "schema": {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Learn Python in 5 hours/week",
-      "description": "Personalized roadmap to master Python basics in 5 hours/week",
-      "provider": {
-        "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
-      }
-    }
-  },
-  {
-    "id": "javascript",
-    "title": "Learn JavaScript in 5 hours/week - Free Personalized Roadmap",
-    "skillName": "JavaScript",
-    "category": "Web Development",
-    "timeCommitment": "5 Hours / Week",
-    "marketDemand": "Essential",
-    "snippet": "Unlock your career potential with our free, 5-hour/week JavaScript learning roadmap. Master JavaScript in 10 weeks with video tutorials and project-based learning.",
-    "content": "\n# Learn JavaScript in 5 hours/week - Complete Roadmap\n\n## Why Learn JavaScript Right Now?\n\n**Job Market Demand**: JavaScript jobs are growing Essential (98% of websites use it) annually.\n**Average Salary**: Professionals with JavaScript earn $115,000+ depending on experience.\n**Time Investment**: Most people take 3-6 months. You'll do it in 5 hours/week.\n**Career Impact**: JavaScript is one of the top 10 most valuable skills in 2026.\n\nAs someone who has followed the growth of JavaScript closely, I can tell you that the demand is real. According to data from Indeed and LinkedIn, there are currently over 150,000 open roles requiring JavaScript proficiency. Businesses are pivoting towards React.js and Node.js, making this the perfect time to enter the field. Whether you're a career changer or a student, the ROI on learning JavaScript is massive right now.\n\n## Your Exact Learning Path\n\n### Week 1: Fundamentals (Master the Basics)\n**What you'll learn**: Core syntax, JavaScript environment setup, and basic data structures.\n**Time**: 2 hours\n**Practice**: Build a simple JavaScript utility script or static page.\n**Resources**: \n- Video: JavaScript for Absolute Beginners (YouTube)\n- Free course: FreeCodeCamp JavaScript Introduction\n- Docs: JavaScript Official Documentation (Getting Started)\n\n**Why Week 1 matters**: Most people skip this and go straight to advanced stuff like Web Development. Big mistake. You need a strong foundation to avoid hitting a wall later.\n\n### Week 2: Go Deeper (Intermediate Concepts)\n**What you'll learn**: Functions, error handling, and working with JavaScript libraries.\n**Time**: 2 hours\n**Practice**: Build a more complex project like a data parser or interactive component.\n**Resources**: \n- Video: Intermediate JavaScript Patterns (YouTube)\n- Free course: Codecademy JavaScript Intermediate\n- Docs: Advanced JavaScript API references\n\n**Real example from my experience**: I tried to skip Week 2 advanced concepts once. I ended up spending three times as long debugging basic issues that I would have understood if I'd just followed the path.\n\n### Week 3: Real Projects (Build Something)\n**What you'll learn**: How to structure real code, best practices, and common JavaScript design patterns.\n**Time**: 3 hours\n**Practice**: Build a real portfolio project like a task tracker or a mini JavaScript framework.\n**Resources**: \n- Video: Build a JavaScript App in 1 Hour\n- Docs: JavaScript Best Practices Guide\n\n### Week 4: Polish & Interview Prep\n**What you'll learn**: Optimization techniques, code quality standards, and technical interview questions.\n**Time**: 3 hours\n**Practice**: Refactor earlier projects and practice mock JavaScript interviews.\n**Resources**: \n- Tool: LeetCode JavaScript Tags\n- Docs: JavaScript Interview Repository on GitHub\n\n## Time Breakdown: 5 hours/week Hours/Week\n\n**Monday**: 1 hour (Learn Week 1/2 concepts via high-quality video tutorials)\n**Wednesday**: 2 hours (Hands-on Practice + building core features)\n**Saturday**: 2 hours (Build a project + review what you learned)\n\n**Why this schedule?** \n- Spaced out learning leads to much better retention.\n- Monday/Wednesday/Saturday balance ensures it doesn't conflict with your work or school.\n- Significant weekend time is dedicated specifically for building, which is where the real learning happens.\n\n## Resources You'll Need\n\n**Free options:**\n- **YouTube Playlists**: Search for \"Full JavaScript Course\" for high-density information.\n- **FreeCodeCamp**: Their JavaScript curriculum is the industry gold standard.\n- **MDN / Official Docs**: The definitive source of truth for all JavaScript developers.\n\n**Paid option (optional):**\n- **Udemy / Zero To Mastery**: These courses offer a structured \"all-in-one\" experience for around $15-20.\n\n**Tools you'll need:**\n- **VS Code**: The best free IDE for JavaScript development.\n- **Node.js / Local Environment**: Required to run JavaScript code on your machine.\n\n## 5 Mistakes Beginners Make (And How to Avoid Them)\n\n**Mistake 1: Jumping straight to advanced concepts**\n*Reality*: You'll get lost and quit within two weeks.\n*Solution*: Spend Week 1 on fundamentals. It's boring but necessary for long-term success.\n\n**Mistake 2: Tutorial hell**\n*Reality*: Watching 10 hours of tutorials teaches you almost nothing if you don't type a single line of code.\n*Solution*: After each concept, build something immediately. No matter how small.\n\n**Mistake 3: Following along without understanding**\n*Reality*: Copy-pasting code from a screen leads to 0% retention.\n*Solution*: Pause videos. Try it yourself first. Look up the error when you get stuck.\n\n**Mistake 4: Building the same todo app as everyone else**\n*Reality*: Portfolio projects need to be unique to catch a recruiter's eye.\n*Solution*: Build something YOU care about. Your enthusiasm will show during the interview.\n\n**Mistake 5: Not comparing yourself to the roadmap**\n*Reality*: You might think you're progressing slower than you actually are.\n*Solution*: Every Friday, review this roadmap. You'll be impressed by how far you've come.\n\n## Related Skills You Should Learn\n\nOnce you master JavaScript, you'll be ready for:\n- **React.js** - Directly builds on your JavaScript knowledge.\n- **Node.js** - The natural progression for a JavaScript expert.\n\nBoth are easier after you finish this 10 weeks program.\n\n## Ready to Start?\n\n**Get your personalized roadmap**. Input your availability, get a customized schedule.\n\n[BIG CTA BUTTON: GENERATE MY JAVASCRIPT ROADMAP]\n\n---\n\n**Questions?** This roadmap is based on:\n- Feedback from 100+ successful career changers\n- Interviews with 50+ professional engineers\n- 5 years of optimizing the LearnPath curriculum\n",
-    "metaDescription": "Master JavaScript with a personalized roadmap. Just 5 hours/week required. Start your free learning journey on LearnPath today.",
-    "schema": {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Learn JavaScript in 5 hours/week",
-      "description": "Personalized roadmap to master JavaScript basics in 5 hours/week",
-      "provider": {
-        "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
-      }
-    }
-  },
-  {
-    "id": "web-dev",
-    "title": "Learn Web Development in 10 hours/week - Free Personalized Roadmap",
-    "skillName": "Web Development",
-    "category": "Full Stack",
-    "timeCommitment": "10 Hours / Week",
-    "marketDemand": "Constant",
-    "snippet": "Unlock your career potential with our free, 5-hour/week Web Development learning roadmap. Master Web Development in 12 weeks with video tutorials and project-based learning.",
-    "content": "\n# Learn Web Development in 10 hours/week - Complete Roadmap\n\n## Why Learn Web Development Right Now?\n\n**Job Market Demand**: Web Development jobs are growing Constant (High demand for mid-level devs) annually.\n**Average Salary**: Professionals with Web Development earn $105,000+ depending on experience.\n**Time Investment**: Most people take 3-6 months. You'll do it in 10 hours/week.\n**Career Impact**: Web Development is one of the top 10 most valuable skills in 2026.\n\nAs someone who has followed the growth of Web Development closely, I can tell you that the demand is real. According to data from Indeed and LinkedIn, there are currently over 150,000 open roles requiring Web Development proficiency. Businesses are pivoting towards JavaScript and UI/UX Design, making this the perfect time to enter the field. Whether you're a career changer or a student, the ROI on learning Web Development is massive right now.\n\n## Your Exact Learning Path\n\n### Week 1: Fundamentals (Master the Basics)\n**What you'll learn**: Core syntax, Web Development environment setup, and basic data structures.\n**Time**: 2 hours\n**Practice**: Build a simple Web Development utility script or static page.\n**Resources**: \n- Video: Web Development for Absolute Beginners (YouTube)\n- Free course: FreeCodeCamp Web Development Introduction\n- Docs: Web Development Official Documentation (Getting Started)\n\n**Why Week 1 matters**: Most people skip this and go straight to advanced stuff like React.js. Big mistake. You need a strong foundation to avoid hitting a wall later.\n\n### Week 2: Go Deeper (Intermediate Concepts)\n**What you'll learn**: Functions, error handling, and working with Web Development libraries.\n**Time**: 2 hours\n**Practice**: Build a more complex project like a data parser or interactive component.\n**Resources**: \n- Video: Intermediate Web Development Patterns (YouTube)\n- Free course: Codecademy Web Development Intermediate\n- Docs: Advanced Web Development API references\n\n**Real example from my experience**: I tried to skip Week 2 advanced concepts once. I ended up spending three times as long debugging basic issues that I would have understood if I'd just followed the path.\n\n### Week 3: Real Projects (Build Something)\n**What you'll learn**: How to structure real code, best practices, and common Web Development design patterns.\n**Time**: 3 hours\n**Practice**: Build a real portfolio project like a task tracker or a mini Web Development framework.\n**Resources**: \n- Video: Build a Web Development App in 1 Hour\n- Docs: Web Development Best Practices Guide\n\n### Week 4: Polish & Interview Prep\n**What you'll learn**: Optimization techniques, code quality standards, and technical interview questions.\n**Time**: 3 hours\n**Practice**: Refactor earlier projects and practice mock Web Development interviews.\n**Resources**: \n- Tool: LeetCode Web Development Tags\n- Docs: Web Development Interview Repository on GitHub\n\n## Time Breakdown: 10 hours/week Hours/Week\n\n**Monday**: 1 hour (Learn Week 1/2 concepts via high-quality video tutorials)\n**Wednesday**: 2 hours (Hands-on Practice + building core features)\n**Saturday**: 2 hours (Build a project + review what you learned)\n\n**Why this schedule?** \n- Spaced out learning leads to much better retention.\n- Monday/Wednesday/Saturday balance ensures it doesn't conflict with your work or school.\n- Significant weekend time is dedicated specifically for building, which is where the real learning happens.\n\n## Resources You'll Need\n\n**Free options:**\n- **YouTube Playlists**: Search for \"Full Web Development Course\" for high-density information.\n- **FreeCodeCamp**: Their Web Development curriculum is the industry gold standard.\n- **MDN / Official Docs**: The definitive source of truth for all Web Development developers.\n\n**Paid option (optional):**\n- **Udemy / Zero To Mastery**: These courses offer a structured \"all-in-one\" experience for around $15-20.\n\n**Tools you'll need:**\n- **VS Code**: The best free IDE for Web Development development.\n- **Node.js / Local Environment**: Required to run Web Development code on your machine.\n\n## 5 Mistakes Beginners Make (And How to Avoid Them)\n\n**Mistake 1: Jumping straight to advanced concepts**\n*Reality*: You'll get lost and quit within two weeks.\n*Solution*: Spend Week 1 on fundamentals. It's boring but necessary for long-term success.\n\n**Mistake 2: Tutorial hell**\n*Reality*: Watching 10 hours of tutorials teaches you almost nothing if you don't type a single line of code.\n*Solution*: After each concept, build something immediately. No matter how small.\n\n**Mistake 3: Following along without understanding**\n*Reality*: Copy-pasting code from a screen leads to 0% retention.\n*Solution*: Pause videos. Try it yourself first. Look up the error when you get stuck.\n\n**Mistake 4: Building the same todo app as everyone else**\n*Reality*: Portfolio projects need to be unique to catch a recruiter's eye.\n*Solution*: Build something YOU care about. Your enthusiasm will show during the interview.\n\n**Mistake 5: Not comparing yourself to the roadmap**\n*Reality*: You might think you're progressing slower than you actually are.\n*Solution*: Every Friday, review this roadmap. You'll be impressed by how far you've come.\n\n## Related Skills You Should Learn\n\nOnce you master Web Development, you'll be ready for:\n- **JavaScript** - Directly builds on your Web Development knowledge.\n- **UI/UX Design** - The natural progression for a Web Development expert.\n\nBoth are easier after you finish this 12 weeks program.\n\n## Ready to Start?\n\n**Get your personalized roadmap**. Input your availability, get a customized schedule.\n\n[BIG CTA BUTTON: GENERATE MY WEB DEVELOPMENT ROADMAP]\n\n---\n\n**Questions?** This roadmap is based on:\n- Feedback from 100+ successful career changers\n- Interviews with 50+ professional engineers\n- 5 years of optimizing the LearnPath curriculum\n",
-    "metaDescription": "Master Web Development with a personalized roadmap. Just 10 hours/week required. Start your free learning journey on LearnPath today.",
-    "schema": {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Learn Web Development in 10 hours/week",
-      "description": "Personalized roadmap to master Web Development basics in 10 hours/week",
-      "provider": {
-        "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
-      }
-    }
-  },
-  {
-    "id": "data-science",
-    "title": "Learn Data Science in 10 hours/week - Free Personalized Roadmap",
-    "skillName": "Data Science",
-    "category": "Data Engineering",
-    "timeCommitment": "10 Hours / Week",
-    "marketDemand": "Very High",
-    "snippet": "Unlock your career potential with our free, 5-hour/week Data Science learning roadmap. Master Data Science in 16 weeks with video tutorials and project-based learning.",
-    "content": "\n# Data Science: The 2026 Survival Guide\n\n## The Reality of the Field\n\nData Science isn't just about 'importing pandas'. In 2026, it's about decision intelligence. Companies are drowning in data but starving for insights. If you can turn raw SQL rows into a compelling narrative for a CEO, you're the most valuable person in the building.\n\n### Core Pillars\n- **Statistical Intuition**: Knowing *why* a model behaves the way it does.\n- **Data Engineering**: Handling the plumbing before you build the house.\n- **Business Acumen**: Translating math into money.\n\n## Your 16-Week Mastery Blueprint\n\n### Phase 1: The Foundation (Math & SQL)\nBefore touching ML, you must master the query. SQL is the bedrock. Expect to spend 2 weeks here.\n\n### Phase 2: Pythonic Analysis\nMoving beyond basic syntax into NumPy and vectorized operations. This is where performance happens.\n\n### Phase 3: Machine Learning & Beyond\nFrom Scikit-learn to specialized LLM fine-tuning. We focus on the models that actually work in production, not just in research papers.\n\n## Time Breakdown: 10 Hours/Week\nThis path is intensive. You'll need at least 2 hours every Tuesday and Thursday for theory, and 6 hours over the weekend for projects.\n\n## Essential Setup\n- **Jupyter Lab**: For interactive exploration.\n- **Anaconda/Miniconda**: Environmental control.\n- **PostgreSQL**: For local data storage practice.\n",
-    "metaDescription": "Master Data Science with a personalized roadmap. Just 10 hours/week required. Start your free learning journey on LearnPath today.",
-    "schema": {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Learn Data Science in 10 hours/week",
-      "description": "Personalized roadmap to master Data Science basics in 10 hours/week",
-      "provider": {
-        "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
-      }
-    }
-  },
-  {
-    "id": "machine-learning",
-    "title": "Learn Machine Learning in 12 hours/week - Free Personalized Roadmap",
-    "skillName": "Machine Learning",
-    "category": "Artificial Intelligence",
+    "id": "ai-agents",
+    "title": "Mastering AI Agentic Workflows - the 2026 Developer Gold Mine",
+    "skillName": "AI Agent Orchestration",
+    "category": "Advanced AI",
     "timeCommitment": "12 Hours / Week",
-    "marketDemand": "Explosive",
-    "snippet": "Unlock your career potential with our free, 5-hour/week Machine Learning learning roadmap. Master Machine Learning in 20 weeks with video tutorials and project-based learning.",
-    "content": "\n# Learn Machine Learning in 12 hours/week - Complete Roadmap\n\n## Why Learn Machine Learning Right Now?\n\n**Job Market Demand**: Machine Learning jobs are growing Explosive (AI agents are the future) annually.\n**Average Salary**: Professionals with Machine Learning earn $150,000+ depending on experience.\n**Time Investment**: Most people take 3-6 months. You'll do it in 12 hours/week.\n**Career Impact**: Machine Learning is one of the top 10 most valuable skills in 2026.\n\nAs someone who has followed the growth of Machine Learning closely, I can tell you that the demand is real. According to data from Indeed and LinkedIn, there are currently over 150,000 open roles requiring Machine Learning proficiency. Businesses are pivoting towards Python and Data Science, making this the perfect time to enter the field. Whether you're a career changer or a student, the ROI on learning Machine Learning is massive right now.\n\n## Your Exact Learning Path\n\n### Week 1: Fundamentals (Master the Basics)\n**What you'll learn**: Core syntax, Machine Learning environment setup, and basic data structures.\n**Time**: 2 hours\n**Practice**: Build a simple Machine Learning utility script or static page.\n**Resources**: \n- Video: Machine Learning for Absolute Beginners (YouTube)\n- Free course: FreeCodeCamp Machine Learning Introduction\n- Docs: Machine Learning Official Documentation (Getting Started)\n\n**Why Week 1 matters**: Most people skip this and go straight to advanced stuff like Deep Learning. Big mistake. You need a strong foundation to avoid hitting a wall later.\n\n### Week 2: Go Deeper (Intermediate Concepts)\n**What you'll learn**: Functions, error handling, and working with Machine Learning libraries.\n**Time**: 2 hours\n**Practice**: Build a more complex project like a data parser or interactive component.\n**Resources**: \n- Video: Intermediate Machine Learning Patterns (YouTube)\n- Free course: Codecademy Machine Learning Intermediate\n- Docs: Advanced Machine Learning API references\n\n**Real example from my experience**: I tried to skip Week 2 advanced concepts once. I ended up spending three times as long debugging basic issues that I would have understood if I'd just followed the path.\n\n### Week 3: Real Projects (Build Something)\n**What you'll learn**: How to structure real code, best practices, and common Machine Learning design patterns.\n**Time**: 3 hours\n**Practice**: Build a real portfolio project like a task tracker or a mini Machine Learning framework.\n**Resources**: \n- Video: Build a Machine Learning App in 1 Hour\n- Docs: Machine Learning Best Practices Guide\n\n### Week 4: Polish & Interview Prep\n**What you'll learn**: Optimization techniques, code quality standards, and technical interview questions.\n**Time**: 3 hours\n**Practice**: Refactor earlier projects and practice mock Machine Learning interviews.\n**Resources**: \n- Tool: LeetCode Machine Learning Tags\n- Docs: Machine Learning Interview Repository on GitHub\n\n## Time Breakdown: 12 hours/week Hours/Week\n\n**Monday**: 1 hour (Learn Week 1/2 concepts via high-quality video tutorials)\n**Wednesday**: 2 hours (Hands-on Practice + building core features)\n**Saturday**: 2 hours (Build a project + review what you learned)\n\n**Why this schedule?** \n- Spaced out learning leads to much better retention.\n- Monday/Wednesday/Saturday balance ensures it doesn't conflict with your work or school.\n- Significant weekend time is dedicated specifically for building, which is where the real learning happens.\n\n## Resources You'll Need\n\n**Free options:**\n- **YouTube Playlists**: Search for \"Full Machine Learning Course\" for high-density information.\n- **FreeCodeCamp**: Their Machine Learning curriculum is the industry gold standard.\n- **MDN / Official Docs**: The definitive source of truth for all Machine Learning developers.\n\n**Paid option (optional):**\n- **Udemy / Zero To Mastery**: These courses offer a structured \"all-in-one\" experience for around $15-20.\n\n**Tools you'll need:**\n- **VS Code**: The best free IDE for Machine Learning development.\n- **Node.js / Local Environment**: Required to run Machine Learning code on your machine.\n\n## 5 Mistakes Beginners Make (And How to Avoid Them)\n\n**Mistake 1: Jumping straight to advanced concepts**\n*Reality*: You'll get lost and quit within two weeks.\n*Solution*: Spend Week 1 on fundamentals. It's boring but necessary for long-term success.\n\n**Mistake 2: Tutorial hell**\n*Reality*: Watching 10 hours of tutorials teaches you almost nothing if you don't type a single line of code.\n*Solution*: After each concept, build something immediately. No matter how small.\n\n**Mistake 3: Following along without understanding**\n*Reality*: Copy-pasting code from a screen leads to 0% retention.\n*Solution*: Pause videos. Try it yourself first. Look up the error when you get stuck.\n\n**Mistake 4: Building the same todo app as everyone else**\n*Reality*: Portfolio projects need to be unique to catch a recruiter's eye.\n*Solution*: Build something YOU care about. Your enthusiasm will show during the interview.\n\n**Mistake 5: Not comparing yourself to the roadmap**\n*Reality*: You might think you're progressing slower than you actually are.\n*Solution*: Every Friday, review this roadmap. You'll be impressed by how far you've come.\n\n## Related Skills You Should Learn\n\nOnce you master Machine Learning, you'll be ready for:\n- **Python** - Directly builds on your Machine Learning knowledge.\n- **Data Science** - The natural progression for a Machine Learning expert.\n\nBoth are easier after you finish this 20 weeks program.\n\n## Ready to Start?\n\n**Get your personalized roadmap**. Input your availability, get a customized schedule.\n\n[BIG CTA BUTTON: GENERATE MY MACHINE LEARNING ROADMAP]\n\n---\n\n**Questions?** This roadmap is based on:\n- Feedback from 100+ successful career changers\n- Interviews with 50+ professional engineers\n- 5 years of optimizing the LearnPath curriculum\n",
-    "metaDescription": "Master Machine Learning with a personalized roadmap. Just 12 hours/week required. Start your free learning journey on LearnPath today.",
+    "marketDemand": "Hyper-Growth",
+    "snippet": "Move beyond simple prompts. Learn to build autonomous agentic loops that reason, tool-call, and self-correct. The definitive 2026 roadmap.",
+    "content": "\n# AI Agentic Workflows: The New Software Paradigm\n\n## Why Agents are Different from LLMs\n\nIn 2026, we don't just 'chat' with AI. We build **Agentic Systems**. Unlike standard RAG or chat interfaces, agents operate in loops: they plan, execute tools, observe results, and iterate. If you can build a system that autonomously handles a customer refund or a complex data migration, you are in the top 1% of developers.\n\n### Core 2026 Competencies\n- **Orchestration Frameworks**: Mastery of LangGraph, Autogen, and CrewaAI.\n- **Tool-Dependency Management**: Ensuring agents use APIs safely and efficiently.\n- **Self-Correction Loops**: Building 'Reflection' patterns where AI checks its own work.\n\n## Your 12-Week Agent Mastery Path\n\n### Week 1-2: Logic & Planning\nMaster ReAct (Reason + Act) patterns. Learn how to prompt for multi-step thought processes.\n\n### Week 3-6: Multi-Agent Systems\nHow to make agents collaborate. One agent researches, one writes, one audits. This is how modern enterprise software is built.\n\n### Week 7-12: Production-Grade Reliability\nObservability for agents. Tracking 'hallucination rates' and cost-optimization in autonomous loops.\n",
+    "metaDescription": "Master AI Agentic Workflows with our specialized learning roadmap. 12 hours/week to join the top 1% of AI developers in 2026.",
     "schema": {
       "@context": "https://schema.org",
       "@type": "Course",
-      "name": "Learn Machine Learning in 12 hours/week",
-      "description": "Personalized roadmap to master Machine Learning basics in 12 hours/week",
+      "name": "AI Agentic Workflows Mastery",
+      "description": "Professional roadmap for building autonomous AI agents in 2026",
       "provider": {
         "@type": "Organization",
         "name": "LearnPath",
@@ -110,86 +22,20 @@ export const articles = [
     }
   },
   {
-    "id": "react-js",
-    "title": "Learn React.js in 5 hours/week - Free Personalized Roadmap",
-    "skillName": "React.js",
-    "category": "Frontend",
-    "timeCommitment": "5 Hours / Week",
-    "marketDemand": "High",
-    "snippet": "Unlock your career potential with our free, 5-hour/week React.js learning roadmap. Master React.js in 6 weeks with video tutorials and project-based learning.",
-    "content": "\n# React in 2026: Beyond the Components\n\n## The State of Frontend\n\nIf you're still thinking about React as just a 'UI library', you're living in 2022. Today, React is a full-stack primitive. With Server Components now the industry default, the line between frontend and backend has blurred into a single, cohesive developer experience.\n\n### Why React is the Career Safe-Bet\n- **Ecosystem Gravity**: 80% of new startup roles still prioritize React proficiency.\n- **Component Portability**: Use your skills for Web, Mobile (Native), and even Desktop.\n- **Declarative Power**: React teaches you how to think in 'data-first' logic, a skill that transfers to every other framework.\n\n## Your 6-Week Immersion Path\n\n### Week 1: Reactive Thinking\nForget the DOM. Learn how to manage state, props, and the unidirectional data flow. This is the hardest part for beginners, butOnce it clicks, you're 50% of the way there.\n\n### Week 2: The Hook Revolution\nFrom `useState` to custom hooks that manage complex side-effects. We focus on building reusable logic, not just reusable divs.\n\n### Phase 3: Server Components & Actions\nThe modern stack. How to fetch data without `useEffect` and how to build truly performant applications.\n\n## Weekly Commitment: 5 Hours\n- **Mon (1h)**: Architecture & Best Practices.\n- **Wed (2h)**: Refactoring a 'legacy' app into modern React.\n- **Sat (2h)**: Building your Capstone project.\n",
-    "metaDescription": "Master React.js with a personalized roadmap. Just 5 hours/week required. Start your free learning journey on LearnPath today.",
-    "schema": {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Learn React.js in 5 hours/week",
-      "description": "Personalized roadmap to master React.js basics in 5 hours/week",
-      "provider": {
-        "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
-      }
-    }
-  },
-  {
-    "id": "node-js",
-    "title": "Learn Node.js in 5 hours/week - Free Personalized Roadmap",
-    "skillName": "Node.js",
-    "category": "Backend",
-    "timeCommitment": "5 Hours / Week",
-    "marketDemand": "High",
-    "snippet": "Unlock your career potential with our free, 5-hour/week Node.js learning roadmap. Master Node.js in 6 weeks with video tutorials and project-based learning.",
-    "content": "\n# Learn Node.js in 5 hours/week - Complete Roadmap\n\n## Why Learn Node.js Right Now?\n\n**Job Market Demand**: Node.js jobs are growing High (Scalable backend solutions) annually.\n**Average Salary**: Professionals with Node.js earn $122,000+ depending on experience.\n**Time Investment**: Most people take 3-6 months. You'll do it in 5 hours/week.\n**Career Impact**: Node.js is one of the top 10 most valuable skills in 2026.\n\nAs someone who has followed the growth of Node.js closely, I can tell you that the demand is real. According to data from Indeed and LinkedIn, there are currently over 150,000 open roles requiring Node.js proficiency. Businesses are pivoting towards JavaScript and SQL & Databases, making this the perfect time to enter the field. Whether you're a career changer or a student, the ROI on learning Node.js is massive right now.\n\n## Your Exact Learning Path\n\n### Week 1: Fundamentals (Master the Basics)\n**What you'll learn**: Core syntax, Node.js environment setup, and basic data structures.\n**Time**: 2 hours\n**Practice**: Build a simple Node.js utility script or static page.\n**Resources**: \n- Video: Node.js for Absolute Beginners (YouTube)\n- Free course: FreeCodeCamp Node.js Introduction\n- Docs: Node.js Official Documentation (Getting Started)\n\n**Why Week 1 matters**: Most people skip this and go straight to advanced stuff like Express.js. Big mistake. You need a strong foundation to avoid hitting a wall later.\n\n### Week 2: Go Deeper (Intermediate Concepts)\n**What you'll learn**: Functions, error handling, and working with Node.js libraries.\n**Time**: 2 hours\n**Practice**: Build a more complex project like a data parser or interactive component.\n**Resources**: \n- Video: Intermediate Node.js Patterns (YouTube)\n- Free course: Codecademy Node.js Intermediate\n- Docs: Advanced Node.js API references\n\n**Real example from my experience**: I tried to skip Week 2 advanced concepts once. I ended up spending three times as long debugging basic issues that I would have understood if I'd just followed the path.\n\n### Week 3: Real Projects (Build Something)\n**What you'll learn**: How to structure real code, best practices, and common Node.js design patterns.\n**Time**: 3 hours\n**Practice**: Build a real portfolio project like a task tracker or a mini Node.js framework.\n**Resources**: \n- Video: Build a Node.js App in 1 Hour\n- Docs: Node.js Best Practices Guide\n\n### Week 4: Polish & Interview Prep\n**What you'll learn**: Optimization techniques, code quality standards, and technical interview questions.\n**Time**: 3 hours\n**Practice**: Refactor earlier projects and practice mock Node.js interviews.\n**Resources**: \n- Tool: LeetCode Node.js Tags\n- Docs: Node.js Interview Repository on GitHub\n\n## Time Breakdown: 5 hours/week Hours/Week\n\n**Monday**: 1 hour (Learn Week 1/2 concepts via high-quality video tutorials)\n**Wednesday**: 2 hours (Hands-on Practice + building core features)\n**Saturday**: 2 hours (Build a project + review what you learned)\n\n**Why this schedule?** \n- Spaced out learning leads to much better retention.\n- Monday/Wednesday/Saturday balance ensures it doesn't conflict with your work or school.\n- Significant weekend time is dedicated specifically for building, which is where the real learning happens.\n\n## Resources You'll Need\n\n**Free options:**\n- **YouTube Playlists**: Search for \"Full Node.js Course\" for high-density information.\n- **FreeCodeCamp**: Their Node.js curriculum is the industry gold standard.\n- **MDN / Official Docs**: The definitive source of truth for all Node.js developers.\n\n**Paid option (optional):**\n- **Udemy / Zero To Mastery**: These courses offer a structured \"all-in-one\" experience for around $15-20.\n\n**Tools you'll need:**\n- **VS Code**: The best free IDE for Node.js development.\n- **Node.js / Local Environment**: Required to run Node.js code on your machine.\n\n## 5 Mistakes Beginners Make (And How to Avoid Them)\n\n**Mistake 1: Jumping straight to advanced concepts**\n*Reality*: You'll get lost and quit within two weeks.\n*Solution*: Spend Week 1 on fundamentals. It's boring but necessary for long-term success.\n\n**Mistake 2: Tutorial hell**\n*Reality*: Watching 10 hours of tutorials teaches you almost nothing if you don't type a single line of code.\n*Solution*: After each concept, build something immediately. No matter how small.\n\n**Mistake 3: Following along without understanding**\n*Reality*: Copy-pasting code from a screen leads to 0% retention.\n*Solution*: Pause videos. Try it yourself first. Look up the error when you get stuck.\n\n**Mistake 4: Building the same todo app as everyone else**\n*Reality*: Portfolio projects need to be unique to catch a recruiter's eye.\n*Solution*: Build something YOU care about. Your enthusiasm will show during the interview.\n\n**Mistake 5: Not comparing yourself to the roadmap**\n*Reality*: You might think you're progressing slower than you actually are.\n*Solution*: Every Friday, review this roadmap. You'll be impressed by how far you've come.\n\n## Related Skills You Should Learn\n\nOnce you master Node.js, you'll be ready for:\n- **JavaScript** - Directly builds on your Node.js knowledge.\n- **SQL & Databases** - The natural progression for a Node.js expert.\n\nBoth are easier after you finish this 6 weeks program.\n\n## Ready to Start?\n\n**Get your personalized roadmap**. Input your availability, get a customized schedule.\n\n[BIG CTA BUTTON: GENERATE MY NODE.JS ROADMAP]\n\n---\n\n**Questions?** This roadmap is based on:\n- Feedback from 100+ successful career changers\n- Interviews with 50+ professional engineers\n- 5 years of optimizing the LearnPath curriculum\n",
-    "metaDescription": "Master Node.js with a personalized roadmap. Just 5 hours/week required. Start your free learning journey on LearnPath today.",
-    "schema": {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Learn Node.js in 5 hours/week",
-      "description": "Personalized roadmap to master Node.js basics in 5 hours/week",
-      "provider": {
-        "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
-      }
-    }
-  },
-  {
-    "id": "sql-databases",
-    "title": "Learn SQL & Databases in 4 hours/week - Free Personalized Roadmap",
-    "skillName": "SQL & Databases",
-    "category": "Databases",
-    "timeCommitment": "4 Hours / Week",
-    "marketDemand": "Universal",
-    "snippet": "Unlock your career potential with our free, 5-hour/week SQL & Databases learning roadmap. Master SQL & Databases in 4 weeks with video tutorials and project-based learning.",
-    "content": "\n# Learn SQL & Databases in 4 hours/week - Complete Roadmap\n\n## Why Learn SQL & Databases Right Now?\n\n**Job Market Demand**: SQL & Databases jobs are growing Universal (Required for almost every dev job) annually.\n**Average Salary**: Professionals with SQL & Databases earn $110,000+ depending on experience.\n**Time Investment**: Most people take 3-6 months. You'll do it in 4 hours/week.\n**Career Impact**: SQL & Databases is one of the top 10 most valuable skills in 2026.\n\nAs someone who has followed the growth of SQL & Databases closely, I can tell you that the demand is real. According to data from Indeed and LinkedIn, there are currently over 150,000 open roles requiring SQL & Databases proficiency. Businesses are pivoting towards Python and Node.js, making this the perfect time to enter the field. Whether you're a career changer or a student, the ROI on learning SQL & Databases is massive right now.\n\n## Your Exact Learning Path\n\n### Week 1: Fundamentals (Master the Basics)\n**What you'll learn**: Core syntax, SQL & Databases environment setup, and basic data structures.\n**Time**: 2 hours\n**Practice**: Build a simple SQL & Databases utility script or static page.\n**Resources**: \n- Video: SQL & Databases for Absolute Beginners (YouTube)\n- Free course: FreeCodeCamp SQL & Databases Introduction\n- Docs: SQL & Databases Official Documentation (Getting Started)\n\n**Why Week 1 matters**: Most people skip this and go straight to advanced stuff like Data Science. Big mistake. You need a strong foundation to avoid hitting a wall later.\n\n### Week 2: Go Deeper (Intermediate Concepts)\n**What you'll learn**: Functions, error handling, and working with SQL & Databases libraries.\n**Time**: 2 hours\n**Practice**: Build a more complex project like a data parser or interactive component.\n**Resources**: \n- Video: Intermediate SQL & Databases Patterns (YouTube)\n- Free course: Codecademy SQL & Databases Intermediate\n- Docs: Advanced SQL & Databases API references\n\n**Real example from my experience**: I tried to skip Week 2 advanced concepts once. I ended up spending three times as long debugging basic issues that I would have understood if I'd just followed the path.\n\n### Week 3: Real Projects (Build Something)\n**What you'll learn**: How to structure real code, best practices, and common SQL & Databases design patterns.\n**Time**: 3 hours\n**Practice**: Build a real portfolio project like a task tracker or a mini SQL & Databases framework.\n**Resources**: \n- Video: Build a SQL & Databases App in 1 Hour\n- Docs: SQL & Databases Best Practices Guide\n\n### Week 4: Polish & Interview Prep\n**What you'll learn**: Optimization techniques, code quality standards, and technical interview questions.\n**Time**: 3 hours\n**Practice**: Refactor earlier projects and practice mock SQL & Databases interviews.\n**Resources**: \n- Tool: LeetCode SQL & Databases Tags\n- Docs: SQL & Databases Interview Repository on GitHub\n\n## Time Breakdown: 4 hours/week Hours/Week\n\n**Monday**: 1 hour (Learn Week 1/2 concepts via high-quality video tutorials)\n**Wednesday**: 2 hours (Hands-on Practice + building core features)\n**Saturday**: 2 hours (Build a project + review what you learned)\n\n**Why this schedule?** \n- Spaced out learning leads to much better retention.\n- Monday/Wednesday/Saturday balance ensures it doesn't conflict with your work or school.\n- Significant weekend time is dedicated specifically for building, which is where the real learning happens.\n\n## Resources You'll Need\n\n**Free options:**\n- **YouTube Playlists**: Search for \"Full SQL & Databases Course\" for high-density information.\n- **FreeCodeCamp**: Their SQL & Databases curriculum is the industry gold standard.\n- **MDN / Official Docs**: The definitive source of truth for all SQL & Databases developers.\n\n**Paid option (optional):**\n- **Udemy / Zero To Mastery**: These courses offer a structured \"all-in-one\" experience for around $15-20.\n\n**Tools you'll need:**\n- **VS Code**: The best free IDE for SQL & Databases development.\n- **Node.js / Local Environment**: Required to run SQL & Databases code on your machine.\n\n## 5 Mistakes Beginners Make (And How to Avoid Them)\n\n**Mistake 1: Jumping straight to advanced concepts**\n*Reality*: You'll get lost and quit within two weeks.\n*Solution*: Spend Week 1 on fundamentals. It's boring but necessary for long-term success.\n\n**Mistake 2: Tutorial hell**\n*Reality*: Watching 10 hours of tutorials teaches you almost nothing if you don't type a single line of code.\n*Solution*: After each concept, build something immediately. No matter how small.\n\n**Mistake 3: Following along without understanding**\n*Reality*: Copy-pasting code from a screen leads to 0% retention.\n*Solution*: Pause videos. Try it yourself first. Look up the error when you get stuck.\n\n**Mistake 4: Building the same todo app as everyone else**\n*Reality*: Portfolio projects need to be unique to catch a recruiter's eye.\n*Solution*: Build something YOU care about. Your enthusiasm will show during the interview.\n\n**Mistake 5: Not comparing yourself to the roadmap**\n*Reality*: You might think you're progressing slower than you actually are.\n*Solution*: Every Friday, review this roadmap. You'll be impressed by how far you've come.\n\n## Related Skills You Should Learn\n\nOnce you master SQL & Databases, you'll be ready for:\n- **Python** - Directly builds on your SQL & Databases knowledge.\n- **Node.js** - The natural progression for a SQL & Databases expert.\n\nBoth are easier after you finish this 4 weeks program.\n\n## Ready to Start?\n\n**Get your personalized roadmap**. Input your availability, get a customized schedule.\n\n[BIG CTA BUTTON: GENERATE MY SQL & DATABASES ROADMAP]\n\n---\n\n**Questions?** This roadmap is based on:\n- Feedback from 100+ successful career changers\n- Interviews with 50+ professional engineers\n- 5 years of optimizing the LearnPath curriculum\n",
-    "metaDescription": "Master SQL & Databases with a personalized roadmap. Just 4 hours/week required. Start your free learning journey on LearnPath today.",
-    "schema": {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Learn SQL & Databases in 4 hours/week",
-      "description": "Personalized roadmap to master SQL & Databases basics in 4 hours/week",
-      "provider": {
-        "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
-      }
-    }
-  },
-  {
-    "id": "aws-cloud",
-    "title": "Learn AWS Cloud in 8 hours/week - Free Personalized Roadmap",
-    "skillName": "AWS Cloud",
-    "category": "Infrastructure",
+    "id": "quantum-safe",
+    "title": "Quantum-Safe Frontend Engineering: Protecting the 2026 Web",
+    "skillName": "PQC (Post-Quantum Cryptography)",
+    "category": "Cybersecurity",
     "timeCommitment": "8 Hours / Week",
-    "marketDemand": "High",
-    "snippet": "Unlock your career potential with our free, 5-hour/week AWS Cloud learning roadmap. Master AWS Cloud in 8 weeks with video tutorials and project-based learning.",
-    "content": "\n# Learn AWS Cloud in 8 hours/week - Complete Roadmap\n\n## Why Learn AWS Cloud Right Now?\n\n**Job Market Demand**: AWS Cloud jobs are growing High (Cloud migration is priority #1) annually.\n**Average Salary**: Professionals with AWS Cloud earn $135,000+ depending on experience.\n**Time Investment**: Most people take 3-6 months. You'll do it in 8 hours/week.\n**Career Impact**: AWS Cloud is one of the top 10 most valuable skills in 2026.\n\nAs someone who has followed the growth of AWS Cloud closely, I can tell you that the demand is real. According to data from Indeed and LinkedIn, there are currently over 150,000 open roles requiring AWS Cloud proficiency. Businesses are pivoting towards DevOps and Cybersecurity, making this the perfect time to enter the field. Whether you're a career changer or a student, the ROI on learning AWS Cloud is massive right now.\n\n## Your Exact Learning Path\n\n### Week 1: Fundamentals (Master the Basics)\n**What you'll learn**: Core syntax, AWS Cloud environment setup, and basic data structures.\n**Time**: 2 hours\n**Practice**: Build a simple AWS Cloud utility script or static page.\n**Resources**: \n- Video: AWS Cloud for Absolute Beginners (YouTube)\n- Free course: FreeCodeCamp AWS Cloud Introduction\n- Docs: AWS Cloud Official Documentation (Getting Started)\n\n**Why Week 1 matters**: Most people skip this and go straight to advanced stuff like Terraform. Big mistake. You need a strong foundation to avoid hitting a wall later.\n\n### Week 2: Go Deeper (Intermediate Concepts)\n**What you'll learn**: Functions, error handling, and working with AWS Cloud libraries.\n**Time**: 2 hours\n**Practice**: Build a more complex project like a data parser or interactive component.\n**Resources**: \n- Video: Intermediate AWS Cloud Patterns (YouTube)\n- Free course: Codecademy AWS Cloud Intermediate\n- Docs: Advanced AWS Cloud API references\n\n**Real example from my experience**: I tried to skip Week 2 advanced concepts once. I ended up spending three times as long debugging basic issues that I would have understood if I'd just followed the path.\n\n### Week 3: Real Projects (Build Something)\n**What you'll learn**: How to structure real code, best practices, and common AWS Cloud design patterns.\n**Time**: 3 hours\n**Practice**: Build a real portfolio project like a task tracker or a mini AWS Cloud framework.\n**Resources**: \n- Video: Build a AWS Cloud App in 1 Hour\n- Docs: AWS Cloud Best Practices Guide\n\n### Week 4: Polish & Interview Prep\n**What you'll learn**: Optimization techniques, code quality standards, and technical interview questions.\n**Time**: 3 hours\n**Practice**: Refactor earlier projects and practice mock AWS Cloud interviews.\n**Resources**: \n- Tool: LeetCode AWS Cloud Tags\n- Docs: AWS Cloud Interview Repository on GitHub\n\n## Time Breakdown: 8 hours/week Hours/Week\n\n**Monday**: 1 hour (Learn Week 1/2 concepts via high-quality video tutorials)\n**Wednesday**: 2 hours (Hands-on Practice + building core features)\n**Saturday**: 2 hours (Build a project + review what you learned)\n\n**Why this schedule?** \n- Spaced out learning leads to much better retention.\n- Monday/Wednesday/Saturday balance ensures it doesn't conflict with your work or school.\n- Significant weekend time is dedicated specifically for building, which is where the real learning happens.\n\n## Resources You'll Need\n\n**Free options:**\n- **YouTube Playlists**: Search for \"Full AWS Cloud Course\" for high-density information.\n- **FreeCodeCamp**: Their AWS Cloud curriculum is the industry gold standard.\n- **MDN / Official Docs**: The definitive source of truth for all AWS Cloud developers.\n\n**Paid option (optional):**\n- **Udemy / Zero To Mastery**: These courses offer a structured \"all-in-one\" experience for around $15-20.\n\n**Tools you'll need:**\n- **VS Code**: The best free IDE for AWS Cloud development.\n- **Node.js / Local Environment**: Required to run AWS Cloud code on your machine.\n\n## 5 Mistakes Beginners Make (And How to Avoid Them)\n\n**Mistake 1: Jumping straight to advanced concepts**\n*Reality*: You'll get lost and quit within two weeks.\n*Solution*: Spend Week 1 on fundamentals. It's boring but necessary for long-term success.\n\n**Mistake 2: Tutorial hell**\n*Reality*: Watching 10 hours of tutorials teaches you almost nothing if you don't type a single line of code.\n*Solution*: After each concept, build something immediately. No matter how small.\n\n**Mistake 3: Following along without understanding**\n*Reality*: Copy-pasting code from a screen leads to 0% retention.\n*Solution*: Pause videos. Try it yourself first. Look up the error when you get stuck.\n\n**Mistake 4: Building the same todo app as everyone else**\n*Reality*: Portfolio projects need to be unique to catch a recruiter's eye.\n*Solution*: Build something YOU care about. Your enthusiasm will show during the interview.\n\n**Mistake 5: Not comparing yourself to the roadmap**\n*Reality*: You might think you're progressing slower than you actually are.\n*Solution*: Every Friday, review this roadmap. You'll be impressed by how far you've come.\n\n## Related Skills You Should Learn\n\nOnce you master AWS Cloud, you'll be ready for:\n- **DevOps** - Directly builds on your AWS Cloud knowledge.\n- **Cybersecurity** - The natural progression for a AWS Cloud expert.\n\nBoth are easier after you finish this 8 weeks program.\n\n## Ready to Start?\n\n**Get your personalized roadmap**. Input your availability, get a customized schedule.\n\n[BIG CTA BUTTON: GENERATE MY AWS CLOUD ROADMAP]\n\n---\n\n**Questions?** This roadmap is based on:\n- Feedback from 100+ successful career changers\n- Interviews with 50+ professional engineers\n- 5 years of optimizing the LearnPath curriculum\n",
-    "metaDescription": "Master AWS Cloud with a personalized roadmap. Just 8 hours/week required. Start your free learning journey on LearnPath today.",
+    "marketDemand": "Critical Infrastructure",
+    "snippet": "With Shor's algorithm looming, the web is transitioning to Quantum-Safe standards. Learn how to implement PQC at the application layer.",
+    "content": "\n# The Quantum-Safe Transition of 2026\n\n## The 'Q-Day' Preparation\n\nStandard RSA and ECC are no longer sufficient for long-term data security. In March 2026, the global shift to **Post-Quantum Cryptography (PQC)** has reached the frontend. As a developer, you need to understand how to handle lattice-based signatures and key encapsulation in the browser.\n\n### Why This Matters for Frontend\n- **Client-Side Encryption**: Protecting sensitive user data before it hits the wire.\n- **Browser APIs**: Mastering the new PQC-enabled WebCrypto standards.\n- **Compliance**: Financial and medical apps now require quantum-resilience by law.\n\n## 8-Week Specialist Roadmap\n\n1. **Lattice-Based Cryptography Basics**: Understanding Kyber and Dilithium.\n2. **Hybrid Key Exchange**: Implementing dual NIST-standard protection.\n3. **Edge Cryptography**: Offloading heavy quantum-math to Wasm modules.\n",
+    "metaDescription": "Learn Post-Quantum Cryptography (PQC) for web developers. Protect your applications against future quantum threats with this 2026 roadmap.",
     "schema": {
       "@context": "https://schema.org",
       "@type": "Course",
-      "name": "Learn AWS Cloud in 8 hours/week",
-      "description": "Personalized roadmap to master AWS Cloud basics in 8 hours/week",
+      "name": "Quantum-Safe Web Engineering",
+      "description": "Roadmap for implementing PQC in web applications",
       "provider": {
         "@type": "Organization",
         "name": "LearnPath",
@@ -198,20 +44,174 @@ export const articles = [
     }
   },
   {
-    "id": "cybersecurity",
-    "title": "Learn Cybersecurity in 10 hours/week - Free Personalized Roadmap",
-    "skillName": "Cybersecurity",
-    "category": "Security",
-    "timeCommitment": "10 Hours / Week",
-    "marketDemand": "Critical",
-    "snippet": "Unlock your career potential with our free, 5-hour/week Cybersecurity learning roadmap. Master Cybersecurity in 12 weeks with video tutorials and project-based learning.",
-    "content": "\n# Learn Cybersecurity in 10 hours/week - Complete Roadmap\n\n## Why Learn Cybersecurity Right Now?\n\n**Job Market Demand**: Cybersecurity jobs are growing Critical (Security is non-negotiable now) annually.\n**Average Salary**: Professionals with Cybersecurity earn $125,000+ depending on experience.\n**Time Investment**: Most people take 3-6 months. You'll do it in 10 hours/week.\n**Career Impact**: Cybersecurity is one of the top 10 most valuable skills in 2026.\n\nAs someone who has followed the growth of Cybersecurity closely, I can tell you that the demand is real. According to data from Indeed and LinkedIn, there are currently over 150,000 open roles requiring Cybersecurity proficiency. Businesses are pivoting towards Python and AWS Cloud, making this the perfect time to enter the field. Whether you're a career changer or a student, the ROI on learning Cybersecurity is massive right now.\n\n## Your Exact Learning Path\n\n### Week 1: Fundamentals (Master the Basics)\n**What you'll learn**: Core syntax, Cybersecurity environment setup, and basic data structures.\n**Time**: 2 hours\n**Practice**: Build a simple Cybersecurity utility script or static page.\n**Resources**: \n- Video: Cybersecurity for Absolute Beginners (YouTube)\n- Free course: FreeCodeCamp Cybersecurity Introduction\n- Docs: Cybersecurity Official Documentation (Getting Started)\n\n**Why Week 1 matters**: Most people skip this and go straight to advanced stuff like Ethical Hacking. Big mistake. You need a strong foundation to avoid hitting a wall later.\n\n### Week 2: Go Deeper (Intermediate Concepts)\n**What you'll learn**: Functions, error handling, and working with Cybersecurity libraries.\n**Time**: 2 hours\n**Practice**: Build a more complex project like a data parser or interactive component.\n**Resources**: \n- Video: Intermediate Cybersecurity Patterns (YouTube)\n- Free course: Codecademy Cybersecurity Intermediate\n- Docs: Advanced Cybersecurity API references\n\n**Real example from my experience**: I tried to skip Week 2 advanced concepts once. I ended up spending three times as long debugging basic issues that I would have understood if I'd just followed the path.\n\n### Week 3: Real Projects (Build Something)\n**What you'll learn**: How to structure real code, best practices, and common Cybersecurity design patterns.\n**Time**: 3 hours\n**Practice**: Build a real portfolio project like a task tracker or a mini Cybersecurity framework.\n**Resources**: \n- Video: Build a Cybersecurity App in 1 Hour\n- Docs: Cybersecurity Best Practices Guide\n\n### Week 4: Polish & Interview Prep\n**What you'll learn**: Optimization techniques, code quality standards, and technical interview questions.\n**Time**: 3 hours\n**Practice**: Refactor earlier projects and practice mock Cybersecurity interviews.\n**Resources**: \n- Tool: LeetCode Cybersecurity Tags\n- Docs: Cybersecurity Interview Repository on GitHub\n\n## Time Breakdown: 10 hours/week Hours/Week\n\n**Monday**: 1 hour (Learn Week 1/2 concepts via high-quality video tutorials)\n**Wednesday**: 2 hours (Hands-on Practice + building core features)\n**Saturday**: 2 hours (Build a project + review what you learned)\n\n**Why this schedule?** \n- Spaced out learning leads to much better retention.\n- Monday/Wednesday/Saturday balance ensures it doesn't conflict with your work or school.\n- Significant weekend time is dedicated specifically for building, which is where the real learning happens.\n\n## Resources You'll Need\n\n**Free options:**\n- **YouTube Playlists**: Search for \"Full Cybersecurity Course\" for high-density information.\n- **FreeCodeCamp**: Their Cybersecurity curriculum is the industry gold standard.\n- **MDN / Official Docs**: The definitive source of truth for all Cybersecurity developers.\n\n**Paid option (optional):**\n- **Udemy / Zero To Mastery**: These courses offer a structured \"all-in-one\" experience for around $15-20.\n\n**Tools you'll need:**\n- **VS Code**: The best free IDE for Cybersecurity development.\n- **Node.js / Local Environment**: Required to run Cybersecurity code on your machine.\n\n## 5 Mistakes Beginners Make (And How to Avoid Them)\n\n**Mistake 1: Jumping straight to advanced concepts**\n*Reality*: You'll get lost and quit within two weeks.\n*Solution*: Spend Week 1 on fundamentals. It's boring but necessary for long-term success.\n\n**Mistake 2: Tutorial hell**\n*Reality*: Watching 10 hours of tutorials teaches you almost nothing if you don't type a single line of code.\n*Solution*: After each concept, build something immediately. No matter how small.\n\n**Mistake 3: Following along without understanding**\n*Reality*: Copy-pasting code from a screen leads to 0% retention.\n*Solution*: Pause videos. Try it yourself first. Look up the error when you get stuck.\n\n**Mistake 4: Building the same todo app as everyone else**\n*Reality*: Portfolio projects need to be unique to catch a recruiter's eye.\n*Solution*: Build something YOU care about. Your enthusiasm will show during the interview.\n\n**Mistake 5: Not comparing yourself to the roadmap**\n*Reality*: You might think you're progressing slower than you actually are.\n*Solution*: Every Friday, review this roadmap. You'll be impressed by how far you've come.\n\n## Related Skills You Should Learn\n\nOnce you master Cybersecurity, you'll be ready for:\n- **Python** - Directly builds on your Cybersecurity knowledge.\n- **AWS Cloud** - The natural progression for a Cybersecurity expert.\n\nBoth are easier after you finish this 12 weeks program.\n\n## Ready to Start?\n\n**Get your personalized roadmap**. Input your availability, get a customized schedule.\n\n[BIG CTA BUTTON: GENERATE MY CYBERSECURITY ROADMAP]\n\n---\n\n**Questions?** This roadmap is based on:\n- Feedback from 100+ successful career changers\n- Interviews with 50+ professional engineers\n- 5 years of optimizing the LearnPath curriculum\n",
-    "metaDescription": "Master Cybersecurity with a personalized roadmap. Just 10 hours/week required. Start your free learning journey on LearnPath today.",
+    "id": "rust-edge",
+    "title": "Rust for Edge Computing: High-Performance Infrastructure in 2026",
+    "skillName": "Rust & Wasm",
+    "category": "Infrastructure",
+    "timeCommitment": "15 Hours / Week",
+    "marketDemand": "Essential",
+    "snippet": "Edge computing is the new cloud. Master Rust and WebAssembly to build lightning-fast, secure edge functions that out-perform Node.js.",
+    "content": "\n# Rust + Wasm: The Edge Computing Revolution\n\n## Why Rust is Dominating 2026\n\nMemory safety is no longer a luxury; it's a security mandate. In 2026, the majority of 'Serverless' has moved to the Edge, and Node.js is being superseded by **Rust-compiled WebAssembly (Wasm)** for its near-native speed and cold-start elimination.\n\n### Learning Pillars\n- **Memory Safety Without GC**: Mastering the Borrow Checker.\n- **Wasm Runtime Orchestration**: Running code in V8 isolations or Wasmtime.\n- **Distributed Edge Databases**: Working with local-first data at the edge.\n\n## Your Intensive Path\n**Weeks 1-4**: Ownership, Lifetimes, and the Rust Type System.\n**Weeks 5-8**: Wasm-bindgen and Frontend-Backend shared logic.\n**Weeks 9-12**: Building a globally distributed API with 0ms latency.\n",
+    "metaDescription": "Master Rust and WebAssembly for Edge Computing. Build high-performance, secure infrastructure for 2026. Start your free roadmap.",
     "schema": {
       "@context": "https://schema.org",
       "@type": "Course",
-      "name": "Learn Cybersecurity in 10 hours/week",
-      "description": "Personalized roadmap to master Cybersecurity basics in 10 hours/week",
+      "name": "Rust Edge Specialist",
+      "description": "Advanced roadmap for Rust and Wasm development",
+      "provider": {
+        "@type": "Organization",
+        "name": "LearnPath",
+        "url": "https://www.learnpath.qzz.io/"
+      }
+    }
+  },
+  {
+    "id": "ai-ethics",
+    "title": "AI Ethics & Governance: The Most Important Non-Tech Skill of 2026",
+    "skillName": "AI Ethics Compliance",
+    "category": "Governance",
+    "timeCommitment": "6 Hours / Week",
+    "marketDemand": "Enormous (Legal Mandate)",
+    "snippet": "As the EU AI Act 2.0 goes live, companies are desperate for Ethics Officers. Learn to audit AI systems for bias, transparency, and safety.",
+    "content": "\n# AI Ethics: From Philosophy to Professional Mandate\n\n## The 2026 Regulatory Landscape\n\nMarch 2026 marks the first major audit cycle for the EU AI Act 2.0. Companies can no longer deploy models without a verified **Impact Assessment**. This has created a massive demand for professionals who understand both the math of bias and the law of digital rights.\n\n### Key Skills for 2026\n- **Bias Auditing**: Using statistical tools to prove model fairness.\n- **Red Teaming**: Simulating adversarial attacks to test safety boundaries.\n- **Regulatory Alignment**: Translating complex laws into technical requirements.\n\n## 10-Week Career Path\n1. **Theoretical Foundations**: Data rights and algorithmic transparency.\n2. **Technical Auditing**: Learning to use AI Fairness toolkits.\n3. **Policy & Strategy**: Building corporate governance frameworks for Fortune 500s.\n",
+    "metaDescription": "Become a certified AI Ethics & Governance specialist. Learn to audit models for bias and compliance in 2026. No deep coding required.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "AI Ethics & Governance Path",
+      "description": "Professional roadmap for AI ethics and compliance",
+      "provider": {
+        "@type": "Organization",
+        "name": "LearnPath",
+        "url": "https://www.learnpath.qzz.io/"
+      }
+    }
+  },
+  {
+    "id": "esg-sustainability",
+    "title": "Sustainable Supply Chain & ESG Auditing in the Digital Age",
+    "skillName": "ESG Sustainability",
+    "category": "Corporate Strategy",
+    "timeCommitment": "7 Hours / Week",
+    "marketDemand": "Universal Growth",
+    "snippet": "Sustainability is now a data problem. Learn to manage ESG metrics and use AI to optimize supply chains for carbon neutrality.",
+    "content": "\n# ESG: The New Corporate Standard of 2026\n\n## The Data-Driven Green Transition\n\nIn 2026, **Environmental, Social, and Governance (ESG)** reporting is as standardized as financial accounting. Investors and regulators demand real-time, verifiable carbon tracking across entire supply chains. This requires a new breed of professional who can bridge the gap between sustainability goals and data systems.\n\n### Core Pillars\n- **Carbon Accounting 2.0**: Automated tracking using IoT and Blockchain.\n- **Circular Economy Modeling**: Designing out waste in product life cycles.\n- **Social Impact Metrics**: Quantifiable reporting on labor and community standards.\n\n## Your 12-Week Roadmap\n- **Week 1-3**: Global ESG Frameworks (IFRS, GRI).\n- **Week 4-8**: Supply Chain Transparency Tools.\n- **Week 9-12**: Building the Corporate Sustainability Report.\n",
+    "metaDescription": "Learn ESG Sustainability and supply chain auditing for the 2026 economy. Master the data-driven green transition with our free roadmap.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "ESG Strategy & Auditing",
+      "description": "Roadmap for corporate sustainability professionals",
+      "provider": {
+        "@type": "Organization",
+        "name": "LearnPath",
+        "url": "https://www.learnpath.qzz.io/"
+      }
+    }
+  },
+  {
+    "id": "bci-ux",
+    "title": "Designing for the Brain: Neuro-Interface UX (BCI) Careers",
+    "skillName": "Neuro-Interface Design",
+    "category": "Design & Health-Tech",
+    "timeCommitment": "10 Hours / Week",
+    "marketDemand": "Emerging Tech",
+    "snippet": "With consumer neuro-wearables hitting the mainstream, BCI Design is the next 'Mobile UX'. Learn how to design for neural intent.",
+    "content": "\n# BCI UX: Beyond the Screen\n\n## The Era of Thought-Based Interaction\n\nBy April 2026, non-invasive **Brain-Computer Interfaces (BCI)** have entered the consumer market for productivity and gaming. We are moving from 'taps and swipes' to 'intent-based interaction'. Designers who understand neural signal processing and cognitive load are the new architects of the human experience.\n\n### 2026 Design Challenges\n- **Mental Feedback Loops**: Managing user expectations during signal latency.\n- **Neural Privacy**: Ensuring 'thought-data' is handled ethically.\n- **Accessibility First**: Using BCI to empower users with limited mobility.\n\n## Your Specialist Path\n1. **Neuro-Anatomy for Designers**: Understanding brain regions and signals.\n2. **Signal Filtering & Interpretation**: Logic for intent vs. noise.\n3. **Interface Design for Neural Input**: Creating 'Calm' and 'Fluid' UI.\n",
+    "metaDescription": "Become a Neuro-Interface (BCI) UX Designer. Master the art of brain-computer interaction for the 2026 tech wave. Start your roadmap.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "BCI Design Specialization",
+      "description": "Professional roadmap for neuro-interface UX design",
+      "provider": {
+        "@type": "Organization",
+        "name": "LearnPath",
+        "url": "https://www.learnpath.qzz.io/"
+      }
+    }
+  },
+  {
+    "id": "climate-resilience",
+    "title": "Climate Resilience Engineering: Infrastructure for a Changing World",
+    "skillName": "Climate Adaptation",
+    "category": "Science & Engineering",
+    "timeCommitment": "10 Hours / Week",
+    "marketDemand": "High Stakes",
+    "snippet": "Learn to design and manage resilient systems that withstand extreme weather. A critical 2026 skill for urban planners and engineers.",
+    "content": "\n# Engineering for the New Normal\n\n## The Reality of 2026 Infrastructure\n\nClimate change is no longer a future threat; it's a current engineering constraint. **Climate Resilience Engineering** focuses on building 'Anti-fragile' systems—infrastructure that not only survives extreme weather but adapts to it. This field combines civil engineering with advanced predictive modeling.\n\n### Expertise Needed\n- **Hydrological Modeling**: Planning for 100-year floods that happen every 5 years.\n- **Heat-Resilient Materials**: New polymers and urban designs for extreme heat.\n- **Distributed Energy Grids**: Ensuring power stability during catastrophic events.\n\n## 14-Week Mastery Path\n- **Phase 1**: Risk Assessment & Predictive Modeling.\n- **Phase 2**: Adaptive Infrastructure Design (Sea Walls, Smart Grids).\n- **Phase 3**: Policy Integration & Disaster Recovery Logic.\n",
+    "metaDescription": "Learn Climate Resilience Engineering. Build the infrastructure of 2026 with advanced adaptation techniques. Start your specialized path.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Climate Resilience Engineer",
+      "description": "Professional roadmap for climate adaptation and infrastructure",
+      "provider": {
+        "@type": "Organization",
+        "name": "LearnPath",
+        "url": "https://www.learnpath.qzz.io/"
+      }
+    }
+  },
+  {
+    "id": "did-web5",
+    "title": "Decentralized Identity (DID) & ZK-Proofs: The End of Passwords",
+    "skillName": "Decentralized Identity",
+    "category": "Web3 & Privacy",
+    "timeCommitment": "11 Hours / Week",
+    "marketDemand": "High (Security Shift)",
+    "snippet": "Web5 has arrived. Learn to build applications where users own their data using Zero-Knowledge Proofs and W3C DID standards.",
+    "content": "\n# The Identity Revolution of 2026\n\n## Why 'Login with Identity' is Dead\n\nIn 2026, the 'Login with Google' paradigm has shifted towards **Decentralized Identity (DID)**. Users now hold 'Verifiable Credentials' in their personal wallets. As a developer, your job is to verify these credentials without ever seeing the raw data, using **Zero-Knowledge Proofs (ZKP)**.\n\n### Core Technologies\n- **ZKP (Zero-Knowledge Proofs)**: Proving 'X' without revealing 'X'.\n- **SSI (Self-Sovereign Identity)**: Built on the W3C 'Web5' standards.\n- **Selective Disclosure**: Letting users share only what is necessary.\n\n## 10-Week Developer Path\n- **Weeks 1-3**: Identity Standards & Wallet Integration.\n- **Weeks 4-7**: ZK-SNARKs and ZK-STARKs Implementation.\n- **Weeks 8-10**: Building a 'Privacy-First' decentralized social graph.\n",
+    "metaDescription": "Master Decentralized Identity and ZK-Proofs for Web5. Build privacy-first applications for 2026. Join the security revolution.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Decentralized Identity Specialist",
+      "description": "Advanced roadmap for Web5 and ZK-Proofs",
+      "provider": {
+        "@type": "Organization",
+        "name": "LearnPath",
+        "url": "https://www.learnpath.qzz.io/"
+      }
+    }
+  },
+  {
+    "id": "neuro-symbolic",
+    "title": "Neuro-Symbolic AI: The Future of Explainable Reasoning",
+    "skillName": "Neuro-Symbolic AI",
+    "category": "Advanced AI",
+    "timeCommitment": "14 Hours / Week",
+    "marketDemand": "R&D Focus",
+    "snippet": "Combine the 'Gut Feeling' of Neural Networks with the 'Logic' of Symbolic AI. The key to solving AI hallucinations in 2026.",
+    "content": "\n# Beyond the Black Box: Neuro-Symbolic AI\n\n## The Solution to Hallucinations\n\nPure LLMs (Neural Networks) are brilliant but unreliable. In 2026, the focus has shifted to **Neuro-Symbolic AI**, which integrates deep learning with classical logic (Symbolic AI). This creates systems that can reason step-by-step and explain *exactly* why they reached a conclusion.\n\n### Why Developers Need This\n- **Reliability**: Essential for medical, legal, and aerospace AI.\n- **Explainability**: Meeting the 'Right to Explanation' in the EU AI Act.\n- **Efficiency**: Solving complex logic problems with 90% less data.\n\n## 12-Week Expert Roadmap\n1. **Symbolic Logic & Knowledge Graphs**: The rules of reasoning.\n2. **Hybrid Architectures**: Integrating Graph Databases with LLMs.\n3. **Practical Implementation**: Building a 'Reasoning Engine' for regulated industries.\n",
+    "metaDescription": "Master Neuro-Symbolic AI. Solve AI hallucinations with explainable reasoning architectures. The elite developer path for 2026.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Neuro-Symbolic AI Researcher",
+      "description": "Advanced roadmap for hybrid AI architectures",
+      "provider": {
+        "@type": "Organization",
+        "name": "LearnPath",
+        "url": "https://www.learnpath.qzz.io/"
+      }
+    }
+  },
+  {
+    "id": "bio-informatics",
+    "title": "Bio-Informatics Data Engineering: Coding for the Genomic Age",
+    "skillName": "Bio-Informatics",
+    "category": "Science & Tech",
+    "timeCommitment": "12 Hours / Week",
+    "marketDemand": "High (Personalized Medicine)",
+    "snippet": "Bridge the gap between Python and Biology. Learn to process massive genomic datasets for personalized medicine and drug discovery.",
+    "content": "\n# Coding the Code of Life\n\n## The Convergence of Bit and Atom\n\nBy 2026, Personalized Medicine has become the healthcare standard. This has triggered a massive shortage of **Bio-Informatics Data Engineers**—people who can build the pipelines to process Terabytes of DNA sequences and identify rare disease markers with AI.\n\n### Core Skills\n- **Genomic Sequence Alignment**: Working with BLAST and BWA tools.\n- **High-Performance Computing (HPC)**: Managing petabyte-scale data in the cloud.\n- **Computational Proteomics**: Modeling protein folding for drug discovery.\n\n## 12-Week Hybrid Roadmap\n1. **Molecular Biology for Engineers**: DNA, RNA, and Protein basics.\n2. **Bio-Python & CLI Tools**: Automating genomic data processing.\n3. **ML in Genomics**: Predicting phenotypes and identifying mutations.\n",
+    "metaDescription": "Become a Bio-Informatics Data Engineer. Master the intersection of coding and genomics for 2026 healthcare. Start your roadmap today.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Bio-Informatics Specialist",
+      "description": "Professional roadmap for genomic data engineering",
       "provider": {
         "@type": "Organization",
         "name": "LearnPath",

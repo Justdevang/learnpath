@@ -80,9 +80,9 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
         }}>
           <Zap size={28} color="var(--accent-primary)" strokeWidth={2.5} />
         </div>
-        <h1 className="text-smaller-on-mobile" style={{ marginBottom: '8px', fontWeight: '800', lineHeight: 1.2 }}>Generate your <span className="text-gradient">AI Personalized Learning Roadmap</span></h1>
-        <h2 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: '600', color: 'var(--text-primary)' }}>What do you want to learn?</h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', maxWidth: '480px', margin: '0 auto' }}>Get a custom, week-by-week learning path generated specifically for your goals and schedule.</p>
+        <h1 className="text-smaller-on-mobile" style={{ marginBottom: '8px', fontWeight: '800', lineHeight: 1.2 }}>Generate your <span className="text-gradient">Professional Learning Roadmap</span></h1>
+        <h2 style={{ fontSize: '20px', marginBottom: '12px', fontWeight: '600', color: 'var(--text-primary)' }}>What's your next career milestone?</h2>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', maxWidth: '480px', margin: '0 auto' }}>From specialized engineering to strategic leadership—get a custom, week-by-week path for your 2026 goals.</p>
       </div>
 
       <div className="glass glass-container">
@@ -97,7 +97,7 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
               id="target-role"
               type="text" 
               className="input-field" 
-              placeholder="e.g. Full Stack Developer, Data Scientist..." 
+              placeholder="e.g. AI Agent Orchestrator, ESG Auditor, Climate Data Scientist..." 
               value={role}
               maxLength={200}
               onChange={(e) => setRole(e.target.value)}
@@ -113,7 +113,7 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
               required
               id="current-skills"
               className="input-field" 
-              placeholder="e.g. Basic HTML/CSS, some Python, SQL..." 
+              placeholder="e.g. Basic SQL, some Python, Corporate Finance, or Chemistry basics..." 
               style={{ minHeight: '90px', resize: 'vertical' }}
               value={skills}
               maxLength={500}
@@ -273,7 +273,7 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
       )}
 
       <div style={{ marginTop: '40px', padding: '0 20px', color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'center', opacity: 0.7 }}>
-        <p>LearnPath is an advanced <strong>AI Personalized Learning Roadmap</strong> generator designed for developers, designers, and tech enthusiasts. Tell us your target career, current skills, and weekly availability, and our system builds a comprehensive, week-by-week curriculum using the best free tutorials, documentation, and real YouTube videos on the internet. Start your structured tech career journey today.</p>
+        <p>LearnPath is an advanced <strong>AI Personalized Learning Roadmap</strong> generator designed for specialized developers, business leaders, and scientific researchers. Tell us your target career, current skills, and weekly availability, and our system builds a comprehensive, week-by-week curriculum using the best free tutorials, documentation, and real YouTube videos on the internet. Start your structured professional journey today.</p>
       </div>
     </motion.div>
   );
