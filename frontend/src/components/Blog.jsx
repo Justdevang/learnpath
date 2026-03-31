@@ -24,7 +24,7 @@ export const Blog = () => {
       style={{ maxWidth: '800px' }}
     >
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <h2 style={{ fontSize: '32px', marginBottom: '12px', fontWeight: '800' }}>Articles & <span className="text-gradient">Guides</span></h2>
+        <h1 style={{ fontSize: '32px', marginBottom: '12px', fontWeight: '800', lineHeight: 1.2 }}>Articles & <span className="text-gradient">Guides</span></h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem' }}>
           In-depth tutorials, career advice, and deep dives into technology.
         </p>

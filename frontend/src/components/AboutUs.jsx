@@ -9,7 +9,7 @@ export const AboutUs = () => {
       className="glass page-container"
       style={{ maxWidth: '800px' }}
     >
-      <h2 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800' }}>About <span className="text-gradient">LearnPath</span></h2>
+      <h1 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800', lineHeight: 1.2 }}>About <span className="text-gradient">LearnPath</span></h1>
       
       <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <p>

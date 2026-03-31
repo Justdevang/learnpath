@@ -45,53 +45,56 @@ export const ContactUs = () => {
       className="glass page-container"
       style={{ maxWidth: '600px' }}
     >
-      <h2 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800' }}>Contact <span className="text-gradient">Us</span></h2>
+      <h1 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800', lineHeight: 1.2 }}>Contact <span className="text-gradient">Us</span></h1>
       <p style={{ color: 'var(--text-secondary)', marginBottom: '32px' }}>
         Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
       </p>
 
       {isSuccess ? (
         <div className="glass" style={{ textAlign: 'center', padding: '30px', borderTop: '4px solid var(--accent-primary)' }}>
-          <h3 style={{ fontSize: '20px', marginBottom: '10px' }}>Message Received!</h3>
+          <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>Message Received!</h2>
           <p style={{ color: 'var(--text-secondary)' }}>We'll get back to you as soon as possible.</p>
           <button className="btn-secondary" style={{ marginTop: '20px' }} onClick={() => setIsSuccess(false)}>Send Another</button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div>
-            <label className="input-label">Name</label>
+            <label htmlFor="contact-name" className="input-label">Name</label>
             <input 
+              required
+              id="contact-name"
               type="text" 
               name="name"
               className="input-field" 
               placeholder="John Doe" 
-              required 
               value={formData.name}
               onChange={handleChange}
             />
           </div>
           
           <div>
-            <label className="input-label">Email Address</label>
+            <label htmlFor="contact-email" className="input-label">Email Address</label>
             <input 
+              required
+              id="contact-email"
               type="email" 
               name="email"
               className="input-field" 
               placeholder="john@example.com" 
-              required 
               value={formData.email}
               onChange={handleChange}
             />
           </div>
           
           <div>
-            <label className="input-label">Message</label>
+            <label htmlFor="contact-message" className="input-label">Message</label>
             <textarea 
+              required
+              id="contact-message"
               name="message"
               className="input-field" 
               placeholder="How can we help you?" 
               style={{ minHeight: '120px', resize: 'vertical' }} 
-              required
               value={formData.message}
               onChange={handleChange}
             ></textarea>

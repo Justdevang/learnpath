@@ -88,12 +88,13 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
       <div className="glass glass-container">
         <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div>
-            <label className="input-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <label htmlFor="target-role" className="input-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><Target size={14} /> Target Role / Goal</span>
               <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{role.length}/200</span>
             </label>
             <input 
               required
+              id="target-role"
               type="text" 
               className="input-field" 
               placeholder="e.g. Full Stack Developer, Data Scientist..." 
@@ -104,12 +105,13 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
           </div>
 
           <div>
-            <label className="input-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <label htmlFor="current-skills" className="input-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><BookOpen size={14} /> Current Skills</span>
               <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{skills.length}/500</span>
             </label>
             <textarea 
               required
+              id="current-skills"
               className="input-field" 
               placeholder="e.g. Basic HTML/CSS, some Python, SQL..." 
               style={{ minHeight: '90px', resize: 'vertical' }}
@@ -121,11 +123,12 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
 
           <div className="flex-responsive">
             <div style={{ flex: 1 }}>
-              <label className="input-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <label htmlFor="hours-per-week" className="input-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <Clock size={14} /> Hours / Week
               </label>
               <input 
                 required
+                id="hours-per-week"
                 type="number" 
                 className="input-field" 
                 min="1" 
@@ -136,10 +139,11 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
             </div>
             
             <div style={{ flex: 1 }}>
-              <label className="input-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <label htmlFor="preferred-style" className="input-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <Video size={14} /> Preferred Style
               </label>
               <select 
+                id="preferred-style"
                 className="input-field" 
                 value={resourcePref}
                 onChange={(e) => setResourcePref(e.target.value)}
@@ -154,10 +158,11 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
           
           <div className="flex-responsive">
             <div style={{ flex: 1 }}>
-              <label className="input-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <label htmlFor="language-select" className="input-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <Globe size={14} /> Language
               </label>
               <select 
+                id="language-select"
                 className="input-field" 
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}

@@ -9,7 +9,7 @@ export const PrivacyPolicy = () => {
       className="glass page-container"
       style={{ maxWidth: '800px' }}
     >
-      <h2 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800' }}>Privacy <span className="text-gradient">Policy</span></h2>
+      <h1 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800', lineHeight: 1.2 }}>Privacy <span className="text-gradient">Policy</span></h1>
       
       <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <p>Last updated: {new Date().toLocaleDateString()}</p>

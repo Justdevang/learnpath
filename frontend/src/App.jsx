@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import { useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import { CreateRoadmap } from './components/CreateRoadmap';
@@ -26,6 +26,32 @@ const PageLoader = () => (
 );
 
 function App() {
+  // Performance Optimization: Defer Google Tag Manager manually to improve initial load metrics
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Initialize GTM / GA
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-P3QYHT4N04';
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-P3QYHT4N04');
+        
+        // Consent Mode v2 Default
+        window.gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
+      };
+    }, 3000); // 3-second delay
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   const [roadmapData, setRoadmapData] = useState(() => {
     try {
       const saved = localStorage.getItem('learnpath_active_roadmap');
