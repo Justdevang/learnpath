@@ -117,10 +117,14 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
           <button 
             className="btn-primary" 
             style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
-            onClick={() => {
+            onClick={(e) => {
               localStorage.setItem('learnpath_active_roadmap', JSON.stringify(roadmapData));
               localStorage.setItem('learnpath_active_params', JSON.stringify(originalParams));
-              alert('Saved to browser');
+              const btn = e.currentTarget;
+              const origText = btn.innerHTML;
+              btn.innerHTML = '✓ Saved!';
+              btn.style.background = 'var(--accent-tertiary)';
+              setTimeout(() => { btn.innerHTML = origText; btn.style.background = ''; }, 2000);
             }}
           >
             <Save size={16} /> Save to Browser

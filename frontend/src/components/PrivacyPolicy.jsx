@@ -15,7 +15,7 @@ export const PrivacyPolicy = () => {
         <p>Last updated: {new Date().toLocaleDateString()}</p>
         
         <p>
-          LearnPath ("we", "us", or "our") operates the learnpath.com website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
+          LearnPath ("we", "us", or "our") operates the learnpath.qzz.io website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
         </p>
 
         <h3 style={{ color: 'var(--text-primary)', fontSize: '20px', marginTop: '16px', marginBottom: '8px' }}>1. Information Collection and Use</h3>

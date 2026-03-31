@@ -65,6 +65,11 @@ function App() {
               <div className="text-gradient" onClick={() => window.location.href='/'} style={{ margin: 0, fontSize: '24px', cursor: 'pointer', fontWeight: 'bold' }}>
                 LearnPath
               </div>
+              <nav style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                <a href="/blog" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='var(--accent-primary)'} onMouseOut={e => e.target.style.color='var(--text-secondary)'}>Blog</a>
+                <a href="/about" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='var(--accent-primary)'} onMouseOut={e => e.target.style.color='var(--text-secondary)'}>About</a>
+                <a href="/contact" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='var(--accent-primary)'} onMouseOut={e => e.target.style.color='var(--text-secondary)'}>Contact</a>
+              </nav>
             </div>
           </div>
         </header>
