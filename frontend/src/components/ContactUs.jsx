@@ -38,7 +38,7 @@ export const ContactUs = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -60,41 +60,41 @@ export const ContactUs = () => {
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div>
             <label htmlFor="contact-name" className="input-label">Name</label>
-            <input 
+            <input
               required
               id="contact-name"
-              type="text" 
+              type="text"
               name="name"
-              className="input-field" 
-              placeholder="John Doe" 
+              className="input-field"
+              placeholder="John Doe"
               value={formData.name}
               onChange={handleChange}
             />
           </div>
-          
+
           <div>
             <label htmlFor="contact-email" className="input-label">Email Address</label>
-            <input 
+            <input
               required
               id="contact-email"
-              type="email" 
+              type="email"
               name="email"
-              className="input-field" 
-              placeholder="john@example.com" 
+              className="input-field"
+              placeholder="john@example.com"
               value={formData.email}
               onChange={handleChange}
             />
           </div>
-          
+
           <div>
             <label htmlFor="contact-message" className="input-label">Message</label>
-            <textarea 
+            <textarea
               required
               id="contact-message"
               name="message"
-              className="input-field" 
-              placeholder="How can we help you?" 
-              style={{ minHeight: '120px', resize: 'vertical' }} 
+              className="input-field"
+              placeholder="How can we help you?"
+              style={{ minHeight: '120px', resize: 'vertical' }}
               value={formData.message}
               onChange={handleChange}
             ></textarea>
@@ -115,10 +115,10 @@ export const ContactUs = () => {
           </button>
         </form>
       )}
-      
+
       <div style={{ marginTop: '40px', borderTop: '1px solid var(--border-color)', paddingTop: '20px', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-        <p>Email: contact@learnpath.com</p>
-        <p>Address: 123 Learning Ave, Suite 400, Tech City, TC 12345</p>
+        <p>Email: nexoraio99@gmail.com</p>
+        <p>Address: Pune, India</p>
       </div>
     </motion.div>
   );
