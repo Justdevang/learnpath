@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 export const ContactUs = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -45,6 +46,11 @@ export const ContactUs = () => {
       className="glass page-container"
       style={{ maxWidth: '600px' }}
     >
+      <Helmet>
+        <title>Contact Us | Support for LearnPath Users & Partners</title>
+        <meta name="description" content="Reach out to the LearnPath team for support, partnership opportunities, or to provide feedback on our AI learning roadmaps." />
+      </Helmet>
+
       <h1 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800', lineHeight: 1.2 }}>Contact <span className="text-gradient">Us</span></h1>
       <p style={{ color: 'var(--text-secondary)', marginBottom: '32px' }}>
         Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.

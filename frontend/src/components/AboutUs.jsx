@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 export const AboutUs = () => {
   return (
@@ -9,6 +10,11 @@ export const AboutUs = () => {
       className="glass page-container"
       style={{ maxWidth: '800px' }}
     >
+      <Helmet>
+        <title>About LearnPath | Our Mission to Democratize Education</title>
+        <meta name="description" content="Learn more about LearnPath, our mission to provide AI-powered personalized learning roadmaps, and how we curate the best free educational resources." />
+      </Helmet>
+
       <h1 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800', lineHeight: 1.2 }}>About <span className="text-gradient">LearnPath</span></h1>
       
       <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '20px' }}>

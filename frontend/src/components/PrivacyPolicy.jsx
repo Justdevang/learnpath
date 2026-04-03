@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 export const PrivacyPolicy = () => {
   return (
@@ -9,6 +10,11 @@ export const PrivacyPolicy = () => {
       className="glass page-container"
       style={{ maxWidth: '800px' }}
     >
+      <Helmet>
+        <title>Privacy Policy | Your Data & Privacy at LearnPath</title>
+        <meta name="description" content="Read the LearnPath privacy policy to understand how we handle your data, our commitment to privacy, and our use of cookies." />
+      </Helmet>
+
       <h1 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800', lineHeight: 1.2 }}>Privacy <span className="text-gradient">Policy</span></h1>
       
       <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '20px' }}>

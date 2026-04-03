@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Home, Compass } from 'lucide-react';
 
@@ -11,6 +12,11 @@ export const NotFound = () => {
       className="glass page-container"
       style={{ textAlign: 'center', padding: '80px 40px', maxWidth: '600px', marginTop: '40px' }}
     >
+      <Helmet>
+        <title>404 Page Not Found | LearnPath</title>
+        <meta name="robots" content="noindex" />
+      </Helmet>
+
       <div style={{ marginBottom: '24px', display: 'flex', justifyContent: 'center' }}>
         <Compass size={64} style={{ color: 'var(--accent-primary)', opacity: 0.8 }} />
       </div>

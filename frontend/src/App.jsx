@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { useState, lazy, Suspense, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -25,7 +25,10 @@ const PageLoader = () => (
   </div>
 );
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const canonicalUrl = `https://learnpath.qzz.io${location.pathname === '/' ? '' : location.pathname.replace(/\/$/, '')}`;
+
   // Performance Optimization: Defer Google Tag Manager manually to improve initial load metrics
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -86,7 +89,12 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
+      <Helmet>
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:url" content={canonicalUrl} />
+      </Helmet>
+      
       <MazeBackground />
       <CookieBanner />
 
@@ -128,6 +136,14 @@ function App() {
         <Footer />
         <AdPlaceholder type="mobile-anchor" />
       </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

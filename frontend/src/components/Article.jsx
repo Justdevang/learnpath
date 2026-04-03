@@ -11,22 +11,7 @@ export const Article = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (article) {
-      document.title = `${article.title} | LearnPath`;
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) {
-        meta.setAttribute('content', article.metaDescription);
-      }
-    }
-    
-    return () => {
-      document.title = "LearnPath | AI Personalized Learning Roadmaps";
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) {
-        meta.setAttribute('content', "LearnPath - An AI-powered personalized learning roadmap generator. Tell us your goals and we will generate a free, step-by-step curriculum for you using top-tier tutorials.");
-      }
-    };
-  }, [id, article]);
+  }, [id]);
 
   if (!article) {
     return (
@@ -111,6 +96,8 @@ export const Article = () => {
   return (
     <div style={{ maxWidth: '900px', margin: '0 auto', paddingBottom: '100px' }}>
       <Helmet>
+        <title>{article.title} | LearnPath</title>
+        <meta name="description" content={article.metaDescription} />
         <script type="application/ld+json">
           {JSON.stringify(article.schema)}
         </script>

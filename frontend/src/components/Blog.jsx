@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { articles } from '../data/articles';
 
 export const Blog = () => {
@@ -23,6 +24,11 @@ export const Blog = () => {
       className="page-container"
       style={{ maxWidth: '800px' }}
     >
+      <Helmet>
+        <title>LearnPath Blog | Expert Guides, Tutorials & Career Insights</title>
+        <meta name="description" content="Explore our library of technology-focused articles, career advice, and deep dives into AI, development, and business skills." />
+      </Helmet>
+
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
         <h1 style={{ fontSize: '32px', marginBottom: '12px', fontWeight: '800', lineHeight: 1.2 }}>Articles & <span className="text-gradient">Guides</span></h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem' }}>
