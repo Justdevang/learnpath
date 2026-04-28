@@ -5,10 +5,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.learnpath.qzz.io"
+          "value": "www.roadmaptic.qzz.io"
         }
       ],
-      "destination": "https://learnpath.qzz.io/$1",
+      "destination": "https://roadmaptic.qzz.io/$1",
       "statusCode": 301
     }
   ],

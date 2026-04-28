@@ -2,12 +2,11 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { articles } from '../data/articles';
+import { ArrowRight, Search, ArrowDown } from 'lucide-react';
 
 export const Blog = () => {
-  // Helper to get a consistent but dynamic date for each article
   const getDynamicDate = (index) => {
     const d = new Date();
-    // Offset each article by its index to make the blog look natural (posted over several days)
     d.setDate(d.getDate() - (index % 5)); 
     return d.toLocaleDateString('en-US', { 
       year: 'numeric', 
@@ -16,45 +15,174 @@ export const Blog = () => {
     });
   };
 
+  const getImage = (index) => `https://loremflickr.com/800/600/tech?lock=${index + 1}`;
+  const heroImage = "https://loremflickr.com/1600/800/technology,learning?lock=100";
+  const ctaImage = "https://loremflickr.com/1600/600/technology,future?lock=101";
+
+  // If there are not enough articles, fallback gracefully
+  const popularMain = articles[0] || articles[0]; 
+  const popularSide = articles.slice(1, 4);
+  const latestArticles = articles.slice(4);
+
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
       className="page-container"
-      style={{ maxWidth: '800px' }}
+      style={{ maxWidth: '1200px', padding: '0 20px 80px', margin: '0 auto' }}
     >
       <Helmet>
-        <title>LearnPath Blog | Expert Guides, Tutorials & Career Insights</title>
+        <title>Roadmaptic Blog | Expert Guides, Tutorials & Career Insights</title>
         <meta name="description" content="Explore our library of technology-focused articles, career advice, and deep dives into AI, development, and business skills." />
       </Helmet>
 
-      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <h1 style={{ fontSize: '32px', marginBottom: '12px', fontWeight: '800', lineHeight: 1.2 }}>Articles & <span className="text-gradient">Guides</span></h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem' }}>
-          In-depth tutorials, career advice, and deep dives into technology.
-        </p>
+      {/* 1. Hero Section */}
+      <div style={{ 
+        width: '100%', 
+        height: 'clamp(400px, 60vh, 600px)', 
+        borderRadius: '32px', 
+        overflow: 'hidden', 
+        position: 'relative', 
+        marginBottom: '80px',
+        marginTop: '20px'
+      }}>
+        <img src={heroImage} alt="Tech learning" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(9,9,11,0.85) 0%, rgba(9,9,11,0.4) 100%)' }}></div>
+        
+        <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 8%' }}>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: '800', lineHeight: 1.1, color: '#fff', maxWidth: '800px', marginBottom: '40px', letterSpacing: '-0.02em' }}>
+            Utilization of Technology to Supercharge Your Career
+          </h1>
+          
+          {/* Search Bar */}
+          <div style={{ display: 'flex', alignItems: 'center', background: '#fff', borderRadius: '100px', padding: '8px', maxWidth: '500px', width: '100%' }}>
+            <Search size={20} color="#666" style={{ marginLeft: '16px', marginRight: '12px' }} />
+            <input 
+              type="text" 
+              placeholder="Search articles..." 
+              style={{ border: 'none', outline: 'none', flex: 1, background: 'transparent', fontSize: '1rem', color: '#000', minWidth: 0 }}
+            />
+            <button style={{ background: 'var(--accent-primary)', color: '#fff', border: 'none', borderRadius: '100px', padding: '12px 24px', fontSize: '0.95rem', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+              Search <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+
+        {/* Explore More Bottom Right */}
+        <div style={{ position: 'absolute', bottom: '40px', right: '40px', display: 'none', alignItems: 'center', gap: '12px', color: '#fff', fontWeight: '500' }} className="desktop-only-flex">
+          Explore More
+          <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>
+            <ArrowDown size={20} />
+          </div>
+        </div>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        {articles.map((article, index) => (
-          <Link key={article.id} to={`/blog/${article.id}`} style={{ textDecoration: 'none', display: 'block' }}>
-            <div className="glass" style={{ padding: '24px', cursor: 'pointer' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', fontWeight: '600', textTransform: 'uppercase' }}>{article.category}</span>
-                <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{getDynamicDate(index)}</span>
+      {/* 2. Popular Articles */}
+      {popularMain && (
+        <div style={{ marginBottom: '100px' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: '800', marginBottom: '40px', color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>Popular Articles</h2>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px', alignItems: 'start' }}>
+            {/* Left Large Article */}
+            <Link to={`/blog/${popularMain.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div>
+                <div style={{ width: '100%', aspectRatio: '16/10', borderRadius: '24px', overflow: 'hidden', marginBottom: '24px', border: '1px solid var(--border-color)' }}>
+                  <img src={getImage(0)} alt={popularMain.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} />
+                </div>
+                <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '12px' }}>{getDynamicDate(0)}</div>
+                <h3 style={{ fontSize: '1.8rem', fontWeight: '800', marginBottom: '16px', lineHeight: 1.3, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>{popularMain.title}</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>{popularMain.snippet}</p>
               </div>
-              <h3 style={{ fontSize: '20px', margin: '12px 0 8px', color: 'var(--text-primary)' }}>{article.title}</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', margin: 0 }}>{article.snippet}</p>
-              <div style={{ marginTop: '16px', fontSize: '0.9rem', color: 'var(--accent-primary)', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                Read Article &rarr;
-              </div>
+            </Link>
+
+            {/* Right Side Stacked Articles */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              {popularSide.map((article, i) => (
+                <Link key={article.id} to={`/blog/${article.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', gap: '24px', alignItems: 'center' }}>
+                  <div style={{ width: 'clamp(120px, 30%, 200px)', aspectRatio: '4/3', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid var(--border-color)' }}>
+                    <img src={getImage(i + 1)} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '8px' }}>{getDynamicDate(i + 1)}</div>
+                    <h4 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-primary)', lineHeight: 1.4, marginBottom: '8px' }}>{article.title}</h4>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{article.snippet}</p>
+                  </div>
+                </Link>
+              ))}
             </div>
-          </Link>
-        ))}
+          </div>
+        </div>
+      )}
+
+      {/* 3. Latest Articles Grid */}
+      {latestArticles.length > 0 && (
+        <div style={{ marginBottom: '80px' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: '800', marginBottom: '40px', color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>Latest Articles</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+            {latestArticles.map((article, i) => (
+              <Link key={article.id} to={`/blog/${article.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div>
+                  <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '20px', overflow: 'hidden', marginBottom: '20px', border: '1px solid var(--border-color)' }}>
+                    <img src={getImage(i + 4)} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '12px' }}>{getDynamicDate(i + 4)}</div>
+                  <h4 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-primary)', lineHeight: 1.4, marginBottom: '12px' }}>{article.title}</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>{article.snippet}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Pagination */}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', marginBottom: '120px', flexWrap: 'wrap' }}>
+        <button style={{ background: 'transparent', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '10px 20px', borderRadius: '100px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '500' }}>
+           &larr; Previous
+        </button>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <span style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'var(--accent-primary)', color: '#fff', fontWeight: '600' }}>1</span>
+          <span style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', color: 'var(--text-primary)', fontWeight: '500', cursor: 'pointer', border: '1px solid transparent' }}>2</span>
+          <span style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', color: 'var(--text-primary)', fontWeight: '500', cursor: 'pointer', border: '1px solid transparent' }}>3</span>
+        </div>
+        <button style={{ background: 'transparent', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '10px 20px', borderRadius: '100px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '500' }}>
+           Next &rarr;
+        </button>
       </div>
 
-
+      {/* 4. Bottom CTA */}
+      <div style={{ 
+        width: '100%', 
+        height: '400px', 
+        borderRadius: '32px', 
+        overflow: 'hidden', 
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center'
+      }}>
+        <img src={ctaImage} alt="CTA" style={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(9,9,11,0.75)' }}></div>
+        
+        <div style={{ position: 'relative', zIndex: 1, padding: '0 20px', width: '100%' }}>
+          <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '800', color: '#fff', marginBottom: '40px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+            Get involved in the <br/>tech learning uprising
+          </h2>
+          
+          <div style={{ display: 'flex', alignItems: 'center', background: '#fff', borderRadius: '100px', padding: '6px', maxWidth: '450px', margin: '0 auto', width: '100%' }}>
+            <input 
+              type="email" 
+              placeholder="Type your email address" 
+              style={{ border: 'none', outline: 'none', flex: 1, background: 'transparent', fontSize: '1rem', color: '#000', paddingLeft: '20px', minWidth: 0 }}
+            />
+            <button style={{ background: 'var(--accent-primary)', color: '#fff', border: 'none', borderRadius: '100px', padding: '12px 28px', fontSize: '1rem', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+              Join Now <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };

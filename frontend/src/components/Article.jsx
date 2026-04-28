@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, TrendingUp, DollarSign } from 'lucide-react';
+import { ArrowLeft, Clock, TrendingUp, Share2, Bookmark, ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { articles } from '../data/articles';
 import { AdPlaceholder } from './AdPlaceholder';
@@ -24,6 +24,17 @@ export const Article = () => {
     );
   }
 
+  const getArticleImage = () => {
+    const images = {
+      'ai-agents': 'https://loremflickr.com/1200/600/ai,robot?lock=300',
+      'quantum-safe': 'https://loremflickr.com/1200/600/security,cyber?lock=301',
+      'rust-edge': 'https://loremflickr.com/1200/600/server,cloud?lock=302'
+    };
+    return images[id] || 'https://loremflickr.com/1200/600/tech,code?lock=303';
+  };
+
+  const articleImage = getArticleImage();
+
   // Enhanced renderer for the more complex markdown template
   const renderContent = (content) => {
     return content.split('\n').map((line, index) => {
@@ -33,10 +44,10 @@ export const Article = () => {
       
       // Headers
       if (trimmedLine.startsWith('### ')) {
-        return <h3 key={index} style={{ fontSize: '22px', marginTop: '32px', marginBottom: '16px', color: 'var(--text-primary)', fontWeight: '700' }}>{trimmedLine.replace('### ', '')}</h3>;
+        return <h3 key={index} style={{ fontSize: '1.75rem', marginTop: '48px', marginBottom: '20px', color: 'var(--text-primary)', fontWeight: '800', letterSpacing: '-0.01em' }}>{trimmedLine.replace('### ', '')}</h3>;
       }
       if (trimmedLine.startsWith('## ')) {
-        return <h2 key={index} style={{ fontSize: '32px', marginTop: '48px', marginBottom: '24px', color: 'var(--text-primary)', fontWeight: '800', borderBottom: '1px solid var(--border-color)', paddingBottom: '12px' }}>{trimmedLine.replace('## ', '')}</h2>;
+        return <h2 key={index} style={{ fontSize: '2.25rem', marginTop: '56px', marginBottom: '28px', color: 'var(--text-primary)', fontWeight: '800', letterSpacing: '-0.02em', borderBottom: '1px solid var(--border-color)', paddingBottom: '16px' }}>{trimmedLine.replace('## ', '')}</h2>;
       }
       if (trimmedLine.startsWith('# ')) {
         return null; // The H1 is already rendered at the top of the component
@@ -44,16 +55,16 @@ export const Article = () => {
       
       // Horizontal Rule
       if (trimmedLine === '---') {
-        return <hr key={index} style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '40px 0' }} />;
+        return <hr key={index} style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '48px 0' }} />;
       }
       
       // Big CTA Button Mapping
       if (trimmedLine.startsWith('[BIG CTA BUTTON:')) {
         const buttonText = trimmedLine.match(/\[BIG CTA BUTTON: (.*?)\]/)?.[1] || "Generate My Roadmap";
         return (
-          <div key={index} style={{ margin: '48px 0', textAlign: 'center' }}>
-            <Link to="/" className="btn-primary" style={{ display: 'inline-block', padding: '16px 48px', fontSize: '1.2rem', textDecoration: 'none' }}>
-              {buttonText}
+          <div key={index} style={{ margin: '56px 0', textAlign: 'center' }}>
+            <Link to="/" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 40px', fontSize: '1.15rem', textDecoration: 'none', borderRadius: '100px' }}>
+              {buttonText} <ArrowRight size={18} />
             </Link>
           </div>
         );
@@ -62,9 +73,9 @@ export const Article = () => {
       // List items
       if (trimmedLine.startsWith('- ')) {
         return (
-          <div key={index} style={{ display: 'flex', gap: '12px', marginBottom: '12px', paddingLeft: '8px' }}>
-            <span style={{ color: 'var(--accent-primary)', fontWeight: 'bold' }}>•</span>
-            <span style={{ color: 'var(--text-secondary)' }}>{parseBoldText(trimmedLine.substring(2))}</span>
+          <div key={index} style={{ display: 'flex', gap: '16px', marginBottom: '16px', paddingLeft: '8px' }}>
+            <span style={{ color: 'var(--accent-primary)', fontWeight: 'bold', fontSize: '1.2rem', lineHeight: '1.5' }}>•</span>
+            <span style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', lineHeight: '1.8' }}>{parseBoldText(trimmedLine.substring(2))}</span>
           </div>
         );
       }
@@ -72,11 +83,11 @@ export const Article = () => {
       // Regular Paragraphs with bold text parsing
       return (
         <React.Fragment key={index}>
-          <p style={{ marginBottom: '20px', fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+          <p style={{ marginBottom: '24px', fontSize: '1.15rem', color: 'var(--text-secondary)', lineHeight: '1.9' }}>
             {parseBoldText(trimmedLine)}
           </p>
           {/* Inject an ad after the 2nd H2 section (approximately) */}
-          {trimmedLine.startsWith('## ') && index > 10 && <AdPlaceholder type="in-content" />}
+          {trimmedLine.startsWith('## ') && index > 10 && <div style={{ margin: '48px 0' }}><AdPlaceholder type="in-content" /></div>}
         </React.Fragment>
       );
     });
@@ -94,90 +105,124 @@ export const Article = () => {
   };
 
   return (
-    <div style={{ maxWidth: '900px', margin: '0 auto', paddingBottom: '100px' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', paddingBottom: '120px', paddingLeft: '20px', paddingRight: '20px' }}>
       <Helmet>
-        <title>{article.title} | LearnPath</title>
+        <title>{article.title} | Roadmaptic</title>
         <meta name="description" content={article.metaDescription} />
+        <meta name="keywords" content={`${article.skillName}, tutorial, guide, career roadmap, learn ${article.skillName}, developer skills`} />
         <script type="application/ld+json">
           {JSON.stringify(article.schema)}
         </script>
       </Helmet>
 
-      <Link to="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent-primary)', textDecoration: 'none', marginBottom: '32px', fontSize: '0.9rem', fontWeight: '600' }}>
-        <ArrowLeft size={16} /> Back to Learning Guides
-      </Link>
-      
-      <div className="glass" style={{ padding: '0', overflow: 'hidden' }}>
-        <div className="article-header" style={{ borderBottom: '1px solid var(--border-color)', background: 'rgba(255,255,255,0.02)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--accent-secondary)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', background: 'rgba(var(--accent-secondary-rgb), 0.1)', padding: '4px 12px', borderRadius: '100px' }}>
+      <div style={{ marginTop: '20px', marginBottom: '40px' }}>
+        <Link to="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.95rem', fontWeight: '600', transition: 'color 0.2s' }}>
+          <ArrowLeft size={16} /> Back to Learning Guides
+        </Link>
+      </div>
+
+      {/* Dribbble Style Hero */}
+      <div style={{ textAlign: 'center', marginBottom: '56px', maxWidth: '800px', margin: '0 auto 56px' }}>
+        <div style={{ display: 'inline-block', marginBottom: '24px' }}>
+           <span style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', background: 'rgba(59,130,246, 0.1)', padding: '8px 20px', borderRadius: '100px' }}>
               {article.category}
             </span>
-            <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>&bull;</span>
-            <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-              Updated {(() => {
+        </div>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '32px', lineHeight: '1.1', fontWeight: '800', letterSpacing: '-0.02em' }}>{article.title}</h1>
+        
+        {/* Author Byline */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
+          <img src="https://api.dicebear.com/7.x/initials/svg?seed=Roadmaptic+Team&backgroundColor=3b82f6&textColor=fff" alt="Roadmaptic Team" style={{ width: '56px', height: '56px', borderRadius: '50%', border: '2px solid var(--border-color)' }} />
+          <div style={{ textAlign: 'left' }}>
+            <div style={{ fontWeight: '700', fontSize: '1.1rem', color: 'var(--text-primary)' }}>Roadmaptic Team</div>
+            <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+              Published {(() => {
                 const index = articles.findIndex(a => a.id === article.id);
                 const d = new Date();
                 d.setDate(d.getDate() - (index % 5));
                 return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-              })()}
-            </span>
-          </div>
-          
-          <h1 style={{ fontSize: '42px', marginBottom: '32px', lineHeight: '1.2', fontWeight: '800' }}>{article.title}</h1>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginTop: '40px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '16px', background: 'rgba(255,255,255,0.03)', borderRadius: '12px' }}>
-              <Clock size={20} style={{ color: 'var(--accent-primary)' }} />
-              <div>
-                <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Time Commitment</div>
-                <div style={{ fontWeight: '600' }}>{article.timeCommitment}</div>
-              </div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '16px', background: 'rgba(255,255,255,0.03)', borderRadius: '12px' }}>
-              <TrendingUp size={20} style={{ color: 'var(--accent-primary)' }} />
-              <div>
-                <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Market Demand</div>
-                <div style={{ fontWeight: '600' }}>{article.marketDemand}</div>
-              </div>
+              })()} &bull; 8 min read
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="article-body">
-          <div style={{ color: 'var(--text-primary)', lineHeight: '1.8', fontSize: '1.15rem' }}>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.3rem', lineHeight: '1.6', marginBottom: '48px', borderLeft: '4px solid var(--accent-primary)', paddingLeft: '24px' }}>
+      {/* Hero Image */}
+      <div style={{ width: '100%', height: 'clamp(300px, 50vw, 550px)', borderRadius: '32px', overflow: 'hidden', marginBottom: '80px', position: 'relative', border: '1px solid var(--border-color)' }}>
+        <img src={articleImage} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </div>
+
+      {/* Main Content Layout with Sticky Sidebar */}
+      <div style={{ display: 'flex', gap: '60px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+        
+        {/* Left Sticky Sidebar (Meta Info) */}
+        <div style={{ flex: '1 1 250px', position: 'sticky', top: '100px' }}>
+          <div className="glass" style={{ padding: '32px', borderRadius: '24px' }}>
+             <h4 style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '24px', fontWeight: '700' }}>Article Details</h4>
+             
+             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+                <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '12px', borderRadius: '12px' }}><Clock size={20} style={{ color: 'var(--accent-primary)' }} /></div>
+                <div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Time to complete</div>
+                  <div style={{ fontWeight: '700', fontSize: '1rem', color: 'var(--text-primary)' }}>{article.timeCommitment}</div>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+                <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '12px', borderRadius: '12px' }}><TrendingUp size={20} style={{ color: 'var(--accent-primary)' }} /></div>
+                <div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Market Demand</div>
+                  <div style={{ fontWeight: '700', fontSize: '1rem', color: 'var(--text-primary)' }}>{article.marketDemand}</div>
+                </div>
+              </div>
+
+              <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '0 0 24px 0' }} />
+              
+              <div style={{ display: 'flex', gap: '16px' }}>
+                <button className="btn-secondary" style={{ padding: '12px', borderRadius: '12px', flex: 1, display: 'flex', justifyContent: 'center' }}><Share2 size={20} /></button>
+                <button className="btn-secondary" style={{ padding: '12px', borderRadius: '12px', flex: 1, display: 'flex', justifyContent: 'center' }}><Bookmark size={20} /></button>
+              </div>
+          </div>
+        </div>
+
+        {/* Right Content Area */}
+        <div style={{ flex: '3 1 600px', maxWidth: '800px' }}>
+          <div className="article-body">
+            <p style={{ color: 'var(--text-primary)', fontSize: '1.4rem', lineHeight: '1.7', marginBottom: '48px', fontWeight: '500' }}>
               {article.snippet}
             </p>
             
-            {renderContent(article.content)}
-            
-            <div style={{ marginTop: '60px' }}>
-              <AdPlaceholder type="post-content" />
-            </div>
-
-            <div className="glass page-container" style={{ 
-              marginTop: '80px', 
-              borderRadius: '24px', 
-              textAlign: 'center', 
-              position: 'relative', 
-              overflow: 'hidden',
-              border: '1px solid var(--accent-primary)',
-              background: 'rgba(255, 255, 255, 0.02)'
-            }}>
-              {/* Subtle background glow */}
-              <div style={{ position: 'absolute', top: '-50%', left: '-50%', width: '200%', height: '200%', background: 'radial-gradient(circle, rgba(204, 255, 0, 0.03) 0%, transparent 70%)', zIndex: 0 }}></div>
+            <div style={{ color: 'var(--text-primary)', lineHeight: '1.9', fontSize: '1.15rem' }}>
+               {renderContent(article.content)}
               
-              <div style={{ position: 'relative', zIndex: 1 }}>
-                <h3 style={{ fontSize: '32px', marginBottom: '20px', fontWeight: '800' }}>
-                  Ready to Master <span className="text-gradient">{article.skillName}</span>?
-                </h3>
-                <p style={{ marginBottom: '32px', opacity: 0.8, fontSize: '1.1rem', maxWidth: '400px', margin: '0 auto 32px' }}>
-                  Get your step-by-step, personalized roadmap in under 60 seconds.
-                </p>
-                <Link to="/" className="btn-primary" style={{ display: 'inline-block', padding: '16px 48px', fontSize: '1.1rem', textDecoration: 'none' }}>
-                  Generate My Free Roadmap
-                </Link>
+              <div style={{ marginTop: '80px' }}>
+                <AdPlaceholder type="post-content" />
+              </div>
+
+              {/* Enhanced Minimalist CTA */}
+              <div className="glass" style={{ 
+                marginTop: '80px', 
+                padding: '64px 40px',
+                borderRadius: '32px', 
+                textAlign: 'center', 
+                position: 'relative', 
+                overflow: 'hidden',
+                background: 'linear-gradient(135deg, rgba(24,24,27,0.8), rgba(9,9,11,1))',
+                border: '1px solid rgba(59, 130, 246, 0.2)'
+              }}>
+                <div style={{ position: 'absolute', top: '-50%', left: '-50%', width: '200%', height: '200%', background: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.08) 0%, transparent 50%)', zIndex: 0 }}></div>
+                
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '16px', fontWeight: '800', letterSpacing: '-0.02em' }}>
+                    Master <span className="text-gradient">{article.skillName}</span> Today.
+                  </h3>
+                  <p style={{ marginBottom: '40px', color: 'var(--text-secondary)', fontSize: '1.15rem', maxWidth: '450px', margin: '0 auto 40px', lineHeight: 1.6 }}>
+                    Stop watching random tutorials. Get a structured, step-by-step learning roadmap tailored just for you.
+                  </p>
+                  <Link to="/" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 40px', fontSize: '1.1rem', textDecoration: 'none', borderRadius: '100px' }}>
+                    Generate Free Roadmap <ArrowRight size={18} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

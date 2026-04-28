@@ -5,7 +5,7 @@ export const Footer = () => {
     <footer style={{ marginTop: '60px', padding: '40px 0', borderTop: '1px solid var(--border-color)', background: 'var(--bg-secondary)' }}>
       <div className="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '20px' }}>
         <div style={{ maxWidth: '300px' }}>
-          <h3 className="text-gradient" style={{ fontSize: '1.2rem', marginBottom: '10px' }}>LearnPath</h3>
+          <h3 className="text-gradient" style={{ fontSize: '1.2rem', marginBottom: '10px' }}>Roadmaptic</h3>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
             AI-powered personalized learning roadmaps. Tell us your goals, and we give you the exact path to get there using the best resources.
           </p>
@@ -30,7 +30,7 @@ export const Footer = () => {
       </div>
       
       <div className="container" style={{ marginTop: '40px', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.05)', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.8rem' }}>
-        &copy; {new Date().getFullYear()} LearnPath. All rights reserved.
+        &copy; {new Date().getFullYear()} Roadmaptic. All rights reserved.
       </div>
     </footer>
   );

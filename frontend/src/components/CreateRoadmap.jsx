@@ -17,7 +17,7 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
   
   useEffect(() => {
     try {
-      const saved = JSON.parse(localStorage.getItem('learnpath_history') || '[]');
+      const saved = JSON.parse(localStorage.getItem('roadmaptic_history') || '[]');
       setHistory(saved);
     } catch(e) {}
   }, []);
@@ -28,7 +28,7 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
     setLoading(true);
     
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://learnpath-3en8.onrender.com';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://roadmaptic-3en8.onrender.com';
 
       const fetchParams = { 
         currentSkills: skills, 
@@ -273,7 +273,7 @@ export const CreateRoadmap = ({ setRoadmapData }) => {
       )}
 
       <div style={{ marginTop: '40px', padding: '0 20px', color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'center', opacity: 0.7 }}>
-        <p>LearnPath is an advanced <strong>AI Personalized Learning Roadmap</strong> generator designed for specialized developers, business leaders, and scientific researchers. Tell us your target career, current skills, and weekly availability, and our system builds a comprehensive, week-by-week curriculum using the best free tutorials, documentation, and real YouTube videos on the internet. Start your structured professional journey today.</p>
+        <p>Roadmaptic is an advanced <strong>AI Personalized Learning Roadmap</strong> generator designed for specialized developers, business leaders, and scientific researchers. Tell us your target career, current skills, and weekly availability, and our system builds a comprehensive, week-by-week curriculum using the best free tutorials, documentation, and real YouTube videos on the internet. Start your structured professional journey today.</p>
       </div>
     </motion.div>
   );

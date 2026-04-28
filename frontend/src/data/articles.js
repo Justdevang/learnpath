@@ -16,8 +16,8 @@ export const articles = [
       "description": "Professional roadmap for building autonomous AI agents in 2026",
       "provider": {
         "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
+        "name": "Roadmaptic",
+        "url": "https://www.roadmaptic.qzz.io/"
       }
     }
   },
@@ -38,8 +38,8 @@ export const articles = [
       "description": "Roadmap for implementing PQC in web applications",
       "provider": {
         "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
+        "name": "Roadmaptic",
+        "url": "https://www.roadmaptic.qzz.io/"
       }
     }
   },
@@ -60,8 +60,8 @@ export const articles = [
       "description": "Advanced roadmap for Rust and Wasm development",
       "provider": {
         "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
+        "name": "Roadmaptic",
+        "url": "https://www.roadmaptic.qzz.io/"
       }
     }
   },
@@ -82,8 +82,8 @@ export const articles = [
       "description": "Professional roadmap for AI ethics and compliance",
       "provider": {
         "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
+        "name": "Roadmaptic",
+        "url": "https://www.roadmaptic.qzz.io/"
       }
     }
   },
@@ -104,8 +104,8 @@ export const articles = [
       "description": "Roadmap for corporate sustainability professionals",
       "provider": {
         "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
+        "name": "Roadmaptic",
+        "url": "https://www.roadmaptic.qzz.io/"
       }
     }
   },
@@ -126,8 +126,8 @@ export const articles = [
       "description": "Professional roadmap for neuro-interface UX design",
       "provider": {
         "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
+        "name": "Roadmaptic",
+        "url": "https://www.roadmaptic.qzz.io/"
       }
     }
   },
@@ -148,8 +148,8 @@ export const articles = [
       "description": "Professional roadmap for climate adaptation and infrastructure",
       "provider": {
         "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
+        "name": "Roadmaptic",
+        "url": "https://www.roadmaptic.qzz.io/"
       }
     }
   },
@@ -170,8 +170,8 @@ export const articles = [
       "description": "Advanced roadmap for Web5 and ZK-Proofs",
       "provider": {
         "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
+        "name": "Roadmaptic",
+        "url": "https://www.roadmaptic.qzz.io/"
       }
     }
   },
@@ -192,8 +192,8 @@ export const articles = [
       "description": "Advanced roadmap for hybrid AI architectures",
       "provider": {
         "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
+        "name": "Roadmaptic",
+        "url": "https://www.roadmaptic.qzz.io/"
       }
     }
   },
@@ -214,8 +214,8 @@ export const articles = [
       "description": "Professional roadmap for genomic data engineering",
       "provider": {
         "@type": "Organization",
-        "name": "LearnPath",
-        "url": "https://www.learnpath.qzz.io/"
+        "name": "Roadmaptic",
+        "url": "https://www.roadmaptic.qzz.io/"
       }
     }
   }

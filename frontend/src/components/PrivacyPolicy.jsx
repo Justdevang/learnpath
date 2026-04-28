@@ -11,8 +11,8 @@ export const PrivacyPolicy = () => {
       style={{ maxWidth: '800px' }}
     >
       <Helmet>
-        <title>Privacy Policy | Your Data & Privacy at LearnPath</title>
-        <meta name="description" content="Read the LearnPath privacy policy to understand how we handle your data, our commitment to privacy, and our use of cookies." />
+        <title>Privacy Policy | Your Data & Privacy at Roadmaptic</title>
+        <meta name="description" content="Read the Roadmaptic privacy policy to understand how we handle your data, our commitment to privacy, and our use of cookies." />
       </Helmet>
 
       <h1 style={{ fontSize: '32px', marginBottom: '24px', fontWeight: '800', lineHeight: 1.2 }}>Privacy <span className="text-gradient">Policy</span></h1>
@@ -21,7 +21,7 @@ export const PrivacyPolicy = () => {
         <p>Last updated: {new Date().toLocaleDateString()}</p>
         
         <p>
-          LearnPath ("we", "us", or "our") operates the learnpath.qzz.io website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
+          Roadmaptic ("we", "us", or "our") operates the roadmaptic.qzz.io website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
         </p>
 
         <h3 style={{ color: 'var(--text-primary)', fontSize: '20px', marginTop: '16px', marginBottom: '8px' }}>1. Information Collection and Use</h3>

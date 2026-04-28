@@ -7,7 +7,7 @@ import { saveRoadmapToFirebase } from '../firebase/api';
 
 export const RoadmapView = ({ roadmapData, originalParams }) => {
   const navigate = useNavigate();
-  const roadmapKey = originalParams?.targetRole ? `learnpath_progress_${originalParams.targetRole.replace(/\s+/g, '_')}` : 'learnpath_progress_default';
+  const roadmapKey = originalParams?.targetRole ? `roadmaptic_progress_${originalParams.targetRole.replace(/\s+/g, '_')}` : 'roadmaptic_progress_default';
   
   const [completedTopics, setCompletedTopics] = useState(() => {
     try {
@@ -25,12 +25,6 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
     }
   }, [completedTopics, roadmapKey]);
   
-  useEffect(() => {
-    if (!roadmapData) {
-      navigate('/');
-    }
-  }, [roadmapData, navigate]);
-
   if (!roadmapData) return null;
 
   // Calculate progress
@@ -80,27 +74,11 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
       transition={{ duration: 0.4 }}
       style={{ paddingBottom: '60px' }}
     >
-      <button 
-        onClick={() => navigate('/')}
-        style={{
-          background: 'none',
-          border: 'none',
-          color: 'var(--accent-primary)',
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '6px',
-          marginBottom: '20px',
-          fontSize: '14px',
-          fontWeight: '600'
-        }}
-      >
-        ← Create New Roadmap
-      </button>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '28px', flexWrap: 'wrap', gap: '16px' }}>
+
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '20px', flexWrap: 'wrap', gap: '12px' }}>
         <div>
-          <h2 style={{ fontSize: '28px', marginBottom: '6px', fontWeight: '800' }}>Your Learning <span className="text-gradient">Roadmap</span></h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>Follow this structured path to achieve your goals.</p>
+          <h2 style={{ fontSize: '24px', marginBottom: '4px', fontWeight: '800' }}>Your Learning <span className="text-gradient">Roadmap</span></h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Follow this structured path to achieve your goals.</p>
         </div>
         <div className="action-buttons-wrap" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
           {shareLink ? (
@@ -125,8 +103,8 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
             className="btn-primary" 
             style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
             onClick={(e) => {
-              localStorage.setItem('learnpath_active_roadmap', JSON.stringify(roadmapData));
-              localStorage.setItem('learnpath_active_params', JSON.stringify(originalParams));
+              localStorage.setItem('roadmaptic_active_roadmap', JSON.stringify(roadmapData));
+              localStorage.setItem('roadmaptic_active_params', JSON.stringify(originalParams));
               const btn = e.currentTarget;
               const origText = btn.innerHTML;
               btn.innerHTML = '✓ Saved!';
@@ -146,7 +124,7 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
         {/* Mobile-only panning instruction */}
         <div className="mobile-only-instruction" style={{ 
           display: 'none', 
-          background: 'rgba(204, 255, 0, 0.05)', 
+          background: 'rgba(59, 130, 246, 0.08)', 
           padding: '10px 14px', 
           borderRadius: '8px', 
           border: '1px solid var(--border-color)',
@@ -170,10 +148,10 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
       </div>
 
       {/* Progress Bar */}
-      <div className="glass" style={{ padding: '20px 24px', marginBottom: '32px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-          <span style={{ fontWeight: '600', fontSize: '0.95rem' }}>Overall Progress</span>
-          <span className="text-gradient" style={{ fontWeight: '800', fontSize: '1.1rem' }}>{progressPercent}%</span>
+      <div className="glass" style={{ padding: '16px 20px', marginBottom: '24px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+          <span style={{ fontWeight: '600', fontSize: '0.9rem' }}>Overall Progress</span>
+          <span className="text-gradient" style={{ fontWeight: '800', fontSize: '1rem' }}>{progressPercent}%</span>
         </div>
         <div style={{ width: '100%', height: '8px', background: 'var(--bg-tertiary)', borderRadius: '4px', overflow: 'hidden' }}>
           <motion.div 
@@ -194,13 +172,13 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: weekIndex * 0.08 }}
             className="glass"
-            style={{ padding: '24px', borderLeft: '4px solid var(--accent-primary)' }}
+            style={{ padding: '20px', borderLeft: '3px solid var(--accent-primary)' }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <div style={{ background: 'var(--bg-secondary)', padding: '4px 10px', borderRadius: '6px', fontSize: '12px', fontWeight: '700', border: '1px solid var(--border-color)', color: 'var(--accent-secondary)', textTransform: 'uppercase', whiteSpace: 'nowrap', flexShrink: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+              <div style={{ background: 'var(--bg-secondary)', padding: '4px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: '700', border: '1px solid var(--border-color)', color: 'var(--accent-secondary)', textTransform: 'uppercase', whiteSpace: 'nowrap', flexShrink: 0 }}>
                 Week {weekData.week}
               </div>
-              <h3 style={{ fontSize: '20px', margin: 0 }}>{weekData.focus}</h3>
+              <h3 style={{ fontSize: '18px', margin: 0 }}>{weekData.focus}</h3>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -216,31 +194,31 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
                       display: 'flex', 
                       alignItems: 'center', 
                       justifyContent: 'space-between',
-                      padding: '14px 16px',
+                      padding: '10px 14px',
                       background: 'var(--bg-tertiary)',
                       borderRadius: 'var(--border-radius)',
                       border: isCompleted ? '1px solid var(--accent-tertiary)' : '1px solid var(--border-color)',
                       transition: 'all 0.2s ease'
                     }}
                   >
-                    <div className="topic-card-text" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                    <div className="topic-card-text" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                       <button 
                         onClick={() => toggleTopic(topicId)}
                         style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}
                       >
                         {isCompleted ? (
-                          <CheckCircle size={22} color="var(--accent-tertiary)" />
+                          <CheckCircle size={18} color="var(--accent-tertiary)" />
                         ) : (
-                          <Circle size={22} color="var(--text-secondary)" />
+                          <Circle size={18} color="var(--text-secondary)" />
                         )}
                       </button>
                       <div>
-                        <h4 style={{ margin: 0, fontSize: '15px', fontWeight: '600', textDecoration: isCompleted ? 'line-through' : 'none', color: isCompleted ? 'var(--text-secondary)' : 'var(--text-primary)' }}>
+                        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600', textDecoration: isCompleted ? 'line-through' : 'none', color: isCompleted ? 'var(--text-secondary)' : 'var(--text-primary)' }}>
                           {topic.name}
                         </h4>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px' }}>
-                          <Play size={12} color="var(--accent-primary)" />
-                          <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>{topic.resourceName}</span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginTop: '2px' }}>
+                          <Play size={10} color="var(--accent-primary)" />
+                          <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>{topic.resourceName}</span>
                         </div>
                       </div>
                     </div>
@@ -250,10 +228,10 @@ export const RoadmapView = ({ roadmapData, originalParams }) => {
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="btn-secondary topic-card-action"
-                      style={{ padding: '6px 12px', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none' }}
+                      style={{ padding: '4px 10px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px', textDecoration: 'none' }}
                       onClick={() => handleLearnClick(topicId)}
                     >
-                      Learn <ExternalLink size={14} />
+                      Learn <ExternalLink size={12} />
                     </a>
                   </div>
                 );

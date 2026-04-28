@@ -13,7 +13,7 @@ export const NotFound = () => {
       style={{ textAlign: 'center', padding: '80px 40px', maxWidth: '600px', marginTop: '40px' }}
     >
       <Helmet>
-        <title>404 Page Not Found | LearnPath</title>
+        <title>404 Page Not Found | Roadmaptic</title>
         <meta name="robots" content="noindex" />
       </Helmet>
 

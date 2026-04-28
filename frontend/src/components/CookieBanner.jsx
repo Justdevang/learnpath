@@ -7,7 +7,7 @@ export const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('learnpath_cookie_consent');
+    const consent = localStorage.getItem('roadmaptic_cookie_consent');
     if (!consent) {
       // Small delay so it animates in nicely after initial load
       const timer = setTimeout(() => setIsVisible(true), 1500);
@@ -26,7 +26,7 @@ export const CookieBanner = () => {
   }, []);
 
   const acceptCookies = () => {
-    localStorage.setItem('learnpath_cookie_consent', 'true');
+    localStorage.setItem('roadmaptic_cookie_consent', 'true');
     setIsVisible(false);
     
     // Dispatch instant update when user clicks accept
@@ -41,7 +41,7 @@ export const CookieBanner = () => {
   };
 
   const declineCookies = () => {
-    localStorage.setItem('learnpath_cookie_consent', 'false');
+    localStorage.setItem('roadmaptic_cookie_consent', 'false');
     setIsVisible(false);
     
     // Update consent to denied

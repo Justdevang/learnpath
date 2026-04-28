@@ -14,4 +14,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://learnpath.qzz.io/sitemap.xml
+Sitemap: https://roadmaptic.qzz.io/sitemap.xml

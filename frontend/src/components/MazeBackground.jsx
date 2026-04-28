@@ -116,7 +116,8 @@ export const MazeBackground = () => {
               transformStyle: 'preserve-3d',
             }}>
               {maze.map((row, y) => row.map((cell, x) => {
-                const borderStyle = `1px solid rgba(204, 255, 0, ${isMobile ? '0.25' : '0.4'})`; 
+                const borderStyle = `1px solid rgba(59, 130, 246, ${isMobile ? '0.15' : '0.25'})`; 
+                const faintBorder = '1px solid rgba(255, 255, 255, 0.02)';
                 
                 return (
                   <div key={`${x}-${y}`} style={{
@@ -124,11 +125,11 @@ export const MazeBackground = () => {
                     width: `${cellSize}px`, 
                     height: `${cellSize}px`,
                     boxSizing: 'border-box',
-                    borderTop: cell.top ? borderStyle : '1px solid rgba(204, 255, 0, 0.05)',
-                    borderRight: cell.right ? borderStyle : '1px solid rgba(204, 255, 0, 0.05)',
-                    borderBottom: cell.bottom ? borderStyle : '1px solid rgba(204, 255, 0, 0.05)',
-                    borderLeft: cell.left ? borderStyle : '1px solid rgba(204, 255, 0, 0.05)',
-                    backgroundColor: 'rgba(10, 10, 12, 0.1)', // Slightly lighter for visibility
+                    borderTop: cell.top ? borderStyle : faintBorder,
+                    borderRight: cell.right ? borderStyle : faintBorder,
+                    borderBottom: cell.bottom ? borderStyle : faintBorder,
+                    borderLeft: cell.left ? borderStyle : faintBorder,
+                    backgroundColor: 'rgba(255, 255, 255, 0.01)', // Very subtle
                   }} />
                 );
               }))}
@@ -156,8 +157,8 @@ export const MazeBackground = () => {
               marginLeft: `-${(cellSize * 0.6) / 2}px`,
               marginTop: `-${(cellSize * 0.6) / 2}px`,
               borderRadius: '50%',
-              background: 'radial-gradient(circle at 30% 30%, #ffea00, #b2a300)',
-              boxShadow: '0 0 20px rgba(255, 234, 0, 0.8), 0 10px 10px rgba(0,0,0,0.5)',
+              background: 'radial-gradient(circle at 30% 30%, #60a5fa, #2563eb)',
+              boxShadow: '0 0 20px rgba(59, 130, 246, 0.6), 0 10px 10px rgba(0,0,0,0.5)',
               transform: 'translateZ(10px)',
               zIndex: 10
             }}
