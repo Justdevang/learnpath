@@ -6,20 +6,20 @@
   --bg-primary: #E8F1F2;
   --bg-secondary: #ffffff;
   --bg-tertiary: #B3EFB2;
-  
+
   --text-primary: #001A23;
   --text-secondary: #31493C;
   --text-muted: #7A9E7E;
-  
+
   --accent-primary: #31493C;
   --accent-secondary: #7A9E7E;
   --accent-tertiary: #B3EFB2;
   --accent-warning: #eab308;
-  
+
   --border-color: rgba(49, 73, 60, 0.15);
   --border-radius: 8px;
   --transition-speed: 0.2s;
-  
+
   --glow-effect: 0 4px 14px rgba(49, 73, 60, 0.2);
 }
 
@@ -28,15 +28,15 @@
   --bg-primary: #001A23;
   --bg-secondary: #0a252f;
   --bg-tertiary: #31493C;
-  
+
   --text-primary: #E8F1F2;
   --text-secondary: #B3EFB2;
   --text-muted: #7A9E7E;
-  
+
   --accent-primary: #B3EFB2;
   --accent-secondary: #7A9E7E;
   --accent-tertiary: #E8F1F2;
-  
+
   --border-color: rgba(232, 241, 242, 0.1);
   --glow-effect: 0 4px 14px rgba(179, 239, 178, 0.2);
 }
@@ -59,7 +59,12 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -90,7 +95,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Buttons */
 .btn-primary {
   background: var(--accent-primary);
-  color: #ffffff; /* White text on blue */
+  color: #ffffff;
+  /* White text on blue */
   border: 1px solid transparent;
   padding: 8px 16px;
   border-radius: var(--border-radius);
@@ -103,7 +109,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: #2563eb; /* Darker blue */
+  background: #2563eb;
+  /* Darker blue */
   transform: translateY(-1px);
   box-shadow: var(--glow-effect);
   border-color: transparent;
@@ -178,13 +185,20 @@ h1, h2, h3, h4, h5, h6 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
@@ -222,7 +236,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsive Layout Classes */
@@ -249,16 +265,22 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 24px;
 }
 
-.article-header { padding: 40px 40px 24px; }
-.article-body { padding: 24px 40px 40px; }
+.article-header {
+  padding: 40px 40px 24px;
+}
+
+.article-body {
+  padding: 24px 40px 40px;
+}
 
 @media (max-width: 768px) {
+
   /* Layout Flow */
   .flex-responsive {
     flex-direction: column;
     gap: 8px !important;
   }
-  
+
   .glass-container {
     width: 100% !important;
     padding: 16px 14px !important;
@@ -274,37 +296,61 @@ h1, h2, h3, h4, h5, h6 {
   .page-container {
     padding: 16px 14px !important;
   }
-  
-  .article-header { padding: 24px 16px 16px !important; }
-  .article-body { padding: 16px 16px 32px !important; }
-  
+
+  .article-header {
+    padding: 24px 16px 16px !important;
+  }
+
+  .article-body {
+    padding: 16px 16px 32px !important;
+  }
+
   .container {
     padding: 0 14px !important;
   }
-  
+
   /* Extreme Typography Miniaturization */
-  h2 { font-size: 26px !important; margin-bottom: 4px !important; }
-  h3 { font-size: 16px !important; margin-bottom: 0px !important; }
-  h4 { font-size: 14px !important; }
-  p { font-size: 0.85rem !important; }
-  .input-label { font-size: 0.75rem !important; margin-bottom: 4px !important; }
-  
+  h2 {
+    font-size: 26px !important;
+    margin-bottom: 4px !important;
+  }
+
+  h3 {
+    font-size: 16px !important;
+    margin-bottom: 0px !important;
+  }
+
+  h4 {
+    font-size: 14px !important;
+  }
+
+  p {
+    font-size: 0.85rem !important;
+  }
+
+  .input-label {
+    font-size: 0.75rem !important;
+    margin-bottom: 4px !important;
+  }
+
   .text-smaller-on-mobile {
     font-size: 22px !important;
   }
-  
+
   /* Input & Button Miniaturization */
-  .input-field { 
-    padding: 8px 12px !important; 
-    font-size: 0.85rem !important; 
+  .input-field {
+    padding: 8px 12px !important;
+    font-size: 0.85rem !important;
   }
-  .btn-primary, .btn-secondary { 
-    padding: 8px 14px !important; 
-    font-size: 0.85rem !important; 
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 8px 14px !important;
+    font-size: 0.85rem !important;
     display: flex !important;
     justify-content: center !important;
   }
-  
+
   /* Cards Setup */
   .topic-card {
     flex-direction: column !important;
@@ -312,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 10px !important;
     padding: 10px 12px !important;
   }
-  
+
   .topic-card-text {
     align-items: flex-start !important;
     gap: 8px !important;
@@ -325,12 +371,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 6px 12px !important;
     font-size: 0.8rem !important;
   }
-  
+
   header {
     padding-bottom: 8px !important;
     margin-bottom: 16px !important;
   }
-  
+
   .action-buttons-wrap {
     width: 100%;
     margin-top: 4px;
@@ -338,16 +384,116 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap !important;
     gap: 8px !important;
   }
-  
+
   /* Scale down icons in input labels only, not globally */
   .input-label svg {
     width: 14px !important;
     height: 14px !important;
   }
-  
+
   /* Fix the specific map loader in D3 component container */
   .d3-mobile-wrap {
     height: 350px !important;
   }
 }
 
+/* =========================================
+   NEW GLOBAL SaaS DENSITY OVERRIDES
+   ========================================= */
+
+/* TYPOGRAPHY */
+h1, .display-headline {
+  font-size: clamp(56px, 5vw, 64px) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+h2, .section-title {
+  font-size: clamp(36px, 4vw, 40px) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+h3, .section-subtitle {
+  font-size: 20px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+p, .body-copy {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.label-caps {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+}
+
+.nav-link, nav a {
+  font-size: 13px !important;
+  text-decoration: none !important;
+  font-weight: 400 !important;
+}
+
+nav, .nav-links {
+  gap: 28px !important;
+}
+
+button, .btn-primary, .btn-secondary, .btn-ghost {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  height: 40px !important;
+  padding: 0 18px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* SPACING & COMPONENTS */
+section, .section, .page-container {
+  padding: 80px 0 !important;
+}
+
+.hero-section {
+  min-height: 100svh !important;
+  padding-top: 0 !important;
+}
+
+.card, .feature-card, .glass {
+  padding: 24px !important;
+  border-radius: 10px !important;
+}
+
+.grid-2 {
+  gap: 16px !important;
+}
+
+.grid-3 {
+  gap: 16px !important;
+}
+
+.input-field, input {
+  height: 40px !important;
+  padding: 0 14px !important;
+  font-size: 14px !important;
+}
+
+nav, .nav-bar {
+  height: 56px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.card svg, .feature-card svg, .glass svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.testimonial-avatar {
+  width: 36px !important;
+  height: 36px !important;
+}

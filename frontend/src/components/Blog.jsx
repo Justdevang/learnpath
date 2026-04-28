@@ -7,11 +7,11 @@ import { ArrowRight, Search, ArrowDown } from 'lucide-react';
 export const Blog = () => {
   const getDynamicDate = (index) => {
     const d = new Date();
-    d.setDate(d.getDate() - (index % 5)); 
-    return d.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    d.setDate(d.getDate() - (index % 5));
+    return d.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
     });
   };
 
@@ -20,12 +20,12 @@ export const Blog = () => {
   const ctaImage = "https://loremflickr.com/1600/600/technology,future?lock=101";
 
   // If there are not enough articles, fallback gracefully
-  const popularMain = articles[0] || articles[0]; 
+  const popularMain = articles[0] || articles[0];
   const popularSide = articles.slice(1, 4);
   const latestArticles = articles.slice(4);
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
@@ -38,29 +38,29 @@ export const Blog = () => {
       </Helmet>
 
       {/* 1. Hero Section */}
-      <div style={{ 
-        width: '100%', 
-        height: 'clamp(400px, 60vh, 600px)', 
-        borderRadius: '32px', 
-        overflow: 'hidden', 
-        position: 'relative', 
+      <div style={{
+        width: '100%',
+        height: 'clamp(400px, 60vh, 600px)',
+        borderRadius: '32px',
+        overflow: 'hidden',
+        position: 'relative',
         marginBottom: '80px',
         marginTop: '20px'
       }}>
         <img src={heroImage} alt="Tech learning" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(9,9,11,0.85) 0%, rgba(9,9,11,0.4) 100%)' }}></div>
-        
+
         <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 8%' }}>
           <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: '800', lineHeight: 1.1, color: '#fff', maxWidth: '800px', marginBottom: '40px', letterSpacing: '-0.02em' }}>
             Utilization of Technology to Supercharge Your Career
           </h1>
-          
+
           {/* Search Bar */}
           <div style={{ display: 'flex', alignItems: 'center', background: '#fff', borderRadius: '100px', padding: '8px', maxWidth: '500px', width: '100%' }}>
             <Search size={20} color="#666" style={{ marginLeft: '16px', marginRight: '12px' }} />
-            <input 
-              type="text" 
-              placeholder="Search articles..." 
+            <input
+              type="text"
+              placeholder="Search articles..."
               style={{ border: 'none', outline: 'none', flex: 1, background: 'transparent', fontSize: '1rem', color: '#000', minWidth: 0 }}
             />
             <button style={{ background: 'var(--accent-primary)', color: '#fff', border: 'none', borderRadius: '100px', padding: '12px 24px', fontSize: '0.95rem', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
@@ -82,7 +82,7 @@ export const Blog = () => {
       {popularMain && (
         <div style={{ marginBottom: '100px' }}>
           <h2 style={{ fontSize: '2rem', fontWeight: '800', marginBottom: '40px', color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>Popular Articles</h2>
-          
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px', alignItems: 'start' }}>
             {/* Left Large Article */}
             <Link to={`/blog/${popularMain.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -139,7 +139,7 @@ export const Blog = () => {
       {/* Pagination */}
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', marginBottom: '120px', flexWrap: 'wrap' }}>
         <button style={{ background: 'transparent', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '10px 20px', borderRadius: '100px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '500' }}>
-           &larr; Previous
+          &larr; Previous
         </button>
         <div style={{ display: 'flex', gap: '8px' }}>
           <span style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'var(--accent-primary)', color: '#fff', fontWeight: '600' }}>1</span>
@@ -147,16 +147,16 @@ export const Blog = () => {
           <span style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', color: 'var(--text-primary)', fontWeight: '500', cursor: 'pointer', border: '1px solid transparent' }}>3</span>
         </div>
         <button style={{ background: 'transparent', border: '1px solid var(--border-color)', color: 'var(--text-primary)', padding: '10px 20px', borderRadius: '100px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '500' }}>
-           Next &rarr;
+          Next &rarr;
         </button>
       </div>
 
       {/* 4. Bottom CTA */}
-      <div style={{ 
-        width: '100%', 
-        height: '400px', 
-        borderRadius: '32px', 
-        overflow: 'hidden', 
+      <div style={{
+        width: '100%',
+        height: '400px',
+        borderRadius: '32px',
+        overflow: 'hidden',
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
@@ -165,16 +165,16 @@ export const Blog = () => {
       }}>
         <img src={ctaImage} alt="CTA" style={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(9,9,11,0.75)' }}></div>
-        
+
         <div style={{ position: 'relative', zIndex: 1, padding: '0 20px', width: '100%' }}>
           <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '800', color: '#fff', marginBottom: '40px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-            Get involved in the <br/>tech learning uprising
+            Get involved in the <br />tech learning uprising
           </h2>
-          
+
           <div style={{ display: 'flex', alignItems: 'center', background: '#fff', borderRadius: '100px', padding: '6px', maxWidth: '450px', margin: '0 auto', width: '100%' }}>
-            <input 
-              type="email" 
-              placeholder="Type your email address" 
+            <input
+              type="email"
+              placeholder="Type your email address"
               style={{ border: 'none', outline: 'none', flex: 1, background: 'transparent', fontSize: '1rem', color: '#000', paddingLeft: '20px', minWidth: 0 }}
             />
             <button style={{ background: 'var(--accent-primary)', color: '#fff', border: 'none', borderRadius: '100px', padding: '12px 28px', fontSize: '1rem', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>

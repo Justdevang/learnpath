@@ -85,7 +85,7 @@ export const ContactUs = () => {
                 <span style={{ color: 'var(--text-primary)', fontWeight: '500', fontSize: '0.9rem' }}>Pune, Maharashtra, India</span>
               </div>
             </div>
-            
+
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
               <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '12px', borderRadius: '12px', color: 'var(--accent-primary)' }}>
                 <MessageSquare size={20} />
@@ -116,7 +116,7 @@ export const ContactUs = () => {
                 <h2 style={{ fontSize: '1.4rem', marginBottom: '4px' }}>Send a message</h2>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Fill out the form below and we'll reply shortly.</p>
               </div>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <div>
                   <label htmlFor="contact-name" className="input-label" style={{ fontSize: '0.8rem' }}>Full Name</label>

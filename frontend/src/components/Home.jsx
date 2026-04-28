@@ -39,17 +39,18 @@ export const Home = () => {
   return (
     <div style={{ paddingBottom: '80px' }}>
       {/* Hero Section */}
-      <motion.div 
+      <motion.div
+        className="hero-section"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        style={{ textAlign: 'center', marginTop: '40px', marginBottom: '60px' }}
+        style={{ textAlign: 'center', flexDirection: 'column', justifyContent: 'center' }}
       >
-        <div style={{ 
-          background: 'rgba(59, 130, 246, 0.1)', 
-          width: '48px', height: '48px', 
-          borderRadius: '12px', 
-          display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        <div style={{
+          background: 'rgba(59, 130, 246, 0.1)',
+          width: '48px', height: '48px',
+          borderRadius: '12px',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
           margin: '0 auto 16px',
           border: '1px solid rgba(59, 130, 246, 0.2)',
           boxShadow: '0 4px 16px rgba(59, 130, 246, 0.1)'
@@ -63,17 +64,17 @@ export const Home = () => {
           Tell us your target career, current skills, and weekly availability. We'll build a custom, step-by-step curriculum using the best resources on the internet.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-          <button 
-            onClick={() => navigate('/roadmap')} 
+          <button
+            onClick={() => navigate('/roadmap')}
             className="btn-primary"
             style={{ fontSize: '1rem', padding: '12px 24px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
           >
             Generate My Roadmap <ArrowRight size={18} />
           </button>
-          
+
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: '12px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-              {[1,2,3,4,5].map(i => <Star key={i} size={16} color="var(--accent-warning)" fill="var(--accent-warning)" />)}
+              {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} color="var(--accent-warning)" fill="var(--accent-warning)" />)}
             </div>
             <span>Trusted by 10,000+ developers</span>
           </div>
@@ -88,13 +89,13 @@ export const Home = () => {
             <h3 style={{ fontSize: '1.1rem', marginBottom: '8px' }}>Your skills + target job → a week-by-week curriculum</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>We map out exactly what you need to learn based on where you are and where you want to be.</p>
           </motion.div>
-          
+
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="glass" style={{ padding: '24px 20px', textAlign: 'center' }}>
             <Settings size={24} color="var(--accent-primary)" style={{ margin: '0 auto 12px' }} />
             <h3 style={{ fontSize: '1.1rem', marginBottom: '8px' }}>Curated Top Tutorials & Projects</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Stop getting lost in tutorial hell. We link you straight to the highest-rated free resources.</p>
           </motion.div>
-          
+
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="glass" style={{ padding: '24px 20px', textAlign: 'center' }}>
             <Calendar size={24} color="var(--accent-primary)" style={{ margin: '0 auto 12px' }} />
             <h3 style={{ fontSize: '1.1rem', marginBottom: '8px' }}>Optimized for Your Schedule</h3>
@@ -110,20 +111,20 @@ export const Home = () => {
             <h2 style={{ fontSize: '2rem', fontWeight: '700', marginBottom: '12px' }}>How it works</h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>Three simple steps to start your structured learning journey.</p>
           </div>
-          
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px', position: 'relative' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--bg-secondary)', border: '2px solid var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: '700', marginBottom: '16px', color: 'var(--text-primary)' }}>1</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '8px' }}>Tell us your goal</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Input your target role, current skills, and weekly availability.</p>
             </div>
-            
+
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--bg-secondary)', border: '2px solid var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: '700', marginBottom: '16px', color: 'var(--text-primary)' }}>2</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '8px' }}>AI builds your plan</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Our engine processes your inputs and generates a structured curriculum in seconds.</p>
             </div>
-            
+
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--accent-primary)', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: '700', marginBottom: '16px' }}>3</div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '8px' }}>Follow it week by week</h3>
@@ -175,9 +176,9 @@ export const Home = () => {
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {week.topics.map((topic, tIdx) => (
-                    <div key={tIdx} style={{ 
-                      background: 'rgba(255, 255, 255, 0.03)', 
-                      padding: '12px 16px', 
+                    <div key={tIdx} style={{
+                      background: 'rgba(255, 255, 255, 0.03)',
+                      padding: '12px 16px',
                       borderRadius: '6px',
                       display: 'flex',
                       justifyContent: 'space-between',
@@ -210,25 +211,25 @@ export const Home = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
           <div className="glass" style={{ padding: '20px' }}>
             <div style={{ display: 'flex', gap: '4px', marginBottom: '12px' }}>
-              {[1,2,3,4,5].map(i => <Star key={i} size={14} color="var(--accent-warning)" fill="var(--accent-warning)" />)}
+              {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} color="var(--accent-warning)" fill="var(--accent-warning)" />)}
             </div>
             <p style={{ fontSize: '0.95rem', fontStyle: 'italic', marginBottom: '16px', lineHeight: 1.5 }}>"I was overwhelmed by tutorials. This generated a clear 8-week Python roadmap that completely changed my learning process. I actually stuck to it."</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '0.85rem' }}>JD</div>
+              <div className="testimonial-avatar" style={{ background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '0.85rem' }}>JD</div>
               <div>
                 <div style={{ fontWeight: '600' }}>James D.</div>
                 <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Data Analyst</div>
               </div>
             </div>
           </div>
-          
+
           <div className="glass" style={{ padding: '20px' }}>
             <div style={{ display: 'flex', gap: '4px', marginBottom: '12px' }}>
-              {[1,2,3,4,5].map(i => <Star key={i} size={14} color="var(--accent-warning)" fill="var(--accent-warning)" />)}
+              {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} color="var(--accent-warning)" fill="var(--accent-warning)" />)}
             </div>
             <p style={{ fontSize: '0.95rem', fontStyle: 'italic', marginBottom: '16px', lineHeight: 1.5 }}>"The fact that it calculates what I need based on my available hours is incredible. It gave me realistic expectations and exact links to study."</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '0.85rem' }}>SM</div>
+              <div className="testimonial-avatar" style={{ background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '0.85rem' }}>SM</div>
               <div>
                 <div style={{ fontWeight: '600' }}>Sarah M.</div>
                 <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Frontend Developer</div>
@@ -246,7 +247,7 @@ export const Home = () => {
           <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
             Not ready to commit? Enter your email and we'll send you an example roadmap to get a taste of what's possible.
           </p>
-          
+
           {subscribed ? (
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: 'var(--accent-tertiary)', fontWeight: '600', padding: '14px', background: 'rgba(16, 185, 129, 0.1)', borderRadius: 'var(--border-radius)', maxWidth: '400px', margin: '0 auto' }}>
               <CheckCircle size={20} /> Example roadmap sent! Check your email.
@@ -254,11 +255,11 @@ export const Home = () => {
           ) : (
             <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '12px', maxWidth: '500px', margin: '0 auto', flexDirection: 'column' }}>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address..." 
+                  placeholder="Enter your email address..."
                   required
                   className="input-field"
                   style={{ flex: '1', minWidth: '200px' }}

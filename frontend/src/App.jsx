@@ -43,7 +43,7 @@ function AppContent() {
       script.onload = () => {
         window.gtag('js', new Date());
         window.gtag('config', 'G-P3QYHT4N04');
-        
+
         // Consent Mode v2 Default
         window.gtag('consent', 'default', {
           'ad_storage': 'denied',
@@ -53,7 +53,7 @@ function AppContent() {
         });
       };
     }, 3000); // 3-second delay
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -63,7 +63,7 @@ function AppContent() {
       return saved ? JSON.parse(saved) : null;
     } catch { return null; }
   });
-  
+
   const [originalParams, setOriginalParams] = useState(() => {
     try {
       const saved = localStorage.getItem('roadmaptic_active_params');
@@ -82,11 +82,11 @@ function AppContent() {
 
   const handleSetRoadmapData = (data, params) => {
     setRoadmapData(data);
-    if(params) {
+    if (params) {
       setOriginalParams(params);
       localStorage.setItem('roadmaptic_active_params', JSON.stringify(params));
     }
-    if(data) {
+    if (data) {
       localStorage.setItem('roadmaptic_active_roadmap', JSON.stringify(data));
       if (params) {
         try {
@@ -94,7 +94,7 @@ function AppContent() {
           const newHistory = history.filter(h => h.params?.targetRole !== params.targetRole);
           newHistory.unshift({ data, params, timestamp: Date.now() });
           localStorage.setItem('roadmaptic_history', JSON.stringify(newHistory.slice(0, 5)));
-        } catch(e) {}
+        } catch (e) { }
       }
     }
   };
@@ -109,7 +109,7 @@ function AppContent() {
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:url" content={canonicalUrl} />
       </Helmet>
-      
+
       <MazeBackground />
       <CookieBanner />
 
@@ -120,20 +120,20 @@ function AppContent() {
               <AdPlaceholder type="sticky-header" />
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div className="text-gradient" onClick={() => window.location.href='/'} style={{ margin: 0, fontSize: '24px', cursor: 'pointer', fontWeight: 'bold' }}>
+              <div className="text-gradient" onClick={() => window.location.href = '/'} style={{ margin: 0, fontSize: '24px', cursor: 'pointer', fontWeight: 'bold' }}>
                 Roadmaptic
               </div>
               <nav style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                <a href="/blog" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='var(--accent-primary)'} onMouseOut={e => e.target.style.color='var(--text-secondary)'}>Blog</a>
-                <a href="/about" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='var(--accent-primary)'} onMouseOut={e => e.target.style.color='var(--text-secondary)'}>About</a>
-                <a href="/contact" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='var(--accent-primary)'} onMouseOut={e => e.target.style.color='var(--text-secondary)'}>Contact</a>
-                
-                <button 
+                <a href="/blog" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = 'var(--accent-primary)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>Blog</a>
+                <a href="/about" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = 'var(--accent-primary)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>About</a>
+                <a href="/contact" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = 'var(--accent-primary)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>Contact</a>
+
+                <button
                   onClick={toggleTheme}
-                  style={{ 
-                    background: 'transparent', 
-                    border: 'none', 
-                    cursor: 'pointer', 
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
                     color: 'var(--text-secondary)',
                     display: 'flex',
                     alignItems: 'center',
@@ -148,7 +148,7 @@ function AppContent() {
             </div>
           </div>
         </header>
-        
+
         <main className="container animate-fade-in">
           <Suspense fallback={<PageLoader />}>
             <Routes>
@@ -164,7 +164,7 @@ function AppContent() {
             </Routes>
           </Suspense>
         </main>
-        
+
         <Footer />
         <AdPlaceholder type="mobile-anchor" />
       </div>

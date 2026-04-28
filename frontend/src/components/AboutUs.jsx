@@ -4,7 +4,7 @@ import { Target, Zap, ShieldCheck } from 'lucide-react';
 
 export const AboutUs = () => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -28,10 +28,10 @@ export const AboutUs = () => {
 
       {/* Hero Image */}
       <div style={{ width: '100%', height: 'clamp(300px, 50vh, 500px)', borderRadius: '32px', overflow: 'hidden', marginBottom: '100px', border: '1px solid var(--border-color)' }}>
-        <img 
-          src="https://loremflickr.com/1600/800/team,office?lock=200" 
-          alt="Team collaborating" 
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+        <img
+          src="https://loremflickr.com/1600/800/team,office?lock=200"
+          alt="Team collaborating"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
       </div>
 
@@ -76,7 +76,7 @@ export const AboutUs = () => {
       <div style={{ background: 'var(--bg-secondary)', borderRadius: '32px', padding: 'clamp(40px, 8vw, 80px) clamp(20px, 4vw, 40px)', border: '1px solid var(--border-color)' }}>
         <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '40px', color: 'var(--text-primary)', letterSpacing: '-0.02em', textAlign: 'center' }}>Our Core Values</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px' }}>
-          
+
           <div>
             <ShieldCheck size={32} color="var(--accent-secondary)" style={{ marginBottom: '16px' }} />
             <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '12px', color: 'var(--text-primary)' }}>Quality First</h3>
@@ -97,7 +97,7 @@ export const AboutUs = () => {
 
         </div>
       </div>
-      
+
     </motion.div>
   );
 };

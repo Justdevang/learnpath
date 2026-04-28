@@ -39,9 +39,9 @@ export const Article = () => {
   const renderContent = (content) => {
     return content.split('\n').map((line, index) => {
       const trimmedLine = line.trim();
-      
+
       if (!trimmedLine) return <div key={index} style={{ height: '16px' }} />;
-      
+
       // Headers
       if (trimmedLine.startsWith('### ')) {
         return <h3 key={index} style={{ fontSize: '1.75rem', marginTop: '48px', marginBottom: '20px', color: 'var(--text-primary)', fontWeight: '800', letterSpacing: '-0.01em' }}>{trimmedLine.replace('### ', '')}</h3>;
@@ -52,12 +52,12 @@ export const Article = () => {
       if (trimmedLine.startsWith('# ')) {
         return null; // The H1 is already rendered at the top of the component
       }
-      
+
       // Horizontal Rule
       if (trimmedLine === '---') {
         return <hr key={index} style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '48px 0' }} />;
       }
-      
+
       // Big CTA Button Mapping
       if (trimmedLine.startsWith('[BIG CTA BUTTON:')) {
         const buttonText = trimmedLine.match(/\[BIG CTA BUTTON: (.*?)\]/)?.[1] || "Generate My Roadmap";
@@ -69,7 +69,7 @@ export const Article = () => {
           </div>
         );
       }
-      
+
       // List items
       if (trimmedLine.startsWith('- ')) {
         return (
@@ -79,7 +79,7 @@ export const Article = () => {
           </div>
         );
       }
-      
+
       // Regular Paragraphs with bold text parsing
       return (
         <React.Fragment key={index}>
@@ -124,12 +124,12 @@ export const Article = () => {
       {/* Dribbble Style Hero */}
       <div style={{ textAlign: 'center', marginBottom: '56px', maxWidth: '800px', margin: '0 auto 56px' }}>
         <div style={{ display: 'inline-block', marginBottom: '24px' }}>
-           <span style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', background: 'rgba(59,130,246, 0.1)', padding: '8px 20px', borderRadius: '100px' }}>
-              {article.category}
-            </span>
+          <span style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em', background: 'rgba(59,130,246, 0.1)', padding: '8px 20px', borderRadius: '100px' }}>
+            {article.category}
+          </span>
         </div>
         <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '32px', lineHeight: '1.1', fontWeight: '800', letterSpacing: '-0.02em' }}>{article.title}</h1>
-        
+
         {/* Author Byline */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
           <img src="https://api.dicebear.com/7.x/initials/svg?seed=Roadmaptic+Team&backgroundColor=3b82f6&textColor=fff" alt="Roadmaptic Team" style={{ width: '56px', height: '56px', borderRadius: '50%', border: '2px solid var(--border-color)' }} />
@@ -154,34 +154,34 @@ export const Article = () => {
 
       {/* Main Content Layout with Sticky Sidebar */}
       <div style={{ display: 'flex', gap: '60px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        
+
         {/* Left Sticky Sidebar (Meta Info) */}
         <div style={{ flex: '1 1 250px', position: 'sticky', top: '100px' }}>
           <div className="glass" style={{ padding: '32px', borderRadius: '24px' }}>
-             <h4 style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '24px', fontWeight: '700' }}>Article Details</h4>
-             
-             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
-                <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '12px', borderRadius: '12px' }}><Clock size={20} style={{ color: 'var(--accent-primary)' }} /></div>
-                <div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Time to complete</div>
-                  <div style={{ fontWeight: '700', fontSize: '1rem', color: 'var(--text-primary)' }}>{article.timeCommitment}</div>
-                </div>
-              </div>
+            <h4 style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '24px', fontWeight: '700' }}>Article Details</h4>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
-                <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '12px', borderRadius: '12px' }}><TrendingUp size={20} style={{ color: 'var(--accent-primary)' }} /></div>
-                <div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Market Demand</div>
-                  <div style={{ fontWeight: '700', fontSize: '1rem', color: 'var(--text-primary)' }}>{article.marketDemand}</div>
-                </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+              <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '12px', borderRadius: '12px' }}><Clock size={20} style={{ color: 'var(--accent-primary)' }} /></div>
+              <div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Time to complete</div>
+                <div style={{ fontWeight: '700', fontSize: '1rem', color: 'var(--text-primary)' }}>{article.timeCommitment}</div>
               </div>
+            </div>
 
-              <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '0 0 24px 0' }} />
-              
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <button className="btn-secondary" style={{ padding: '12px', borderRadius: '12px', flex: 1, display: 'flex', justifyContent: 'center' }}><Share2 size={20} /></button>
-                <button className="btn-secondary" style={{ padding: '12px', borderRadius: '12px', flex: 1, display: 'flex', justifyContent: 'center' }}><Bookmark size={20} /></button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
+              <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '12px', borderRadius: '12px' }}><TrendingUp size={20} style={{ color: 'var(--accent-primary)' }} /></div>
+              <div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Market Demand</div>
+                <div style={{ fontWeight: '700', fontSize: '1rem', color: 'var(--text-primary)' }}>{article.marketDemand}</div>
               </div>
+            </div>
+
+            <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '0 0 24px 0' }} />
+
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <button className="btn-secondary" style={{ padding: '12px', borderRadius: '12px', flex: 1, display: 'flex', justifyContent: 'center' }}><Share2 size={20} /></button>
+              <button className="btn-secondary" style={{ padding: '12px', borderRadius: '12px', flex: 1, display: 'flex', justifyContent: 'center' }}><Bookmark size={20} /></button>
+            </div>
           </div>
         </div>
 
@@ -191,27 +191,27 @@ export const Article = () => {
             <p style={{ color: 'var(--text-primary)', fontSize: '1.4rem', lineHeight: '1.7', marginBottom: '48px', fontWeight: '500' }}>
               {article.snippet}
             </p>
-            
+
             <div style={{ color: 'var(--text-primary)', lineHeight: '1.9', fontSize: '1.15rem' }}>
-               {renderContent(article.content)}
-              
+              {renderContent(article.content)}
+
               <div style={{ marginTop: '80px' }}>
                 <AdPlaceholder type="post-content" />
               </div>
 
               {/* Enhanced Minimalist CTA */}
-              <div className="glass" style={{ 
-                marginTop: '80px', 
+              <div className="glass" style={{
+                marginTop: '80px',
                 padding: '64px 40px',
-                borderRadius: '32px', 
-                textAlign: 'center', 
-                position: 'relative', 
+                borderRadius: '32px',
+                textAlign: 'center',
+                position: 'relative',
                 overflow: 'hidden',
                 background: 'linear-gradient(135deg, rgba(24,24,27,0.8), rgba(9,9,11,1))',
                 border: '1px solid rgba(59, 130, 246, 0.2)'
               }}>
                 <div style={{ position: 'absolute', top: '-50%', left: '-50%', width: '200%', height: '200%', background: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.08) 0%, transparent 50%)', zIndex: 0 }}></div>
-                
+
                 <div style={{ position: 'relative', zIndex: 1 }}>
                   <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '16px', fontWeight: '800', letterSpacing: '-0.02em' }}>
                     Master <span className="text-gradient">{article.skillName}</span> Today.
