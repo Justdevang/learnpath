@@ -156,13 +156,19 @@ export const Home = () => {
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
           <button
-            onClick={() => navigate('/roadmap')}
+            onClick={() => {
+              const user = localStorage.getItem('roadmaptic_user');
+              if (user) {
+                navigate('/roadmap');
+              } else {
+                navigate('/auth', { state: { from: '/roadmap' } });
+              }
+            }}
             className="btn-primary"
             style={{ fontSize: '1rem', padding: '12px 24px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
           >
             Generate My Roadmap <ArrowRight size={18} />
           </button>
-
         </div>
       </motion.div>
 
