@@ -177,9 +177,9 @@ export const AuthPage = ({ onSuccess }) => {
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <label htmlFor="name" className="input-label">Full Name</label>
-                <div style={{ position: 'relative' }}>
-                  <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }}>
+                <label htmlFor="name" className="input-label" style={{ fontSize: '0.75rem', marginBottom: '8px', opacity: 0.8 }}>Full Name</label>
+                <div style={{ position: 'relative', marginBottom: '4px' }}>
+                  <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', opacity: 0.6 }}>
                     <User size={18} />
                   </div>
                   <input
@@ -188,20 +188,20 @@ export const AuthPage = ({ onSuccess }) => {
                     type="text"
                     name="name"
                     className="input-field"
-                    placeholder="Enter your name"
+                    placeholder="e.g. James Wilson"
                     value={formData.name}
                     onChange={handleChange}
-                    style={{ paddingLeft: '48px', height: '52px' }}
+                    style={{ paddingLeft: '48px', height: '52px', fontSize: '0.95rem' }}
                   />
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
 
-          <div>
-            <label htmlFor="email" className="input-label">Email Address</label>
+          <div style={{ marginTop: isLogin ? '0' : '4px' }}>
+            <label htmlFor="email" className="input-label" style={{ fontSize: '0.75rem', marginBottom: '8px', opacity: 0.8 }}>Email Address</label>
             <div style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }}>
+              <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', opacity: 0.6 }}>
                 <Mail size={18} />
               </div>
               <input
@@ -210,25 +210,25 @@ export const AuthPage = ({ onSuccess }) => {
                 type="email"
                 name="email"
                 className="input-field"
-                placeholder="name@company.com"
+                placeholder="james@company.com"
                 value={formData.email}
                 onChange={handleChange}
-                style={{ paddingLeft: '48px', height: '52px' }}
+                style={{ paddingLeft: '48px', height: '52px', fontSize: '0.95rem' }}
               />
             </div>
           </div>
 
-          <div>
+          <div style={{ marginTop: '4px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <label htmlFor="password" className="input-label" style={{ marginBottom: 0 }}>Password</label>
+              <label htmlFor="password" className="input-label" style={{ fontSize: '0.75rem', marginBottom: 0, opacity: 0.8 }}>Password</label>
               {isLogin && (
-                <button type="button" style={{ background: 'none', border: 'none', color: 'var(--accent-primary)', fontSize: '0.8rem', fontWeight: '600', cursor: 'pointer' }}>
+                <button type="button" style={{ background: 'none', border: 'none', color: 'var(--accent-primary)', fontSize: '0.75rem', fontWeight: '700', cursor: 'pointer', opacity: 0.9 }}>
                   Forgot password?
                 </button>
               )}
             </div>
             <div style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }}>
+              <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', opacity: 0.6 }}>
                 <Lock size={18} />
               </div>
               <input
@@ -237,10 +237,10 @@ export const AuthPage = ({ onSuccess }) => {
                 type="password"
                 name="password"
                 className="input-field"
-                placeholder="••••••••"
+                placeholder="Minimum 6 characters"
                 value={formData.password}
                 onChange={handleChange}
-                style={{ paddingLeft: '48px', height: '52px' }}
+                style={{ paddingLeft: '48px', height: '52px', fontSize: '0.95rem' }}
                 minLength={6}
               />
             </div>
