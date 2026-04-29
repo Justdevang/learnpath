@@ -98,7 +98,7 @@ export const AuthPage = ({ onSuccess }) => {
   };
 
   return (
-    <div style={{ padding: '60px 20px 100px', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '90vh' }}>
+    <div style={{ padding: '100px 20px 100px', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
       <Helmet>
         <title>{isLogin ? 'Welcome Back' : 'Join Roadmaptic'} | AI Roadmaps</title>
         <meta name="description" content="Sign in or create an account to generate your personalized learning roadmap." />
@@ -115,7 +115,9 @@ export const AuthPage = ({ onSuccess }) => {
           padding: '48px 40px', 
           borderRadius: '24px', 
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-          border: '1px solid rgba(255, 255, 255, 0.1)'
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          background: 'var(--bg-secondary)', // Ensure card background is solid
+          zIndex: 10
         }}
       >
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
@@ -132,7 +134,7 @@ export const AuthPage = ({ onSuccess }) => {
           }}>
             <Lock size={28} color="#000" />
           </div>
-          <h1 style={{ fontSize: '2.25rem', fontWeight: '800', marginBottom: '10px', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '2.25rem', fontWeight: '800', marginBottom: '10px', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
             {isLogin ? 'Sign In' : 'Get Started'}
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.5 }}>
@@ -163,7 +165,7 @@ export const AuthPage = ({ onSuccess }) => {
 
         <div style={{ position: 'relative', textAlign: 'center', marginBottom: '32px' }}>
           <div style={{ position: 'absolute', top: '50%', left: 0, right: 0, height: '1px', background: 'var(--border-color)', zIndex: 0 }}></div>
-          <span style={{ position: 'relative', background: 'var(--bg-primary)', padding: '0 16px', fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: '700', letterSpacing: '0.05em' }}>
+          <span style={{ position: 'relative', background: 'var(--bg-secondary)', padding: '0 16px', fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: '700', letterSpacing: '0.05em' }}>
             OR CONTINUE WITH EMAIL
           </span>
         </div>
@@ -179,7 +181,7 @@ export const AuthPage = ({ onSuccess }) => {
               >
                 <label htmlFor="name" className="input-label" style={{ fontSize: '0.75rem', marginBottom: '8px', opacity: 0.8 }}>Full Name</label>
                 <div style={{ position: 'relative', marginBottom: '4px' }}>
-                  <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', opacity: 0.6 }}>
+                  <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', opacity: 0.6, zIndex: 1 }}>
                     <User size={18} />
                   </div>
                   <input
@@ -191,7 +193,7 @@ export const AuthPage = ({ onSuccess }) => {
                     placeholder="e.g. James Wilson"
                     value={formData.name}
                     onChange={handleChange}
-                    style={{ paddingLeft: '48px', height: '52px', fontSize: '0.95rem' }}
+                    style={{ paddingLeft: '52px', height: '52px', fontSize: '0.95rem' }}
                   />
                 </div>
               </motion.div>
@@ -201,7 +203,7 @@ export const AuthPage = ({ onSuccess }) => {
           <div style={{ marginTop: isLogin ? '0' : '4px' }}>
             <label htmlFor="email" className="input-label" style={{ fontSize: '0.75rem', marginBottom: '8px', opacity: 0.8 }}>Email Address</label>
             <div style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', opacity: 0.6 }}>
+              <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', opacity: 0.6, zIndex: 1 }}>
                 <Mail size={18} />
               </div>
               <input
@@ -213,7 +215,7 @@ export const AuthPage = ({ onSuccess }) => {
                 placeholder="james@company.com"
                 value={formData.email}
                 onChange={handleChange}
-                style={{ paddingLeft: '48px', height: '52px', fontSize: '0.95rem' }}
+                style={{ paddingLeft: '52px', height: '52px', fontSize: '0.95rem' }}
               />
             </div>
           </div>
@@ -228,7 +230,7 @@ export const AuthPage = ({ onSuccess }) => {
               )}
             </div>
             <div style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', opacity: 0.6 }}>
+              <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)', opacity: 0.6, zIndex: 1 }}>
                 <Lock size={18} />
               </div>
               <input
@@ -240,7 +242,7 @@ export const AuthPage = ({ onSuccess }) => {
                 placeholder="Minimum 6 characters"
                 value={formData.password}
                 onChange={handleChange}
-                style={{ paddingLeft: '48px', height: '52px', fontSize: '0.95rem' }}
+                style={{ paddingLeft: '52px', height: '52px', fontSize: '0.95rem' }}
                 minLength={6}
               />
             </div>
@@ -259,7 +261,8 @@ export const AuthPage = ({ onSuccess }) => {
               gap: '10px', 
               height: '56px',
               fontSize: '1rem',
-              fontWeight: '700'
+              fontWeight: '700',
+              color: '#fff' // Force white text
             }}
           >
             {isSubmitting ? (
