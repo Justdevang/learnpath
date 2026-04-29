@@ -21,6 +21,7 @@ const sampleRoadmapData = [
     ]
   }
 ];
+import { Helmet } from 'react-helmet-async';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -38,6 +39,77 @@ export const Home = () => {
 
   return (
     <div style={{ paddingBottom: '80px' }}>
+      <Helmet>
+        <title>Roadmaptic – Free AI Coding Bootcamp Generator | 12-Week Learning Roadmaps</title>
+        <meta name="description" content="Get your free personalized 12-week coding roadmap in 30 seconds. AI-powered learning paths for Web Dev, Python, Data Science & ML. Tailored to your skills & schedule. No signup needed." />
+        <meta name="keywords" content="free coding bootcamp, AI learning roadmap, 12 week coding plan, personalized coding curriculum, learn python free, data science roadmap, web development roadmap, machine learning path, coding for beginners" />
+        <link rel="canonical" href="https://learnpath.qzz.io/" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Roadmaptic" />
+        <meta property="og:title" content="Roadmaptic – Free AI Coding Bootcamp Generator | 12-Week Learning Roadmaps" />
+        <meta property="og:description" content="Get your free personalized 12-week coding roadmap in 30 seconds. AI-powered learning paths for Web Dev, Python, Data Science & ML. Tailored to your skills & schedule. No signup needed." />
+        <meta property="og:url" content="https://learnpath.qzz.io/" />
+        <meta property="og:image" content="https://learnpath.qzz.io/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Roadmaptic – Free AI Coding Bootcamp Generator | 12-Week Learning Roadmaps" />
+        <meta name="twitter:description" content="Get your free personalized 12-week coding roadmap in 30 seconds. AI-powered learning paths for Web Dev, Python, Data Science & ML. Tailored to your skills & schedule. No signup needed." />
+        <meta name="twitter:image" content="https://learnpath.qzz.io/og-image.png" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Roadmaptic",
+            "url": "https://learnpath.qzz.io/",
+            "description": "Free AI-powered personalized 12-week coding roadmap generator",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://learnpath.qzz.io/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is Roadmaptic free to use?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes, Roadmaptic is 100% free. No credit card or signup required."}
+              },
+              {
+                "@type": "Question",
+                "name": "How does Roadmaptic generate a coding roadmap?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Our AI Curriculum Engine takes your current skill level, target job role, and weekly availability to generate a personalized 12-week coding plan in 30 seconds."}
+              },
+              {
+                "@type": "Question",
+                "name": "What coding topics does Roadmaptic cover?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Roadmaptic covers Web Development, Python, Data Science, Machine Learning, AI, and more tech and business topics."}
+              },
+              {
+                "@type": "Question",
+                "name": "How long does it take to generate a roadmap?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Roadmaptic generates your personalized 12-week coding plan in just 30 seconds."}
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to create an account?",
+                "acceptedAnswer": {"@type": "Answer", "text": "No. Roadmaptic requires no signup, no email, and no credit card. Just enter your details and get your roadmap instantly."}
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
       {/* Hero Section */}
       <motion.div
         className="hero-section"
