@@ -1,0 +1,592 @@
+[
+  {
+    "term": "microservices",
+    "slug": "microservices",
+    "definition": "Microservices are small, independent, loosely-coupled services that work together to build a complete application. Each service runs its own process and communicates with other services through APIs, typically using REST or message queues.",
+    "category": "Microservices",
+    "example": "Netflix uses microservices where separate services handle user authentication, recommendations, payment, and streaming.",
+    "keywordVariations": ["microservices architecture", "microservices pattern", "microservices design"],
+    "relatedTerms": ["monolithic architecture", "service-oriented architecture", "api gateway", "distributed systems"],
+    "priority": 5
+  },
+  {
+    "term": "docker",
+    "slug": "docker",
+    "definition": "Docker is a containerization platform that packages applications and their dependencies into lightweight containers. Containers are isolated environments that run consistently across different machines, from laptops to production servers.",
+    "category": "DevOps",
+    "example": "A Node.js application bundled with Docker runs identically on a developer's machine and on AWS, eliminating 'works on my machine' problems.",
+    "keywordVariations": ["docker containers", "containerization", "docker image", "docker container"],
+    "relatedTerms": ["kubernetes", "container orchestration", "image registry", "container networking"],
+    "priority": 5
+  },
+  {
+    "term": "kubernetes",
+    "slug": "kubernetes",
+    "definition": "Kubernetes (K8s) is an open-source container orchestration platform that automates deployment, scaling, and management of containerized applications. It handles load balancing, self-healing, and rolling updates across clusters of machines.",
+    "category": "DevOps",
+    "example": "Kubernetes automatically restarts failed containers, scales services based on CPU usage, and distributes traffic across replicas.",
+    "keywordVariations": ["k8s", "kubernetes orchestration", "container orchestration", "kubernetes clusters"],
+    "relatedTerms": ["docker", "container orchestration", "pods", "services", "ingress"],
+    "priority": 5
+  },
+  {
+    "term": "api gateway",
+    "slug": "api-gateway",
+    "definition": "An API Gateway is a server that acts as an intermediary between clients and backend services. It handles request routing, authentication, rate limiting, logging, and protocol translation for microservices architectures.",
+    "category": "Microservices",
+    "example": "AWS API Gateway receives client requests, authenticates them, routes to the correct Lambda function or microservice, and returns responses.",
+    "keywordVariations": ["api gateway pattern", "gateway pattern", "api proxy"],
+    "relatedTerms": ["microservices", "load balancer", "reverse proxy", "service mesh"],
+    "priority": 4
+  },
+  {
+    "term": "database sharding",
+    "slug": "database-sharding",
+    "definition": "Database sharding is a horizontal partitioning technique that splits data across multiple database instances (shards). Each shard holds a subset of data, allowing the database to scale beyond the limits of a single machine.",
+    "category": "Databases",
+    "example": "A user database might be sharded by user ID, where users 1-1M are on Shard 1, 1M-2M on Shard 2, distributing the load across multiple servers.",
+    "keywordVariations": ["sharding strategy", "horizontal partitioning", "database partitioning"],
+    "relatedTerms": ["replication", "consistency hashing", "distributed databases", "eventual consistency"],
+    "priority": 4
+  },
+  {
+    "term": "eventual consistency",
+    "slug": "eventual-consistency",
+    "definition": "Eventual consistency is a consistency model where data becomes consistent across distributed systems after a period of time. Unlike strong consistency, it temporarily allows inconsistent reads but ensures all nodes eventually have the same data.",
+    "category": "Databases",
+    "example": "In a distributed social media system, a user's post might appear on their follower's feed after a 2-3 second delay, not immediately.",
+    "keywordVariations": ["weak consistency", "eventual consistency model", "causal consistency"],
+    "relatedTerms": ["cap theorem", "strong consistency", "causal consistency", "replication"],
+    "priority": 4
+  },
+  {
+    "term": "circuit breaker pattern",
+    "slug": "circuit-breaker-pattern",
+    "definition": "The Circuit Breaker pattern is a design pattern used in microservices to prevent cascading failures. When a service experiences repeated failures, the circuit breaker 'opens' to stop sending requests, preventing resource waste and allowing the service time to recover.",
+    "category": "Architecture",
+    "example": "If a payment service is down, the circuit breaker stops forwarding requests to it after 5 failures, returning an error immediately instead of timing out.",
+    "keywordVariations": ["circuit breaker", "fault tolerance", "resilience pattern"],
+    "relatedTerms": ["retry pattern", "bulkhead pattern", "timeout pattern", "fallback"],
+    "priority": 4
+  },
+  {
+    "term": "load balancer",
+    "slug": "load-balancer",
+    "definition": "A load balancer is a system that distributes incoming network traffic across multiple backend servers. It ensures no single server becomes overloaded, improving application performance, availability, and fault tolerance.",
+    "category": "Architecture",
+    "example": "nginx is a popular load balancer that distributes HTTP requests across multiple web servers using algorithms like round-robin or least connections.",
+    "keywordVariations": ["load balancing", "traffic distribution", "load balancing algorithm"],
+    "relatedTerms": ["reverse proxy", "api gateway", "horizontal scaling", "health checks"],
+    "priority": 4
+  },
+  {
+    "term": "rate limiting",
+    "slug": "rate-limiting",
+    "definition": "Rate limiting is a technique that restricts the number of requests a client can make to a service within a time window. It protects APIs from abuse, ensures fair usage, and prevents denial-of-service attacks.",
+    "category": "Security",
+    "example": "A payment API might limit clients to 100 requests per minute. Once exceeded, subsequent requests are rejected with a 429 error.",
+    "keywordVariations": ["request throttling", "api rate limiting", "throttling"],
+    "relatedTerms": ["authentication", "authorization", "ddos protection", "api security"],
+    "priority": 3
+  },
+  {
+    "term": "caching strategy",
+    "slug": "caching-strategy",
+    "definition": "A caching strategy defines how data is stored and retrieved from cache systems to improve application performance. Common strategies include cache-aside, write-through, and write-behind.",
+    "category": "Performance",
+    "example": "Using cache-aside strategy: check Redis first; if data isn't there, fetch from database, store in Redis, and return to user.",
+    "keywordVariations": ["caching patterns", "cache design", "cache strategy"],
+    "relatedTerms": ["redis", "memcached", "cdn", "cache invalidation"],
+    "priority": 4
+  },
+  {
+    "term": "redis",
+    "slug": "redis",
+    "definition": "Redis is an in-memory data structure store used as a database, cache, and message broker. It stores data in RAM for ultra-fast access and supports various data types like strings, lists, sets, and hashes.",
+    "category": "Databases",
+    "example": "Redis caches frequently accessed user profiles, reducing database queries by 90% and improving response times to milliseconds.",
+    "keywordVariations": ["redis cache", "redis database", "in-memory cache"],
+    "relatedTerms": ["memcached", "caching strategy", "cache invalidation", "pub/sub"],
+    "priority": 4
+  },
+  {
+    "term": "message queue",
+    "slug": "message-queue",
+    "definition": "A message queue is a system that enables asynchronous communication between services. Services send messages to a queue instead of calling each other directly, decoupling producers from consumers.",
+    "category": "Architecture",
+    "example": "When a user orders something, instead of calling the email service directly, the order service puts a message in a queue. The email service processes it when ready.",
+    "keywordVariations": ["message broker", "async messaging", "event-driven architecture"],
+    "relatedTerms": ["kafka", "rabbitmq", "pub/sub", "asynchronous processing"],
+    "priority": 4
+  },
+  {
+    "term": "kafka",
+    "slug": "kafka",
+    "definition": "Apache Kafka is a distributed event streaming platform that handles real-time data feeds. It's designed for high-throughput, low-latency processing of event streams across multiple services.",
+    "category": "DevOps",
+    "example": "Uber uses Kafka to stream real-time events from millions of rides, enabling analytics, fraud detection, and driver-rider matching.",
+    "keywordVariations": ["apache kafka", "event streaming", "kafka streams"],
+    "relatedTerms": ["message queue", "pub/sub", "event-driven architecture", "stream processing"],
+    "priority": 4
+  },
+  {
+    "term": "monolithic architecture",
+    "slug": "monolithic-architecture",
+    "definition": "Monolithic architecture is a traditional software architecture where all components of an application are built as a single, unified unit. All features share the same codebase, database, and deployment process.",
+    "category": "Architecture",
+    "example": "A traditional blog platform might have user management, post management, and comment management all in a single Rails or Django application.",
+    "keywordVariations": ["monolith", "monolithic design", "tightly coupled"],
+    "relatedTerms": ["microservices", "modular architecture", "service-oriented architecture"],
+    "priority": 3
+  },
+  {
+    "term": "rest api",
+    "slug": "rest-api",
+    "definition": "REST (Representational State Transfer) API is an architectural style for building web services that use HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations on resources identified by URLs.",
+    "category": "Architecture",
+    "example": "A REST API for users might have GET /users (list), POST /users (create), GET /users/1 (read), PUT /users/1 (update), DELETE /users/1 (delete).",
+    "keywordVariations": ["rest api design", "restful web service", "http api"],
+    "relatedTerms": ["graphql", "api design", "http methods", "resource-oriented"],
+    "priority": 4
+  },
+  {
+    "term": "graphql",
+    "slug": "graphql",
+    "definition": "GraphQL is a query language and runtime for APIs that allows clients to request exactly the data they need. Unlike REST, it uses a single endpoint and a flexible query syntax to fetch nested data efficiently.",
+    "category": "Architecture",
+    "example": "Instead of calling /users/1 to get a user and /users/1/posts to get their posts, GraphQL lets you request both in one query.",
+    "keywordVariations": ["graphql api", "graphql query language", "graphql server"],
+    "relatedTerms": ["rest api", "api design", "apollo", "relay"],
+    "priority": 4
+  },
+  {
+    "term": "authentication",
+    "slug": "authentication",
+    "definition": "Authentication is the process of verifying the identity of a user or system. Common methods include passwords, multi-factor authentication, OAuth, and biometrics.",
+    "category": "Security",
+    "example": "When you log in with username and password, the system authenticates you by comparing your credentials against stored records.",
+    "keywordVariations": ["user authentication", "identity verification", "login"],
+    "relatedTerms": ["authorization", "oauth2", "jwt", "multi-factor authentication"],
+    "priority": 4
+  },
+  {
+    "term": "jwt token",
+    "slug": "jwt-token",
+    "definition": "JWT (JSON Web Token) is a compact, self-contained token used for securely transmitting information between systems. It contains a header, payload, and signature, allowing stateless authentication in distributed systems.",
+    "category": "Security",
+    "example": "After login, a server issues a JWT token that the client includes in subsequent requests. The server verifies the signature without storing session state.",
+    "keywordVariations": ["json web token", "jwt authentication", "bearer token"],
+    "relatedTerms": ["authentication", "oauth2", "session-based auth", "token-based auth"],
+    "priority": 4
+  },
+  {
+    "term": "oauth2",
+    "slug": "oauth2",
+    "definition": "OAuth 2.0 is an authorization framework that allows users to grant third-party applications access to their resources without sharing passwords. It's widely used for social login and delegated access.",
+    "category": "Security",
+    "example": "'Sign in with Google' uses OAuth 2.0 to authenticate you without sharing your Google password with the application.",
+    "keywordVariations": ["oauth", "authorization protocol", "social login"],
+    "relatedTerms": ["authentication", "jwt token", "openid connect", "access control"],
+    "priority": 4
+  },
+  {
+    "term": "sql injection",
+    "slug": "sql-injection",
+    "definition": "SQL Injection is a security vulnerability where attackers insert malicious SQL code into input fields. If not properly sanitized, this code executes on the database, potentially allowing unauthorized data access or modification.",
+    "category": "Security",
+    "example": "An attacker enters ' OR '1'='1 in a login field, potentially bypassing authentication by making the SQL query always return true.",
+    "keywordVariations": ["sql injection attack", "sql injection vulnerability", "sql injection prevention"],
+    "relatedTerms": ["web security", "input validation", "parameterized queries", "owasp"],
+    "priority": 4
+  },
+  {
+    "term": "cross-site scripting",
+    "slug": "cross-site-scripting",
+    "definition": "Cross-Site Scripting (XSS) is a security vulnerability where attackers inject malicious scripts into web pages viewed by other users. These scripts can steal cookies, session tokens, or sensitive data.",
+    "category": "Security",
+    "example": "An attacker posts a comment with embedded JavaScript: <script>alert('XSS')</script>, which executes in every user's browser.",
+    "keywordVariations": ["xss", "xss vulnerability", "script injection"],
+    "relatedTerms": ["web security", "input sanitization", "content security policy", "owasp"],
+    "priority": 4
+  },
+  {
+    "term": "owasp top 10",
+    "slug": "owasp-top-10",
+    "definition": "OWASP Top 10 is a list of the ten most critical web application security risks. It serves as a security baseline for developers and organizations to identify and mitigate the most impactful vulnerabilities.",
+    "category": "Security",
+    "example": "OWASP Top 10 includes SQL Injection, XSS, Broken Authentication, Insecure Deserialization, and other critical vulnerabilities.",
+    "keywordVariations": ["owasp", "web security risks", "security vulnerabilities"],
+    "relatedTerms": ["web security", "vulnerability assessment", "penetration testing"],
+    "priority": 3
+  },
+  {
+    "term": "cicd pipeline",
+    "slug": "cicd-pipeline",
+    "definition": "CI/CD (Continuous Integration/Continuous Deployment) is a practice where code changes are automatically tested, built, and deployed to production. It enables fast, reliable releases with minimal manual intervention.",
+    "category": "DevOps",
+    "example": "When you push code to GitHub, a CI/CD pipeline automatically runs tests, builds a Docker image, and deploys to Kubernetes if tests pass.",
+    "keywordVariations": ["continuous integration", "continuous deployment", "continuous delivery"],
+    "relatedTerms": ["github actions", "jenkins", "gitlab ci", "docker"],
+    "priority": 4
+  },
+  {
+    "term": "docker image",
+    "slug": "docker-image",
+    "definition": "A Docker image is a lightweight, standalone, executable package containing everything needed to run an application: code, runtime, libraries, and dependencies. Images are built from a Dockerfile and used to create containers.",
+    "category": "DevOps",
+    "example": "An image for a Node.js app includes Node.js, npm, your code, and all dependencies. Running this image creates a container.",
+    "keywordVariations": ["container image", "docker container image", "image registry"],
+    "relatedTerms": ["docker", "dockerfile", "container registry", "image layer"],
+    "priority": 3
+  },
+  {
+    "term": "dockerfile",
+    "slug": "dockerfile",
+    "definition": "A Dockerfile is a text file containing instructions to build a Docker image. It specifies the base image, installs dependencies, copies application code, and sets the command to run.",
+    "category": "DevOps",
+    "example": "FROM node:18 \\nWORKDIR /app\\nCOPY . .\\nRUN npm install\\nCMD ['node', 'server.js']",
+    "keywordVariations": ["dockerfile syntax", "docker build", "image construction"],
+    "relatedTerms": ["docker image", "docker", "container"],
+    "priority": 3
+  },
+  {
+    "term": "nginx",
+    "slug": "nginx",
+    "definition": "Nginx is a high-performance, open-source web server and reverse proxy. It efficiently handles concurrent connections, serves static content, and routes requests to backend applications.",
+    "category": "DevOps",
+    "example": "Nginx receives incoming HTTP requests, routes them to multiple Node.js servers using round-robin load balancing, and returns responses to clients.",
+    "keywordVariations": ["nginx server", "web server", "reverse proxy"],
+    "relatedTerms": ["apache", "load balancer", "reverse proxy", "web server"],
+    "priority": 3
+  },
+  {
+    "term": "postgresql",
+    "slug": "postgresql",
+    "definition": "PostgreSQL is a powerful, open-source relational database system. It's known for reliability, advanced features like JSON support, full-text search, and ACID transactions.",
+    "category": "Databases",
+    "example": "PostgreSQL stores structured data with relationships, enforces data integrity through constraints, and supports complex queries.",
+    "keywordVariations": ["postgres", "sql database", "relational database"],
+    "relatedTerms": ["mongodb", "mysql", "sql", "database normalization"],
+    "priority": 4
+  },
+  {
+    "term": "mongodb",
+    "slug": "mongodb",
+    "definition": "MongoDB is a NoSQL document database that stores data in JSON-like documents. It's schema-flexible, scalable, and ideal for applications requiring flexible data models.",
+    "category": "Databases",
+    "example": "Instead of rigid tables, MongoDB stores user profiles as documents with varying fields: {name, email, profile_pic, hobbies}.",
+    "keywordVariations": ["nosql database", "document database", "mongodb database"],
+    "relatedTerms": ["postgresql", "nosql", "database design", "document model"],
+    "priority": 4
+  },
+  {
+    "term": "sql vs nosql",
+    "slug": "sql-vs-nosql",
+    "definition": "SQL (relational) databases use structured schemas and ACID transactions, while NoSQL databases offer flexibility and horizontal scalability. SQL is best for structured data; NoSQL for unstructured or rapidly changing data.",
+    "category": "Databases",
+    "example": "Use PostgreSQL for a banking system requiring ACID guarantees; use MongoDB for a social media app with rapidly evolving user profiles.",
+    "keywordVariations": ["relational vs document", "sql vs nosql comparison"],
+    "relatedTerms": ["postgresql", "mongodb", "acid transactions", "eventual consistency"],
+    "priority": 3
+  },
+  {
+    "term": "index database",
+    "slug": "index-database",
+    "definition": "A database index is a data structure that improves query performance by allowing faster data retrieval. Indexes map column values to their row locations, reducing the number of rows scanned.",
+    "category": "Databases",
+    "example": "Indexing a 'email' column in a users table makes login queries instantly faster, searching 1 million users in milliseconds instead of seconds.",
+    "keywordVariations": ["database index", "query optimization", "index strategy"],
+    "relatedTerms": ["query optimization", "explain plan", "full table scan"],
+    "priority": 3
+  },
+  {
+    "term": "normalization",
+    "slug": "normalization",
+    "definition": "Database normalization is the process of organizing data to reduce redundancy and improve consistency. It involves breaking data into related tables following normal forms (1NF, 2NF, 3NF).",
+    "category": "Databases",
+    "example": "Instead of storing customer name and address in every order, normalization separates them: orders reference customers, avoiding data duplication.",
+    "keywordVariations": ["database normalization", "normal forms", "database design"],
+    "relatedTerms": ["database design", "foreign key", "denormalization"],
+    "priority": 2
+  },
+  {
+    "term": "react hooks",
+    "slug": "react-hooks",
+    "definition": "React Hooks are functions that let you use state and other React features in functional components. Common hooks include useState for state, useEffect for side effects, and useContext for context access.",
+    "category": "Frameworks",
+    "example": "const [count, setCount] = useState(0); useEffect(() => {...}, []); - these hooks enable state and lifecycle management in functional components.",
+    "keywordVariations": ["react hook", "usestate", "useeffect"],
+    "relatedTerms": ["react", "functional components", "state management"],
+    "priority": 4
+  },
+  {
+    "term": "react state",
+    "slug": "react-state",
+    "definition": "React state is data that determines a component's current condition. When state changes, React re-renders the component and updates the UI. State is managed with useState hook in functional components.",
+    "category": "Frameworks",
+    "example": "A counter component has state count = 5. When a button clicks setCount(6), React re-renders showing the new count.",
+    "keywordVariations": ["component state", "state management", "react usestate"],
+    "relatedTerms": ["react props", "react hooks", "state management"],
+    "priority": 3
+  },
+  {
+    "term": "react component",
+    "slug": "react-component",
+    "definition": "A React component is a reusable piece of UI that returns JSX (HTML-like syntax). Components can be functional (functions returning JSX) or class-based (classes extending React.Component).",
+    "category": "Frameworks",
+    "example": "function Button({label}) { return <button>{label}</button>; } is a functional component that renders a button with customizable label.",
+    "keywordVariations": ["component", "functional component", "class component"],
+    "relatedTerms": ["jsx", "props", "state", "react lifecycle"],
+    "priority": 3
+  },
+  {
+    "term": "jsx",
+    "slug": "jsx",
+    "definition": "JSX is a syntax extension to JavaScript that looks like XML/HTML. It allows you to write UI components using familiar HTML syntax within JavaScript, which gets compiled to React.createElement() calls.",
+    "category": "Programming",
+    "example": "<div className='card'><h1>Hello</h1></div> is JSX. Babel compiles it to React.createElement('div', {className: 'card'}, ...).",
+    "keywordVariations": ["jsx syntax", "xml in javascript"],
+    "relatedTerms": ["react", "babel", "javascript"],
+    "priority": 3
+  },
+  {
+    "term": "props react",
+    "slug": "props-react",
+    "definition": "Props (properties) are read-only inputs passed from parent to child components in React. They allow component customization without modifying the component itself.",
+    "category": "Frameworks",
+    "example": "<Button color='blue' onClick={handleClick} /> passes color and onClick as props to the Button component.",
+    "keywordVariations": ["react props", "component props"],
+    "relatedTerms": ["state", "react component", "context api"],
+    "priority": 3
+  },
+  {
+    "term": "javascript async await",
+    "slug": "javascript-async-await",
+    "definition": "Async/await is modern JavaScript syntax for handling asynchronous operations. Async functions return promises, and await pauses execution until a promise resolves, making asynchronous code look synchronous.",
+    "category": "Programming",
+    "example": "async function fetchUser(id) { const user = await fetch('/api/users/' + id); return user; } - await pauses until data arrives.",
+    "keywordVariations": ["async function", "await keyword", "asynchronous javascript"],
+    "relatedTerms": ["promises", "callbacks", "promise chaining"],
+    "priority": 4
+  },
+  {
+    "term": "promises",
+    "slug": "promises",
+    "definition": "A Promise is a JavaScript object representing the eventual completion or failure of an asynchronous operation. Promises have three states: pending, fulfilled, or rejected.",
+    "category": "Programming",
+    "example": "const promise = fetch('/api/data'); promise.then(data => {...}).catch(error => {...});",
+    "keywordVariations": ["javascript promise", "promise resolution"],
+    "relatedTerms": ["callbacks", "async await", "promise chaining"],
+    "priority": 3
+  },
+  {
+    "term": "version control",
+    "slug": "version-control",
+    "definition": "Version control is a system that tracks changes to code over time. It enables collaboration, rollback to previous versions, and branching for parallel development.",
+    "category": "Programming",
+    "example": "Git is a distributed version control system. Developers commit changes with messages, push to a central repository, and merge branches.",
+    "keywordVariations": ["git", "source control", "scm"],
+    "relatedTerms": ["git", "github", "gitlab", "branching"],
+    "priority": 3
+  },
+  {
+    "term": "git",
+    "slug": "git",
+    "definition": "Git is a distributed version control system that tracks code changes locally and remotely. It enables branching, merging, and collaboration without a central server.",
+    "category": "Programming",
+    "example": "git commit -m 'fix login bug' saves changes locally. git push uploads them to GitHub.",
+    "keywordVariations": ["git commands", "git version control"],
+    "relatedTerms": ["github", "gitlab", "branching strategy"],
+    "priority": 3
+  },
+  {
+    "term": "github",
+    "slug": "github",
+    "definition": "GitHub is a cloud-based platform for hosting Git repositories, enabling collaboration, code review, and project management. It's widely used for open-source and private projects.",
+    "category": "Programming",
+    "example": "Developers push code to GitHub, create pull requests for review, and merge to main branch after approval.",
+    "keywordVariations": ["github repository", "github actions", "pull request"],
+    "relatedTerms": ["git", "gitlab", "bitbucket", "version control"],
+    "priority": 3
+  },
+  {
+    "term": "aws",
+    "slug": "aws",
+    "definition": "Amazon Web Services (AWS) is a comprehensive cloud computing platform offering compute, storage, database, and networking services. It powers millions of applications worldwide.",
+    "category": "Cloud",
+    "example": "AWS EC2 provides virtual servers, S3 stores files, RDS manages databases, and Lambda runs serverless functions.",
+    "keywordVariations": ["amazon web services", "aws cloud", "aws services"],
+    "relatedTerms": ["azure", "gcp", "cloud computing", "serverless"],
+    "priority": 4
+  },
+  {
+    "term": "lambda aws",
+    "slug": "lambda-aws",
+    "definition": "AWS Lambda is a serverless computing service that executes code in response to events without managing servers. You pay only for compute time used.",
+    "category": "Cloud",
+    "example": "An HTTP request triggers a Lambda function that processes data and returns a response, without provisioning or managing servers.",
+    "keywordVariations": ["aws lambda", "serverless function", "function as a service"],
+    "relatedTerms": ["aws", "serverless", "api gateway", "event-driven"],
+    "priority": 3
+  },
+  {
+    "term": "s3 aws",
+    "slug": "s3-aws",
+    "definition": "Amazon S3 (Simple Storage Service) is an object storage service offering high availability, scalability, and durability. It's commonly used for backups, logs, static website hosting, and big data.",
+    "category": "Cloud",
+    "example": "Upload files to S3, set public read permissions, and access them via HTTP URLs globally with minimal latency.",
+    "keywordVariations": ["aws s3", "object storage", "bucket"],
+    "relatedTerms": ["aws", "cloud storage", "cdn", "bucket policy"],
+    "priority": 3
+  },
+  {
+    "term": "rds aws",
+    "slug": "rds-aws",
+    "definition": "Amazon RDS (Relational Database Service) is a managed database service supporting PostgreSQL, MySQL, MariaDB, Oracle, and SQL Server. It handles backups, patching, and replication automatically.",
+    "category": "Cloud",
+    "example": "RDS manages your PostgreSQL database: automated backups, multi-AZ failover, read replicas for scaling, without managing infrastructure.",
+    "keywordVariations": ["aws rds", "managed database", "database service"],
+    "relatedTerms": ["aws", "postgresql", "database replication", "backup"],
+    "priority": 3
+  },
+  {
+    "term": "system design interview",
+    "slug": "system-design-interview",
+    "definition": "A system design interview evaluates your ability to design large-scale systems. You discuss architecture, scalability, databases, caching, and tradeoffs to build systems that handle millions of users.",
+    "category": "Architecture",
+    "example": "Design Instagram: discuss how to store photos, handle feed generation, scale to 1B users, ensure 99.9% uptime.",
+    "keywordVariations": ["system design", "design interview", "architecture interview"],
+    "relatedTerms": ["scaling", "load balancing", "microservices", "database design"],
+    "priority": 4
+  },
+  {
+    "term": "cap theorem",
+    "slug": "cap-theorem",
+    "definition": "CAP Theorem states that distributed systems can guarantee at most 2 of 3 properties: Consistency (all nodes see same data), Availability (system always responds), Partition tolerance (system survives network failures).",
+    "category": "Architecture",
+    "example": "A banking system prioritizes Consistency and Partition tolerance, accepting temporary unavailability. Facebook prioritizes Availability and Partition tolerance, accepting eventual consistency.",
+    "keywordVariations": ["consistency availability partition", "brewer's theorem"],
+    "relatedTerms": ["distributed systems", "eventual consistency", "strong consistency"],
+    "priority": 3
+  },
+  {
+    "term": "consensus algorithm",
+    "slug": "consensus-algorithm",
+    "definition": "Consensus algorithms enable distributed systems to agree on a single state despite failures. Raft and PBFT are common algorithms ensuring all nodes reach agreement.",
+    "category": "Architecture",
+    "example": "Raft consensus: leader proposes changes, followers acknowledge, leader commits when majority agrees, ensuring fault tolerance.",
+    "keywordVariations": ["consensus mechanism", "raft", "byzantine fault tolerance"],
+    "relatedTerms": ["distributed systems", "cap theorem", "blockchain"],
+    "priority": 2
+  },
+  {
+    "term": "terraform",
+    "slug": "terraform",
+    "definition": "Terraform is an Infrastructure as Code (IaC) tool that provisions and manages cloud infrastructure using declarative configuration files. It supports AWS, Azure, GCP, and other providers.",
+    "category": "DevOps",
+    "example": "Define AWS resources in .tf files: provider, vpc, subnets, instances. Run terraform apply to create/update infrastructure identically across environments.",
+    "keywordVariations": ["terraform iac", "infrastructure as code", "terraform aws"],
+    "relatedTerms": ["ansible", "iac", "aws", "infrastructure automation"],
+    "priority": 3
+  },
+  {
+    "term": "git merge",
+    "slug": "git-merge",
+    "definition": "Git merge combines changes from two branches. After code review and testing on a feature branch, merge combines it into main, integrating new functionality.",
+    "category": "Programming",
+    "example": "git checkout main; git merge feature/login merges login feature into main branch.",
+    "keywordVariations": ["merge branch", "git merge conflict", "merge request"],
+    "relatedTerms": ["git branch", "pull request", "rebase"],
+    "priority": 2
+  },
+  {
+    "term": "pull request",
+    "slug": "pull-request",
+    "definition": "A pull request (PR) is a request to merge code changes from one branch to another. It enables code review, discussion, and quality assurance before merging.",
+    "category": "Programming",
+    "example": "Create a feature branch, make changes, push to GitHub, and create a PR for team review. After approval, merge to main.",
+    "keywordVariations": ["merge request", "code review", "pr"],
+    "relatedTerms": ["git", "github", "code review", "git merge"],
+    "priority": 3
+  },
+  {
+    "term": "code review",
+    "slug": "code-review",
+    "definition": "Code review is the process of examining code changes before integration. Reviewers check for bugs, style violations, security issues, and architectural concerns.",
+    "category": "Programming",
+    "example": "A developer submits a PR. Team members review code for correctness, performance, and maintainability before approval.",
+    "keywordVariations": ["peer review", "code inspection"],
+    "relatedTerms": ["pull request", "testing", "quality assurance"],
+    "priority": 2
+  },
+  {
+    "term": "nodejs",
+    "slug": "nodejs",
+    "definition": "Node.js is a JavaScript runtime that executes JavaScript outside browsers, enabling server-side development. It's event-driven, non-blocking, and excellent for I/O-heavy applications.",
+    "category": "Frameworks",
+    "example": "Node.js handles thousands of concurrent connections efficiently using an event loop, making it ideal for APIs and real-time applications.",
+    "keywordVariations": ["node.js", "javascript runtime", "server-side javascript"],
+    "relatedTerms": ["express", "javascript", "npm"],
+    "priority": 4
+  },
+  {
+    "term": "express",
+    "slug": "express",
+    "definition": "Express.js is a minimal, flexible Node.js web framework for building APIs and web applications. It provides routing, middleware, and request/response handling.",
+    "category": "Frameworks",
+    "example": "app.get('/users', (req, res) => { res.json(users); }); - Express routes HTTP requests to handler functions.",
+    "keywordVariations": ["express.js", "express server", "express middleware"],
+    "relatedTerms": ["nodejs", "api", "middleware"],
+    "priority": 3
+  },
+  {
+    "term": "npm",
+    "slug": "npm",
+    "definition": "npm (Node Package Manager) is the default package manager for Node.js. It manages project dependencies, scripts, and versioning in package.json.",
+    "category": "Programming",
+    "example": "npm install express -S installs Express and saves it as a dependency. npm start runs scripts defined in package.json.",
+    "keywordVariations": ["npm package", "package manager", "npm install"],
+    "relatedTerms": ["nodejs", "yarn", "package.json"],
+    "priority": 2
+  },
+  {
+    "term": "testing unit test",
+    "slug": "testing-unit-test",
+    "definition": "Unit testing is testing individual functions or components in isolation. Unit tests are fast, focused, and verify that code behaves as expected.",
+    "category": "Programming",
+    "example": "Test a calculateTotal(items) function with various inputs to ensure correct math, edge cases, and error handling.",
+    "keywordVariations": ["unit test", "test case", "testing"],
+    "relatedTerms": ["jest", "integration testing", "test driven development"],
+    "priority": 3
+  },
+  {
+    "term": "jest",
+    "slug": "jest",
+    "definition": "Jest is a JavaScript testing framework with built-in assertions, mocking, and coverage reporting. It's popular for testing Node.js and React code.",
+    "category": "Programming",
+    "example": "test('adds 1 + 2 to equal 3', () => { expect(add(1, 2)).toBe(3); }); - Jest tests verify function behavior.",
+    "keywordVariations": ["jest testing", "javascript test framework"],
+    "relatedTerms": ["testing", "mocha", "sinon"],
+    "priority": 2
+  },
+  {
+    "term": "dom",
+    "slug": "dom",
+    "definition": "DOM (Document Object Model) is a programming interface representing HTML documents as a tree of objects. JavaScript manipulates the DOM to update web pages dynamically.",
+    "category": "Programming",
+    "example": "document.getElementById('button').addEventListener('click', handleClick); - JavaScript accesses and modifies DOM elements.",
+    "keywordVariations": ["dom manipulation", "document object model"],
+    "relatedTerms": ["javascript", "html", "react", "virtual dom"],
+    "priority": 2
+  },
+  {
+    "term": "http status code",
+    "slug": "http-status-code",
+    "definition": "HTTP status codes indicate the result of HTTP requests. 2xx (success), 3xx (redirect), 4xx (client error), 5xx (server error) categories help clients understand responses.",
+    "category": "Programming",
+    "example": "200 OK (success), 404 Not Found (missing resource), 500 Internal Server Error (server problem).",
+    "keywordVariations": ["http status", "response code", "status codes"],
+    "relatedTerms": ["http", "api", "error handling"],
+    "priority": 2
+  }
+]

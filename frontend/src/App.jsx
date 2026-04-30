@@ -16,6 +16,7 @@ const SharedRoadmap = lazy(() => import('./components/SharedRoadmap').then(m => 
 const AboutUs = lazy(() => import('./components/AboutUs').then(m => ({ default: m.AboutUs })));
 const ContactUs = lazy(() => import('./components/ContactUs').then(m => ({ default: m.ContactUs })));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy })));
+const Glossary = lazy(() => import('./components/Glossary').then(m => ({ default: m.Glossary })));
 const Blog = lazy(() => import('./components/Blog').then(m => ({ default: m.Blog })));
 const Article = lazy(() => import('./components/Article').then(m => ({ default: m.Article })));
 const NotFound = lazy(() => import('./components/NotFound').then(m => ({ default: m.NotFound })));
@@ -123,6 +124,7 @@ function AppContent() {
                 Roadmaptic
               </div>
               <nav className="main-nav">
+                <a href="/glossary">Glossary</a>
                 <a href="/blog">Blog</a>
                 <a href="/about">About</a>
                 <a href="/contact">Contact</a>
@@ -157,6 +159,7 @@ function AppContent() {
                 </ProtectedRoute>
               } />
               <Route path="/shared/:id" element={<SharedRoadmap />} />
+              <Route path="/glossary" element={<Glossary />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />

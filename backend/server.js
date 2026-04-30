@@ -11,6 +11,7 @@ import User from './models/User.js';
 import Contact from './models/Contact.js';
 import Email from './models/Email.js';
 import Roadmap from './models/Roadmap.js';
+import Glossary from './models/Glossary.js';
 import { protect } from './middleware/authMiddleware.js';
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/learnpath')
@@ -59,7 +60,7 @@ app.get('/health', (req, res) => {
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 20,
+  max: 100, // Increased from 20 to 100 for better dev experience
   standardHeaders: true,
   legacyHeaders: false,
   message: { error: 'Too many requests. Please wait 15 minutes and try again.' }
@@ -160,7 +161,7 @@ app.post('/api/contact', async (req, res) => {
 app.post('/api/generate-roadmap', protect, async (req, res) => {
   try {
     const { currentSkills, targetRole, hoursPerWeek, resourcePreference, includeYouTube, language } = req.body;
-    
+
     if (!currentSkills || !targetRole || !hoursPerWeek) {
       return res.status(400).json({ error: 'Missing required fields: currentSkills, targetRole, hoursPerWeek' });
     }
@@ -180,7 +181,7 @@ app.post('/api/generate-roadmap', protect, async (req, res) => {
 
     const pref = resourcePreference || "mixed";
     const roadmap = await generateRoadmap(currentSkills, targetRole, hoursPerWeek, pref, includeYouTube, language);
-    
+
     // Save to DB
     const savedRoadmap = await Roadmap.create({
       user: req.user._id,
@@ -193,10 +194,99 @@ app.post('/api/generate-roadmap', protect, async (req, res) => {
     res.json({ roadmap, id: savedRoadmap._id });
   } catch (error) {
     console.error('API Error:', error);
-    res.status(500).json({ 
-      error: 'Failed to generate roadmap', 
+    res.status(500).json({
+      error: 'Failed to generate roadmap',
       details: error.message || 'Unknown error'
     });
+  }
+});
+
+// --- GLOSSARY ROUTES (SEO/AEO) ---
+
+// Get all glossary terms with pagination
+app.get('/api/glossary', async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 20;
+    const category = req.query.category;
+
+    const query = { published: true };
+    if (category) query.category = category;
+
+    const terms = await Glossary.find(query)
+      .sort({ priority: -1, term: 1 })
+      .skip((page - 1) * limit)
+      .limit(limit);
+
+    const total = await Glossary.countDocuments(query);
+
+    res.json({
+      terms,
+      pagination: {
+        page,
+        limit,
+        total,
+        pages: Math.ceil(total / limit)
+      }
+    });
+  } catch (error) {
+    console.error('Glossary Fetch Error:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch glossary terms from database',
+      details: error.message 
+    });
+  }
+});
+
+// Get single glossary term by slug
+app.get('/api/glossary/:slug', async (req, res) => {
+  try {
+    const term = await Glossary.findOne({ slug: req.params.slug, published: true });
+
+    if (!term) {
+      return res.status(404).json({ error: 'Term not found' });
+    }
+
+    res.json(term);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Search glossary terms
+app.get('/api/glossary/search/:query', async (req, res) => {
+  try {
+    const searchQuery = req.params.query.trim();
+
+    if (searchQuery.length < 2) {
+      return res.status(400).json({ error: 'Query must be at least 2 characters' });
+    }
+
+    const results = await Glossary.find({
+      $text: { $search: searchQuery },
+      published: true
+    })
+      .limit(10)
+      .select({ term: 1, definition: 1, category: 1, slug: 1 });
+
+    res.json({ results });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get glossary terms by category
+app.get('/api/glossary/category/:category', async (req, res) => {
+  try {
+    const terms = await Glossary.find({
+      category: req.params.category,
+      published: true
+    })
+      .sort({ priority: -1, term: 1 });
+
+    res.json({ terms, count: terms.length });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 });
 

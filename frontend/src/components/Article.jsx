@@ -28,7 +28,7 @@ export const Article = () => {
     const images = {
       'ai-agents': 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200&h=600',
       'quantum-safe': 'https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=1200&h=600',
-      'rust-edge': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=1200&h=600'
+      'rust-edge': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200&h=600'
     };
     return images[id] || 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200&h=600';
   };
@@ -132,7 +132,7 @@ export const Article = () => {
 
         {/* Author Byline */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
-          <img src="https://api.dicebear.com/7.x/initials/svg?seed=Roadmaptic+Team&backgroundColor=3b82f6&textColor=fff" alt="Roadmaptic Team" style={{ width: '56px', height: '56px', borderRadius: '50%', border: '2px solid var(--border-color)' }} />
+          <img src="https://ui-avatars.com/api/?name=Roadmaptic+Team&background=3b82f6&color=fff" alt="Roadmaptic Team" style={{ width: '56px', height: '56px', borderRadius: '50%', border: '2px solid var(--border-color)' }} />
           <div style={{ textAlign: 'left' }}>
             <div style={{ fontWeight: '700', fontSize: '1.1rem', color: 'var(--text-primary)' }}>Roadmaptic Team</div>
             <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
@@ -148,8 +148,15 @@ export const Article = () => {
       </div>
 
       {/* Hero Image */}
-      <div style={{ width: '100%', height: 'clamp(300px, 50vw, 550px)', borderRadius: '32px', overflow: 'hidden', marginBottom: '80px', position: 'relative', border: '1px solid var(--border-color)' }}>
-        <img src={articleImage} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      <div style={{ width: '100%', height: 'clamp(300px, 50vw, 550px)', borderRadius: '32px', overflow: 'hidden', marginBottom: '80px', position: 'relative', border: '1px solid var(--border-color)', background: 'var(--bg-tertiary)' }}>
+        <img 
+          src={articleImage} 
+          alt={article.title} 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          onError={(e) => {
+            e.target.src = 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200&h=600';
+          }}
+        />
       </div>
 
       {/* Main Content Layout with Sticky Sidebar */}

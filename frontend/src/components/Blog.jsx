@@ -31,7 +31,7 @@ export const Blog = () => {
   };
 
   const heroImage = "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&q=80&w=1600&h=800";
-  const ctaImage = "https://images.unsplash.com/photo-1451187557450-575637b59240?auto=format&fit=crop&q=80&w=1600&h=600";
+  const ctaImage = "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1600&h=600";
 
   // If there are not enough articles, fallback gracefully
   const popularMain = articles[0] || articles[0];
@@ -61,7 +61,14 @@ export const Blog = () => {
         marginBottom: '80px',
         marginTop: '20px'
       }}>
-        <img src={heroImage} alt="Tech learning" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <img 
+          src={heroImage} 
+          alt="Tech learning" 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          onError={(e) => {
+            e.target.src = 'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&q=80&w=1600&h=800';
+          }}
+        />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(9,9,11,0.85) 0%, rgba(9,9,11,0.4) 100%)' }}></div>
 
         <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 8%' }}>
@@ -101,8 +108,15 @@ export const Blog = () => {
             {/* Left Large Article */}
             <Link to={`/blog/${popularMain.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
               <div>
-                <div style={{ width: '100%', aspectRatio: '16/10', borderRadius: '24px', overflow: 'hidden', marginBottom: '24px', border: '1px solid var(--border-color)' }}>
-                  <img src={getImage(0)} alt={popularMain.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} />
+                <div style={{ width: '100%', aspectRatio: '16/10', borderRadius: '24px', overflow: 'hidden', marginBottom: '24px', border: '1px solid var(--border-color)', background: 'var(--bg-tertiary)' }}>
+                  <img 
+                    src={getImage(0)} 
+                    alt={popularMain.title} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} 
+                    onError={(e) => {
+                      e.target.src = 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=800&h=600';
+                    }}
+                  />
                 </div>
                 <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '12px' }}>{getDynamicDate(0)}</div>
                 <h3 style={{ fontSize: '1.8rem', fontWeight: '800', marginBottom: '16px', lineHeight: 1.3, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>{popularMain.title}</h3>
@@ -114,8 +128,15 @@ export const Blog = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
               {popularSide.map((article, i) => (
                 <Link key={article.id} to={`/blog/${article.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', gap: '24px', alignItems: 'center' }}>
-                  <div style={{ width: 'clamp(120px, 30%, 200px)', aspectRatio: '4/3', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid var(--border-color)' }}>
-                    <img src={getImage(i + 1)} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ width: 'clamp(120px, 30%, 200px)', aspectRatio: '4/3', borderRadius: '16px', overflow: 'hidden', flexShrink: 0, border: '1px solid var(--border-color)', background: 'var(--bg-tertiary)' }}>
+                    <img 
+                      src={getImage(i + 1)} 
+                      alt={article.title} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                      onError={(e) => {
+                        e.target.src = 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800&h=600';
+                      }}
+                    />
                   </div>
                   <div>
                     <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '8px' }}>{getDynamicDate(i + 1)}</div>
@@ -137,8 +158,15 @@ export const Blog = () => {
             {latestArticles.map((article, i) => (
               <Link key={article.id} to={`/blog/${article.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div>
-                  <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '20px', overflow: 'hidden', marginBottom: '20px', border: '1px solid var(--border-color)' }}>
-                    <img src={getImage(i + 4)} alt={article.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '20px', overflow: 'hidden', marginBottom: '20px', border: '1px solid var(--border-color)', background: 'var(--bg-tertiary)' }}>
+                    <img 
+                      src={getImage(i + 4)} 
+                      alt={article.title} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                      onError={(e) => {
+                        e.target.src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800&h=600';
+                      }}
+                    />
                   </div>
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '12px' }}>{getDynamicDate(i + 4)}</div>
                   <h4 style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-primary)', lineHeight: 1.4, marginBottom: '12px' }}>{article.title}</h4>
@@ -177,7 +205,14 @@ export const Blog = () => {
         justifyContent: 'center',
         textAlign: 'center'
       }}>
-        <img src={ctaImage} alt="CTA" style={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover' }} />
+        <img 
+          src={ctaImage} 
+          alt="CTA" 
+          style={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover' }} 
+          onError={(e) => {
+            e.target.src = 'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&q=80&w=1600&h=800';
+          }}
+        />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(9,9,11,0.75)' }}></div>
 
         <div style={{ position: 'relative', zIndex: 1, padding: '0 20px', width: '100%' }}>
